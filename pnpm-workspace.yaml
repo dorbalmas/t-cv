@@ -1,0 +1,5 @@
+packages:
+  - 'schema'
+  - 'server'
+  - 'client'
+  - 'docs'

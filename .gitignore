@@ -1,0 +1,13 @@
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Project Dependencies
+node_modules
+
+# macOS
+.DS_Store
+
+# Turbo
+.turbo
