@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.main}>
-          <h1>{t<string>('common.title')}</h1>
+          <h1> ddddd{t<string>('common.title')}</h1>
 
           <h2>{t<string>('common.subtitle')}</h2>
 
