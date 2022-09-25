@@ -1,8 +1,13 @@
+# docker
+docker-compose.yml*
+docker-compose.yml.dev
+docker-compose.yml.prod
+
 # Environment Variables
 .env
 .env.*
 !.env.example
-
+letsEncrypt
 # Project Dependencies
 node_modules
 
