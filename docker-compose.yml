@@ -48,13 +48,13 @@ services:
     labels:
       - "traefik.enable=true"
       # Dashboard
-      - "traefik.http.routers.traefik.rule=Host(`dashboard.tivlotcv.com`)"
-      - "traefik.http.routers.traefik.service=api@internal"
-      - "traefik.http.routers.traefik.tls=true"
-      - "traefik.http.routers.traefik.tls.certresolver=le"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.middlewares=authtraefik"
-      - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq" # user:devAdmin, password:devto
+      # - "traefik.http.routers.traefik.rule=Host(`dashboard.tivlotcv.com`)"
+      # - "traefik.http.routers.traefik.service=api@internal"
+      # - "traefik.http.routers.traefik.tls=true"
+      # - "traefik.http.routers.traefik.tls.certresolver=le"
+      # - "traefik.http.routers.traefik.entrypoints=websecure"
+      # - "traefik.http.routers.traefik.middlewares=authtraefik"
+      # - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq" # user:devAdmin, password:devto
       # global redirect to https
       - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
       - "traefik.http.routers.http-catchall.entrypoints=web"
@@ -78,10 +78,11 @@ services:
       - "traefik.http.routers.server.tls=true"
       - "traefik.http.routers.server.tls.certresolver=le"
       - "traefik.http.routers.server.rule=Host(`tivlotcv.com`) && PathPrefix(`/api/`)"
-      - "traefik.http.routers.server.middlewares=auth,server-stripprefix"
+      - "traefik.http.routers.server.middlewares=server-stripprefix"
+      # - "traefik.http.routers.server.middlewares=auth,server-stripprefix"
       - "traefik.http.middlewares.server-stripprefix.stripprefix.prefixes=/api"
       - "traefik.http.middlewares.server-stripprefix.stripprefix.forceslash=true"
-      - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq"
+      # - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq"
     restart: unless-stopped
 
   client:
@@ -96,11 +97,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.client.rule=Host(`tivlotcv.com`)"
-      - "traefik.http.routers.client.middlewares=auth"
+      # - "traefik.http.routers.client.middlewares=auth"
       - "traefik.http.routers.client.entrypoints=websecure"
       - "traefik.http.routers.client.tls=true"
       - "traefik.http.routers.client.tls.certresolver=le"
-      - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq"
+      # - "traefik.http.middlewares.authtraefik.basicauth.users=devAdmin:$$2y$$05$$h9OxLeY20/5uiXjfPgdRxuFlrfqBf2QifYDgrwsR6rAEgX3/dpOGq"
     restart: unless-stopped
 
 volumes:
