@@ -3,6 +3,14 @@
 .env.*
 !.env.example
 
+# Letsencrypt
+letsencrypt
+
+# Docker
+docker-compose.yml
+docker-compose.yml.dev
+docker-compose.yml.prod
+
 # Project Dependencies
 node_modules
 
