@@ -237,7 +237,7 @@
         "heading": "Exportálás",
         "json": {
           "primary": "JSON",
-          "secondary": "Töltse le önéletrajzának JSON-verzióját, amelyet vissza lehet importálni a Reactive Resume alkalmazásba."
+          "secondary": "Töltse le önéletrajzának JSON-verzióját, amelyet vissza lehet importálni a TivlotCV alkalmazásba."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "Hibák? Funkciókérés?"
         },
         "donate": {
-          "body": "Ha tetszett a Reactive Resume, kérjük, fontolja meg, hogy amennyit csak tud, adományozzon arra, hogy az alkalmazás folyamatosan működjön, hirdetések nélkül és örökké ingyenesen.",
+          "body": "Ha tetszett a TivlotCV, kérjük, fontolja meg, hogy amennyit csak tud, adományozzon arra, hogy az alkalmazás folyamatosan működjön, hirdetések nélkül és örökké ingyenesen.",
           "button": "Vegyél nekem egy kávét",
-          "heading": "Adományozzon a Reactive Resume-nak"
+          "heading": "Adományozzon a TivlotCV-nak"
         },
         "github": "Forráskód",
         "heading": "Linkek"

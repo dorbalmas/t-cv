@@ -609,7 +609,7 @@ export class IntegrationsService {
       // Metadata
       const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
-        name: `Imported from Reactive Resume (${timestamp})`,
+        name: `Imported from TivlotCV (${timestamp})`,
         slug: `imported-from-reactive-resume-${timestamp}`,
       });
 
@@ -630,7 +630,7 @@ export class IntegrationsService {
       // Metadata
       const timestamp = dayjs().utc().format(FILENAME_TIMESTAMP);
       merge<Partial<Resume>, DeepPartial<Resume>>(resume, {
-        name: `Imported from Reactive Resume V2 (${timestamp})`,
+        name: `Imported from TivlotCV V2 (${timestamp})`,
         slug: `imported-from-reactive-resume-v2-${timestamp}`,
       });
 
