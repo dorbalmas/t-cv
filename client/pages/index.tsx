@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.main}>
-          <h1>TivlotCV</h1>
+          <h1>Reactive Resume</h1>
 
           <h2>{t<string>('common.subtitle')}</h2>
 
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
 
         <p className="my-3">
           <Trans t={t} i18nKey="landing.testimonials.body">
-            Good or bad, I would love to hear your opinion on TivlotCV and how the experience has been for you.
+            Good or bad, I would love to hear your opinion on Reactive Resume and how the experience has been for you.
             <br />
             Here are some of the messages sent in by users across the world.
           </Trans>

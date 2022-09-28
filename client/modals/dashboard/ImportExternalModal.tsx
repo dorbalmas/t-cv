@@ -89,8 +89,8 @@ const ImportExternalModal: React.FC = () => {
 
         <p className="mb-2">
           <Trans t={t} i18nKey="modals.dashboard.import-external.linkedin.body">
-            You can save time by exporting your data from LinkedIn and using it to auto-fill fields on TivlotCV. Head
-            over to the
+            You can save time by exporting your data from LinkedIn and using it to auto-fill fields on Reactive Resume.
+            Head over to the
             <a
               href="https://www.linkedin.com/psettings/member-data"
               className="underline"
@@ -142,8 +142,8 @@ const ImportExternalModal: React.FC = () => {
             >
               validated JSON Resume
             </a>
-            ready to go, you can use it to fast-track your development on TivlotCV. Click the button below and upload a
-            valid JSON file to begin.
+            ready to go, you can use it to fast-track your development on Reactive Resume. Click the button below and
+            upload a valid JSON file to begin.
           </Trans>
         </p>
 
