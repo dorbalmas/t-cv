@@ -8,6 +8,7 @@ import { useMemo } from 'react';
 import { validate } from 'uuid';
 
 import Logo from '@/components/shared/Logo';
+import { rtlLanguages } from '@/config/languages';
 import { getCustomSections, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -19,7 +20,7 @@ import Section from './sections/Section';
 const LeftSidebar = () => {
   const theme = useTheme();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -64,7 +65,7 @@ const LeftSidebar = () => {
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
-      <div className={styles.container}>
+      <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
         <nav>
           <div>
             <Link href="/dashboard">

@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 
+import { rtlLanguages } from '@/config/languages';
 import { useAppSelector } from '@/store/hooks';
 import templateMap from '@/templates/templateMap';
 import { generateThemeStyles, generateTypographyStyles } from '@/utils/styles';
@@ -18,7 +19,7 @@ type Props = PageProps & {
 };
 
 const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const resume = useAppSelector((state) => state.resume);
   const breakLine: boolean = useAppSelector((state) => state.build.page.breakLine);
@@ -33,7 +34,7 @@ const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const TemplatePage: React.FC<PageProps> | null = useMemo(() => templateMap[template].component, [template]);
 
   return (
-    <div data-page={page + 1} className={styles.container}>
+    <div data-page={page + 1} className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
       <div
         className={clsx({
           reset: true,

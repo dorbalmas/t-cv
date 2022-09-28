@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import Avatar from '@/components/shared/Avatar';
 import Footer from '@/components/shared/Footer';
+import { rtlLanguages } from '@/config/languages';
 import { right } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -13,7 +14,7 @@ import styles from './RightSidebar.module.scss';
 const RightSidebar = () => {
   const theme = useTheme();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -42,7 +43,7 @@ const RightSidebar = () => {
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
-      <div className={styles.container}>
+      <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
         <nav>
           <div>
             <Avatar size={40} />

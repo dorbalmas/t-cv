@@ -24,6 +24,15 @@ const theme: ThemeOptions = {
         variant: 'outlined',
       },
     },
+    // MuiInputLabel: {
+    //   styleOverrides: {
+    //     root: {
+    //       left: 'inherit',
+    //       right: '1.75rem',
+    //       transformOrigin: 'right',
+    //     },
+    //   },
+    // },
     MuiAppBar: {
       styleOverrides: {
         root: {

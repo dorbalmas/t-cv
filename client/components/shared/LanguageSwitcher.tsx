@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
-import { TRANSLATE_URL } from '@/constants/index';
+// import { TRANSLATE_URL } from '@/constants/index';
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -25,7 +25,7 @@ const LanguageSwitcher = () => {
     router.push({ pathname, query }, asPath, { locale });
   };
 
-  const handleAddLanguage = () => window.open(TRANSLATE_URL, '_blank');
+  //   const handleAddLanguage = () => window.open(TRANSLATE_URL, '_blank');
 
   return (
     <div>
@@ -40,11 +40,11 @@ const LanguageSwitcher = () => {
           </MenuItem>
         ))}
 
-        <MenuItem>
+        {/* <MenuItem>
           <span className="font-bold" onClick={handleAddLanguage}>
             Add your language
           </span>
-        </MenuItem>
+        </MenuItem> */}
       </Menu>
     </div>
   );
