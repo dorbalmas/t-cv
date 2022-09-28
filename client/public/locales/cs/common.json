@@ -16,7 +16,7 @@
     "present": "Současnost"
   },
   "subtitle": "Bezplatný a open source tvůrce životopisů.",
-  "title": "TivlotCV",
+  "title": "Reactive Resume",
   "toast": {
     "error": {
       "upload-file-size": "Prosím nahrajte pouze soubory pod 2 megabajty.",

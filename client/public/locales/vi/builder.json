@@ -237,7 +237,7 @@
         "heading": "Xuất ra",
         "json": {
           "primary": "JSON",
-          "secondary": "Tải sơ yếu lý lịch của bạn dưới dạng JSON, với định dạng này bạn có thể nhập lại vào TivlotCV."
+          "secondary": "Tải sơ yếu lý lịch của bạn dưới dạng JSON, với định dạng này bạn có thể nhập lại vào Reactive Resume."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "Lỗi? Yêu cầu tính năng?"
         },
         "donate": {
-          "body": "Nếu bạn thích sử dụng TivlotCV, vui lòng cân nhắc quyên góp nhiều nhất có thể cho mục đích duy trì ứng dụng luôn hoạt động, không có quảng cáo và miễn phí vĩnh viễn.",
+          "body": "Nếu bạn thích sử dụng Reactive Resume, vui lòng cân nhắc quyên góp nhiều nhất có thể cho mục đích duy trì ứng dụng luôn hoạt động, không có quảng cáo và miễn phí vĩnh viễn.",
           "button": "Mua cho tôi một ly cà phê",
-          "heading": "Quyên góp cho TivlotCV"
+          "heading": "Quyên góp cho Reactive Resume"
         },
         "github": "Mã nguồn",
         "heading": "Liên kết"

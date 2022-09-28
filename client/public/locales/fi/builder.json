@@ -237,7 +237,7 @@
         "heading": "Vie",
         "json": {
           "primary": "JSON",
-          "secondary": "Lataa JSON-versio ansioluettelostasi, jonka voit tuoda takaisin TivlotCVen."
+          "secondary": "Lataa JSON-versio ansioluettelostasi, jonka voit tuoda takaisin Reactive Resumeen."
         },
         "pdf": {
           "loading": {
@@ -263,7 +263,7 @@
           "heading": "Bugeja? Ominaisuuspyyntöjä?"
         },
         "donate": {
-          "body": "Jos pidit TivlotCV -sovelluksen käytöstä, harkitse lahjoitusta niin paljon kuin voit, jotta sovellus pysyy toiminnassa ilman mainoksia ja ikuisesti ilmaisena.",
+          "body": "Jos pidit Reactive Resume -sovelluksen käytöstä, harkitse lahjoitusta niin paljon kuin voit, jotta sovellus pysyy toiminnassa ilman mainoksia ja ikuisesti ilmaisena.",
           "button": "Osta minulle kahvi",
           "heading": "Lahjoita Reaktiiviselle ansioluettelolle"
         },

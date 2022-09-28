@@ -16,7 +16,7 @@
     "present": "Presente"
   },
   "subtitle": "Gerador de currículos gratuito e de código aberto.",
-  "title": "TivlotCV",
+  "title": "Reactive Resume",
   "toast": {
     "error": {
       "upload-file-size": "Carregue apenas arquivos com menos de 2 megabytes.",

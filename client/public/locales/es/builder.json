@@ -237,7 +237,7 @@
         "heading": "Exportar",
         "json": {
           "primary": "JSON",
-          "secondary": "Descargar una versión JSON de su currículum que se puede volver a importar a TivlotCV."
+          "secondary": "Descargar una versión JSON de su currículum que se puede volver a importar a Reactive Resume."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "¿Errores? ¿Solicitud de características?"
         },
         "donate": {
-          "body": "Si le gustó usar TivlotCV, considere donar lo que pueda a la causa de mantener la aplicación en funcionamiento, sin anuncios y gratis para siempre.",
+          "body": "Si le gustó usar Reactive Resume, considere donar lo que pueda a la causa de mantener la aplicación en funcionamiento, sin anuncios y gratis para siempre.",
           "button": "Invítame a un café",
-          "heading": "Donar a TivlotCV"
+          "heading": "Donar a Reactive Resume"
         },
         "github": "Código Fuente",
         "heading": "Enlaces"

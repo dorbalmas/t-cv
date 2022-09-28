@@ -16,7 +16,7 @@
     "present": "Ajándék"
   },
   "subtitle": "Ingyenes és nyílt forráskódú önéletrajzkészítő.",
-  "title": "TivlotCV",
+  "title": "Reactive Resume",
   "toast": {
     "error": {
       "upload-file-size": "Kérjük, csak 2 megabájtnál kisebb fájlokat töltsön fel.",

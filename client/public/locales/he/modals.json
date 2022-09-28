@@ -113,8 +113,8 @@
           "upload-json": "העלה JSON",
           "upload-json-v2": "העלה JSON מגרסה 2"
         },
-        "body": "אם יש לך JSON שיוצא עם הגרסה הנוכחית של TivlotCV, תוכל לייבא אותו בחזרה לכאן כדי לקבל שוב גרסה הניתנת לעריכה.",
-        "heading": "ייבא מ- TivlotCV"
+        "body": "אם יש לך JSON שיוצא עם הגרסה הנוכחית של Reactive Resume, תוכל לייבא אותו בחזרה לכאן כדי לקבל שוב גרסה הניתנת לעריכה.",
+        "heading": "ייבא מ- Reactive Resume"
       }
     },
     "rename-resume": {

@@ -16,7 +16,7 @@
     "present": "Present"
   },
   "subtitle": "A free and open source resume builder.",
-  "title": "TivlotCV",
+  "title": "Reactive Resume",
   "toast": {
     "error": {
       "upload-file-size": "Please upload only files under 2 megabytes.",

@@ -237,7 +237,7 @@
         "heading": "Exportovat",
         "json": {
           "primary": "JSON",
-          "secondary": "Stáhněte si JSON verzi vašeho životopisu, kterou lze importovat zpět do TivlotCV."
+          "secondary": "Stáhněte si JSON verzi vašeho životopisu, kterou lze importovat zpět do Reactive Resume."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "Chyby? Požadavky na funkce?"
         },
         "donate": {
-          "body": "Pokud se vám líbilo používání TivlotCV, zvažte prosím darování co největší částky na udržení aplikace v provozu, bez reklam a navždy zdarma.",
+          "body": "Pokud se vám líbilo používání Reactive Resume, zvažte prosím darování co největší částky na udržení aplikace v provozu, bez reklam a navždy zdarma.",
           "button": "Kupte mi kávu",
-          "heading": "Přispějte na TivlotCV"
+          "heading": "Přispějte na Reactive Resume"
         },
         "github": "Zdrojový kód",
         "heading": "Odkazy"

@@ -16,7 +16,7 @@
     "present": "Présent"
   },
   "subtitle": "Un constructeur de CV gratuit et open source.",
-  "title": "TivlotCV",
+  "title": "Reactive Resume",
   "toast": {
     "error": {
       "upload-file-size": "Veuillez télécharger uniquement des fichiers de moins de 2 Mo.",
