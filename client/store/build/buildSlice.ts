@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import merge from 'lodash/merge';
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'dark' | 'light';
 
 export type Sidebar = 'left' | 'right';
 

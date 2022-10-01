@@ -62,6 +62,27 @@ const theme: ThemeOptions = {
 
 export const lightTheme = createTheme({
   ...theme,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        size: 'small',
+        variant: 'contained',
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          padding: '6px 20px',
+          color: '#0084c7',
+          backgroundColor: '#DCF2FE',
+          '&:hover': {
+            backgroundColor: '#94A3B8',
+            color: '#fff',
+          },
+        },
+      },
+    },
+  },
   palette: {
     mode: 'light',
     primary: { main: '#404040' }, // neutral[700]
@@ -71,6 +92,27 @@ export const lightTheme = createTheme({
 
 export const darkTheme = createTheme({
   ...theme,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        size: 'small',
+        variant: 'contained',
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          padding: '6px 20px',
+          color: '#37BCF8',
+          backgroundColor: '#1F3F59',
+          '&:hover': {
+            backgroundColor: '#1E293B',
+            color: '#fff',
+          },
+        },
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     primary: { main: '#f5f5f5' }, // neutral[100]

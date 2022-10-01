@@ -1,6 +1,6 @@
 .header {
   @apply mx-0 flex justify-between shadow;
-  @apply bg-neutral-800 text-neutral-100;
+  @apply bg-slate-400 dark:bg-slate-800 text-neutral-100;
   @apply transition-[margin-left,margin-right] duration-200;
 
   button > svg {

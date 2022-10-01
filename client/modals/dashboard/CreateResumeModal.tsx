@@ -130,7 +130,7 @@ const CreateResumeModal: React.FC = () => {
               <Controller
                 name="isPublic"
                 control={control}
-                render={({ field }) => <Switch defaultChecked color="secondary" {...field} />}
+                render={({ field }) => <Switch defaultChecked color="info" {...field} />}
               />
             }
           />

@@ -169,7 +169,7 @@ const Settings = () => {
               }
             />
             <Switch
-              color="secondary"
+              color="info"
               disabled={pages.length === 1}
               checked={orientation === 'horizontal'}
               onChange={() => dispatch(togglePageOrientation())}
@@ -181,7 +181,7 @@ const Settings = () => {
               primary={t<string>('builder.rightSidebar.sections.settings.page.break-line.primary')}
               secondary={t<string>('builder.rightSidebar.sections.settings.page.break-line.secondary')}
             />
-            <Switch color="secondary" checked={breakLine} onChange={() => dispatch(togglePageBreakLine())} />
+            <Switch color="info" checked={breakLine} onChange={() => dispatch(togglePageBreakLine())} />
           </ListItem>
         </>
 

@@ -8,7 +8,6 @@ import {
   FontDownload,
   Groups,
   Language,
-  Link as LinkIcon,
   Map,
   Margin,
   MenuBook,
@@ -18,7 +17,6 @@ import {
   School,
   Settings as SettingsIcon,
   Share,
-  Style,
   Twitter,
   VolunteerActivism,
   Work,
@@ -30,10 +28,8 @@ import Basics from '@/components/build/LeftSidebar/sections/Basics';
 import Location from '@/components/build/LeftSidebar/sections/Location';
 import Profiles from '@/components/build/LeftSidebar/sections/Profiles';
 import Section from '@/components/build/LeftSidebar/sections/Section';
-import CustomCSS from '@/components/build/RightSidebar/sections/CustomCSS';
 import Export from '@/components/build/RightSidebar/sections/Export';
 import Layout from '@/components/build/RightSidebar/sections/Layout';
-import Links from '@/components/build/RightSidebar/sections/Links';
 import Settings from '@/components/build/RightSidebar/sections/Settings';
 import Sharing from '@/components/build/RightSidebar/sections/Sharing';
 import Templates from '@/components/build/RightSidebar/sections/Templates';
@@ -137,11 +133,11 @@ export const right: SidebarSection[] = [
     icon: <Palette />,
     component: <Theme />,
   },
-  {
-    id: 'css',
-    icon: <Style />,
-    component: <CustomCSS />,
-  },
+  //   {
+  //     id: 'css',
+  //     icon: <Style />,
+  //     component: <CustomCSS />,
+  //   },
   {
     id: 'sharing',
     icon: <Share />,
@@ -157,11 +153,11 @@ export const right: SidebarSection[] = [
     icon: <SettingsIcon />,
     component: <Settings />,
   },
-  {
-    id: 'links',
-    icon: <LinkIcon />,
-    component: <Links />,
-  },
+  //   {
+  //     id: 'links',
+  //     icon: <LinkIcon />,
+  //     component: <Links />,
+  //   },
 ];
 
 export const getCustomSections = (sections: Record<string, SectionRecord>): Array<Required<SectionRecord>> => {

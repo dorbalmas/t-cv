@@ -43,7 +43,7 @@ const Sharing = () => {
               primary={t<string>('builder.rightSidebar.sections.sharing.visibility.title')}
               secondary={t<string>('builder.rightSidebar.sections.sharing.visibility.subtitle')}
             />
-            <Switch color="secondary" checked={isPublic} onChange={(_, value) => handleSetVisibility(value)} />
+            <Switch color="info" checked={isPublic} onChange={(_, value) => handleSetVisibility(value)} />
           </div>
 
           <div className="mt-2 w-full">
