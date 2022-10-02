@@ -47,7 +47,7 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
           horizontal: 'left',
         }}
       >
-        <div className="p-5 dark:bg-neutral-800">
+        <div className="p-5 dark:bg-slate-700">
           <h4 className="mb-2 font-medium">{t<string>('builder.common.columns.heading')}</h4>
 
           <ToggleButtonGroup exclusive value={columns} onChange={(_, value: number) => handleSetColumns(value)}>

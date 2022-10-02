@@ -1,7 +1,8 @@
 .center {
   @apply mx-0 flex flex-grow pt-12 lg:pt-16;
   @apply transition-[margin-left,margin-right] duration-200;
-  @apply bg-slate-300 dark:bg-slate-700;
+  @apply dark:bg-slate-700;
+  background-color: #f3f2ee;
 }
 
 .wrapper {

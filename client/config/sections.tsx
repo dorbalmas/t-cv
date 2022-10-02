@@ -8,6 +8,7 @@ import {
   FontDownload,
   Groups,
   Language,
+  LinkedIn,
   Map,
   Margin,
   MenuBook,
@@ -17,11 +18,10 @@ import {
   School,
   Settings as SettingsIcon,
   Share,
-  Twitter,
   VolunteerActivism,
   Work,
 } from '@mui/icons-material';
-import { Section as SectionRecord } from '@reactive-resume/schema';
+import { Section as SectionRecord } from '@tivlot-cv/schema';
 import isEmpty from 'lodash/isEmpty';
 
 import Basics from '@/components/build/LeftSidebar/sections/Basics';
@@ -50,7 +50,7 @@ export const left: SidebarSection[] = [
   },
   {
     id: 'profiles',
-    icon: <Twitter />,
+    icon: <LinkedIn />,
     component: <Profiles />,
   },
   {

@@ -1,26 +1,25 @@
-import { PhotoFilter } from '@mui/icons-material';
-import { Button, Divider, Popover } from '@mui/material';
+// import { PhotoFilter } from '@mui/icons-material';
+import { Divider } from '@mui/material';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
 
 import Heading from '@/components/shared/Heading';
 import ResumeInput from '@/components/shared/ResumeInput';
 
-import PhotoFilters from './PhotoFilters';
-import PhotoUpload from './PhotoUpload';
+// import PhotoFilters from './PhotoFilters';
+// import PhotoUpload from './PhotoUpload';
 
 const Basics = () => {
   const { t } = useTranslation();
 
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  //   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  //   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //     setAnchorEl(event.currentTarget);
+  //   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  //   const handleClose = () => {
+  //     setAnchorEl(null);
+  //   };
 
   return (
     <>
@@ -28,18 +27,18 @@ const Basics = () => {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3">
-          <div className="mx-auto">
+          {/* <div className="mx-auto">
             <PhotoUpload />
-          </div>
+          </div> */}
 
           <div className="grid gap-2 w-full sm:col-span-2">
             <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
 
-            <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
+            {/* <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
               {t<string>('builder.leftSidebar.sections.basics.actions.photo-filters')}
-            </Button>
+            </Button> */}
 
-            <Popover
+            {/* <Popover
               open={Boolean(anchorEl)}
               anchorEl={anchorEl}
               onClose={handleClose}
@@ -53,7 +52,7 @@ const Basics = () => {
               }}
             >
               <PhotoFilters />
-            </Popover>
+            </Popover> */}
           </div>
         </div>
 

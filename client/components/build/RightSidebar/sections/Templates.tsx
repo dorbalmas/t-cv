@@ -35,7 +35,7 @@ const Templates = () => {
               </ButtonBase>
             </div>
 
-            <p className={styles.label}>{template.name}</p>
+            {/* <p className={styles.label}>{template.name}</p> */}
           </div>
         ))}
       </div>

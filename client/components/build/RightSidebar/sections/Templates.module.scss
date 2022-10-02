@@ -3,16 +3,16 @@
 }
 
 .template {
-  @apply grid text-center;
+  @apply grid text-center hover:-translate-y-1 hover:scale-110 duration-300;
 
   .preview {
     aspect-ratio: 1 / 1.4142;
 
     @apply relative grid rounded;
-    @apply border-2 border-transparent;
+    @apply border-4 border-transparent;
 
     &.selected {
-      @apply border-black dark:border-white;
+      @apply border-sky-300;
     }
   }
 

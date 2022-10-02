@@ -15,8 +15,9 @@
 .controller {
   @apply z-20 flex items-center justify-center shadow-lg;
   @apply flex rounded-l-full rounded-r-full px-4;
-  @apply bg-slate-200 dark:bg-slate-800;
+  @apply dark:bg-slate-800;
   @apply opacity-70 transition-opacity duration-200 hover:opacity-100;
+  background-color: #edf5f8;
 
   > button {
     @apply px-2.5 py-2.5;
