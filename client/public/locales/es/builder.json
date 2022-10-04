@@ -332,7 +332,7 @@
             "label": "Principal"
           },
           "gradient": {
-            "label": "Degradado"
+            "label": "Gradiente"
           },
           "text": {
             "label": "Texto"
@@ -340,8 +340,9 @@
         },
         "heading": "Tema",
         "gradient_visibility": {
+          "disabled": "Esta plantilla de currículum no tiene gradiente ",
           "subtitle": "Agrega un degradado a tu currículum ",
-          "title": "Degradado"
+          "title": "Gradiente"
         }
       },
       "typography": {

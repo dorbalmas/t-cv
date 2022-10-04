@@ -340,6 +340,7 @@
         },
         "heading": "Theme",
         "gradient_visibility": {
+          "disabled": "This resume template has no gradient",
           "subtitle": "Add a gradient to your resume ",
           "title": "Gradient"
         }

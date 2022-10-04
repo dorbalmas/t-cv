@@ -20,6 +20,8 @@ const Theme = () => {
   const { background, text, primary, gradient, isGradient } = useAppSelector<ThemeType>((state) =>
     get(state.resume, 'metadata.theme')
   );
+  const templatesWithoutGradient = ['onyx', 'pikachu', 'gengar', 'kakuna', 'leafish'];
+  const template = useAppSelector((state) => state.resume.metadata.template);
 
   const handleChange = (property: string, color: string) => {
     dispatch(setResumeState({ path: `metadata.theme.${property}`, value: color[0] !== '#' ? `#${color}` : color }));
@@ -44,14 +46,33 @@ const Theme = () => {
           onChange={(color) => handleChange('primary', color)}
         />
 
+        <ColorPicker
+          label={t<string>('builder.rightSidebar.sections.theme.form.background.label')}
+          color={background}
+          onChange={(color) => handleChange('background', color)}
+        />
+        <ColorPicker
+          label={t<string>('builder.rightSidebar.sections.theme.form.text.label')}
+          color={text}
+          onChange={(color) => handleChange('text', color)}
+        />
         <List sx={{ padding: 0 }} className="col-span-2">
           <ListItem className="flex flex-col" sx={{ padding: 0 }}>
             <div className="flex w-full items-center justify-between">
               <ListItemText
                 primary={t<string>('builder.rightSidebar.sections.theme.gradient_visibility.title')}
-                secondary={t<string>('builder.rightSidebar.sections.theme.gradient_visibility.subtitle')}
+                secondary={
+                  templatesWithoutGradient.includes(template)
+                    ? t<string>('builder.rightSidebar.sections.theme.gradient_visibility.disabled')
+                    : t<string>('builder.rightSidebar.sections.theme.gradient_visibility.subtitle')
+                }
               />
-              <Switch color="info" checked={isGradient} onChange={(_, value) => handleSetGradient(value)} />
+              <Switch
+                disabled={templatesWithoutGradient.includes(template)}
+                color="info"
+                checked={isGradient}
+                onChange={(_, value) => handleSetGradient(value)}
+              />
             </div>
           </ListItem>
         </List>
@@ -64,17 +85,6 @@ const Theme = () => {
             onChange={(color) => handleChange('gradient', color)}
           />
         )}
-
-        <ColorPicker
-          label={t<string>('builder.rightSidebar.sections.theme.form.background.label')}
-          color={background}
-          onChange={(color) => handleChange('background', color)}
-        />
-        <ColorPicker
-          label={t<string>('builder.rightSidebar.sections.theme.form.text.label')}
-          color={text}
-          onChange={(color) => handleChange('text', color)}
-        />
       </div>
     </>
   );
