@@ -11,4 +11,5 @@ export type User = {
   resumes: Resume[];
   createdAt: Date;
   updatedAt: Date;
+  isSubscribed: boolean;
 };

@@ -7,6 +7,8 @@ export type Theme = {
   text: string;
   background: string;
   primary: string;
+  gradient: string;
+  isGradient: boolean;
 };
 
 export type TypeCategory = 'heading' | 'body';

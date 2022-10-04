@@ -430,6 +430,8 @@ const sampleData: Partial<Resume> = {
       text: '#000000',
       primary: '#1682cf',
       background: '#ffffff',
+      gradient: '#1682cf',
+      isGradient: true,
     },
     layout: [
       [

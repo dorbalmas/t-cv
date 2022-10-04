@@ -1,3 +1,4 @@
+import { List, ListItem, ListItemText, Switch } from '@mui/material';
 import { Theme as ThemeType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
@@ -16,11 +17,14 @@ const Theme = () => {
 
   const dispatch = useAppDispatch();
 
-  const { background, text, primary } = useAppSelector<ThemeType>((state) => get(state.resume, 'metadata.theme'));
+  const { background, text, primary, gradient, isGradient } = useAppSelector<ThemeType>((state) =>
+    get(state.resume, 'metadata.theme')
+  );
 
   const handleChange = (property: string, color: string) => {
     dispatch(setResumeState({ path: `metadata.theme.${property}`, value: color[0] !== '#' ? `#${color}` : color }));
   };
+  const handleSetGradient = (value: boolean) => dispatch(setResumeState({ path: 'metadata.theme.isGradient', value }));
 
   return (
     <>
@@ -39,6 +43,28 @@ const Theme = () => {
           className="col-span-2"
           onChange={(color) => handleChange('primary', color)}
         />
+
+        <List sx={{ padding: 0 }} className="col-span-2">
+          <ListItem className="flex flex-col" sx={{ padding: 0 }}>
+            <div className="flex w-full items-center justify-between">
+              <ListItemText
+                primary={t<string>('builder.rightSidebar.sections.theme.gradient_visibility.title')}
+                secondary={t<string>('builder.rightSidebar.sections.theme.gradient_visibility.subtitle')}
+              />
+              <Switch color="info" checked={isGradient} onChange={(_, value) => handleSetGradient(value)} />
+            </div>
+          </ListItem>
+        </List>
+
+        {isGradient && (
+          <ColorPicker
+            label={t<string>('builder.rightSidebar.sections.theme.form.gradient.label')}
+            color={gradient}
+            className="col-span-2"
+            onChange={(color) => handleChange('gradient', color)}
+          />
+        )}
+
         <ColorPicker
           label={t<string>('builder.rightSidebar.sections.theme.form.background.label')}
           color={background}

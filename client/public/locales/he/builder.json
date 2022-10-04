@@ -331,11 +331,18 @@
           "primary": {
             "label": "ראשי"
           },
+          "gradient": {
+            "label": "גרדיאנט"
+          },
           "text": {
             "label": "טקסט"
           }
         },
-        "heading": "ערכת נושא"
+        "heading": "ערכת נושא",
+        "gradient_visibility": {
+          "subtitle": "הוספת גרדיאנט לקורות חיים שלך ",
+          "title": "גרדיאנט"
+        }
       },
       "typography": {
         "form": {

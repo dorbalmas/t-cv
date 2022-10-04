@@ -39,7 +39,7 @@ const defaultState: Partial<Resume> = {
       id: 'work',
       name: 'Work Experience',
       type: 'basic',
-      columns: 2,
+      columns: 1,
       visible: true,
       items: [],
     },
@@ -132,7 +132,9 @@ const defaultState: Partial<Resume> = {
     theme: {
       text: '#000000',
       background: '#ffffff',
-      primary: '#f44336',
+      primary: '#77cde5',
+      gradient: '#1e4d70',
+      isGradient: false,
     },
     locale: 'en',
     date: {

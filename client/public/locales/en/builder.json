@@ -331,11 +331,18 @@
           "primary": {
             "label": "Primary"
           },
+          "gradient": {
+            "label": "Gradient"
+          },
           "text": {
             "label": "Text"
           }
         },
-        "heading": "Theme"
+        "heading": "Theme",
+        "gradient_visibility": {
+          "subtitle": "Add a gradient to your resume ",
+          "title": "Gradient"
+        }
       },
       "typography": {
         "form": {

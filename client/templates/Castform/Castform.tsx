@@ -26,7 +26,15 @@ const Castform: React.FC<PageProps> = ({ page }) => {
     <div className={styles.page}>
       <div className={styles.container}>
         <div
-          className={clsx(styles.sidebar, css(`svg { color: ${color} } --primary-color: ${color}`))}
+          className={clsx(
+            styles.sidebar,
+            !theme.isGradient
+              ? css(`svg { color: ${color} } --primary-color: ${color}`)
+              : css(`svg { color: ${color} } --primary-color: ${color} background: ${theme.primary};
+		  background: linear-gradient(180deg, ${theme.primary} 0%, ${theme.gradient} 100%);
+		  background: -moz-linear-gradient(180deg, ${theme.primary} 0%, ${theme.gradient} 100%);
+		  background: -webkit-linear-gradient(270deg, ${theme.primary} 0%, ${theme.gradient} 100%);`)
+          )}
           style={{ color, backgroundColor: theme.primary }}
         >
           {isFirstPage && <MastheadSidebar />}

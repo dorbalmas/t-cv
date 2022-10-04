@@ -331,11 +331,18 @@
           "primary": {
             "label": "Principal"
           },
+          "gradient": {
+            "label": "Degradado"
+          },
           "text": {
             "label": "Texto"
           }
         },
-        "heading": "Tema"
+        "heading": "Tema",
+        "gradient_visibility": {
+          "subtitle": "Agrega un degradado a tu currículum ",
+          "title": "Degradado"
+        }
       },
       "typography": {
         "form": {
