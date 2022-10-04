@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
+import { rtlLanguages } from '@/config/languages';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const SectionSettings: React.FC<Props> = ({ path }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -48,7 +49,9 @@ const SectionSettings: React.FC<Props> = ({ path }) => {
         }}
       >
         <div className="p-5 dark:bg-slate-700">
-          <h4 className="mb-2 font-medium">{t<string>('builder.common.columns.heading')}</h4>
+          <h4 className="mb-2 font-medium" dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
+            {t<string>('builder.common.columns.heading')}
+          </h4>
 
           <ToggleButtonGroup exclusive value={columns} onChange={(_, value: number) => handleSetColumns(value)}>
             {[1, 2, 3, 4].map((index) => (
