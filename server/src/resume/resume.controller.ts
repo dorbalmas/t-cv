@@ -6,14 +6,14 @@ import {
   Param,
   Patch,
   Post,
-  Put,
+  //   Put,
   Query,
-  UploadedFile,
+  //   UploadedFile,
   UseGuards,
-  UseInterceptors,
+  //   UseInterceptors,
 } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
 
+// import { FileInterceptor } from '@nestjs/platform-express';
 import { JwtAuthGuard } from '@/auth/guards/jwt.guard';
 import { OptionalJwtAuthGuard } from '@/auth/guards/optional-jwt.guard';
 import { User } from '@/decorators/user.decorator';
@@ -95,16 +95,16 @@ export class ResumeController {
     return this.resumeService.reset(+id, userId);
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Put(':id/photo')
-  @UseInterceptors(FileInterceptor('file'))
-  async uploadPhoto(@Param('id') id: string, @User('id') userId: number, @UploadedFile() file: Express.Multer.File) {
-    return this.resumeService.uploadPhoto(+id, userId, file);
-  }
+  //   @UseGuards(JwtAuthGuard)
+  //   @Put(':id/photo')
+  //   @UseInterceptors(FileInterceptor('file'))
+  //   async uploadPhoto(@Param('id') id: string, @User('id') userId: number, @UploadedFile() file: Express.Multer.File) {
+  //     return this.resumeService.uploadPhoto(+id, userId, file);
+  //   }
 
-  @UseGuards(JwtAuthGuard)
-  @Delete(':id/photo')
-  deletePhoto(@Param('id') id: string, @User('id') userId: number) {
-    return this.resumeService.deletePhoto(+id, userId);
-  }
+  //   @UseGuards(JwtAuthGuard)
+  //   @Delete(':id/photo')
+  //   deletePhoto(@Param('id') id: string, @User('id') userId: number) {
+  //     return this.resumeService.deletePhoto(+id, userId);
+  //   }
 }

@@ -1,7 +1,7 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
+// import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
@@ -10,17 +10,19 @@ import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { getContrastColor } from '@/utils/styles';
-import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+import {
+  addHttp,
+  formatLocation,
+  // getPhotoClassNames
+} from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const { name, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
-  );
+  const { email, phone, birthdate, website, location, profiles } = useAppSelector((state) => state.resume.basics);
 
   return (
     <div className="col-span-2 grid justify-items-left gap-4">
-      {photo.visible && !isEmpty(photo.url) && (
+      {/* {photo.visible && !isEmpty(photo.url) && (
         <img
           alt={name}
           src={photo.url}
@@ -28,7 +30,7 @@ export const MastheadSidebar: React.FC = () => {
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}
         />
-      )}
+      )} */}
 
       <div className="flex flex-col gap-2">
         <DataDisplay icon={<Room />} className="text-xs">

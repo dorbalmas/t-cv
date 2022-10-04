@@ -2,17 +2,21 @@ import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import { alpha } from '@mui/material';
 import { Theme } from '@reactive-resume/schema';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
 
+// import isEmpty from 'lodash/isEmpty';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
-import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+import {
+  addHttp,
+  formatLocation,
+  //  getPhotoClassNames
+} from '@/utils/template';
 
 const Masthead: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const { name, photo, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
+  const { name, headline, summary, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
@@ -34,7 +38,7 @@ const Masthead: React.FC = () => {
           </p>
         </div>
 
-        {photo.visible && !isEmpty(photo.url) && (
+        {/* {photo.visible && !isEmpty(photo.url) && (
           <img
             alt={name}
             src={photo.url}
@@ -43,7 +47,7 @@ const Masthead: React.FC = () => {
             className={getPhotoClassNames(photo.filters)}
             id="Masterhead_photo"
           />
-        )}
+        )} */}
       </div>
       <div
         className="grid gap-y-2 px-8 py-4"

@@ -6,16 +6,16 @@ const sampleData: Partial<Resume> = {
     email: 'alexis.jones@gmail.com',
     phone: '+1 800 1200 3820',
     birthdate: '1995-08-06T00:00:00.000Z',
-    photo: {
-      url: `/images/sample-photo.jpg`,
-      filters: {
-        size: 128,
-        shape: 'rounded-square',
-        grayscale: false,
-        border: false,
-      },
-      visible: true,
-    },
+    // photo: {
+    //   url: `/images/sample-photo.jpg`,
+    //   filters: {
+    //     size: 128,
+    //     shape: 'rounded-square',
+    //     grayscale: false,
+    //     border: false,
+    //   },
+    //   visible: true,
+    // },
     summary:
       'I am a creative frontend developer offering 4+ years of experience providing high-impact web solutions for diverse industry organizations. Skilled in designing, developing and testing multiple web-based applications incorporating a range of technologies. Aspiring to combine broad background with strong technical skills to excel as a frontend web developer.',
     website: 'alexisjones.com',

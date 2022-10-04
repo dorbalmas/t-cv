@@ -1,24 +1,28 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
 
+// import isEmpty from 'lodash/isEmpty';
 import Markdown from '@/components/shared/Markdown';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
-import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+import {
+  addHttp,
+  formatLocation,
+  //  getPhotoClassNames
+} from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
   const primaryColor: string = useAppSelector((state) => get(state.resume, 'metadata.theme.primary'));
-  const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
+  const { name, headline, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
 
   return (
     <div className="col-span-2 grid justify-items-center gap-4">
-      {photo.visible && !isEmpty(photo.url) && (
+      {/* {photo.visible && !isEmpty(photo.url) && (
         <img
           alt={name}
           src={photo.url}
@@ -26,7 +30,7 @@ export const MastheadSidebar: React.FC = () => {
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}
         />
-      )}
+      )} */}
 
       <div className="text-center">
         <h1>{name}</h1>

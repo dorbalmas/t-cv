@@ -284,9 +284,9 @@ export class IntegrationsService {
           basics: {
             name: get(jsonResume, 'basics.name'),
             headline: get(jsonResume, 'basics.label'),
-            photo: {
-              url: get(jsonResume, 'basics.image'),
-            },
+            // photo: {
+            //   url: get(jsonResume, 'basics.image'),
+            // },
             email: get(jsonResume, 'basics.email'),
             phone: get(jsonResume, 'basics.phone'),
             website: get(jsonResume, 'basics.url'),
@@ -640,9 +640,9 @@ export class IntegrationsService {
           basics: {
             name: get(jsonResume, 'profile.firstName') + ' ' + get(jsonResume, 'profile.lastName'),
             headline: get(jsonResume, 'profile.subtitle'),
-            photo: {
-              url: get(jsonResume, 'profile.photograph'),
-            },
+            // photo: {
+            //   url: get(jsonResume, 'profile.photograph'),
+            // },
             email: get(jsonResume, 'profile.email'),
             phone: get(jsonResume, 'profile.phone'),
             website: get(jsonResume, 'profile.website'),

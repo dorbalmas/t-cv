@@ -1,22 +1,26 @@
 import { Cake, Email, Phone, Public, Room } from '@mui/icons-material';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
 
+// import isEmpty from 'lodash/isEmpty';
 import { useAppSelector } from '@/store/hooks';
 import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
-import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+import {
+  addHttp,
+  formatLocation,
+  //  getPhotoClassNames
+} from '@/utils/template';
 
 const Masthead: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const { name, photo, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
+  const { name, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
 
   return (
     <div className="flex items-center gap-4">
-      {photo.visible && !isEmpty(photo.url) && (
+      {/* {photo.visible && !isEmpty(photo.url) && (
         <img
           alt={name}
           src={photo.url}
@@ -24,7 +28,7 @@ const Masthead: React.FC = () => {
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}
         />
-      )}
+      )} */}
 
       <div className="grid flex-1 gap-1">
         <h1>{name}</h1>

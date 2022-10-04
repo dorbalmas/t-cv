@@ -4,7 +4,7 @@ import { alpha } from '@mui/material';
 import { Theme } from '@reactive-resume/schema';
 import clsx from 'clsx';
 import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
+// import isEmpty from 'lodash/isEmpty';
 import { useMemo } from 'react';
 
 import Markdown from '@/components/shared/Markdown';
@@ -13,11 +13,15 @@ import DataDisplay from '@/templates/shared/DataDisplay';
 import { formatDateString } from '@/utils/date';
 import getProfileIcon from '@/utils/getProfileIcon';
 import { getContrastColor } from '@/utils/styles';
-import { addHttp, formatLocation, getPhotoClassNames } from '@/utils/template';
+import {
+  addHttp,
+  formatLocation,
+  // getPhotoClassNames
+} from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
   const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const { name, headline, photo, email, phone, birthdate, website, location, profiles } = useAppSelector(
+  const { name, headline, email, phone, birthdate, website, location, profiles } = useAppSelector(
     (state) => state.resume.basics
   );
   const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
@@ -26,7 +30,7 @@ export const MastheadSidebar: React.FC = () => {
 
   return (
     <div className="col-span-2 grid justify-items-start gap-3 p-4">
-      {photo.visible && !isEmpty(photo.url) && (
+      {/* {photo.visible && !isEmpty(photo.url) && (
         <img
           alt={name}
           src={photo.url}
@@ -34,7 +38,7 @@ export const MastheadSidebar: React.FC = () => {
           height={photo.filters.size}
           className={getPhotoClassNames(photo.filters)}
         />
-      )}
+      )} */}
 
       <div>
         <h1 className="mb-1">{name}</h1>

@@ -30,7 +30,7 @@ export type Photo = {
 
 export type Basics = {
   name: string;
-  photo: Photo;
+  //   photo: Photo;
   email: string;
   phone: string;
   website: string;

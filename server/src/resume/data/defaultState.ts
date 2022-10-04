@@ -11,16 +11,16 @@ const defaultState: Partial<Resume> = {
     email: '',
     headline: '',
     birthdate: '',
-    photo: {
-      url: '',
-      visible: true,
-      filters: {
-        size: 128,
-        shape: 'square',
-        border: false,
-        grayscale: false,
-      },
-    },
+    // photo: {
+    //   url: '',
+    //   visible: true,
+    //   filters: {
+    //     size: 128,
+    //     shape: 'square',
+    //     border: false,
+    //     grayscale: false,
+    //   },
+    // },
     name: '',
     phone: '',
     summary: '',
