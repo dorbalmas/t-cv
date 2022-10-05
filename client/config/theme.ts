@@ -3,10 +3,18 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 export const rtlStyleChanges = {
   dir: 'rtl',
   textAlign: 'right',
+  MuiInputLabel: {
+    left: 'inherit',
+    right: '1.75rem',
+    transformOrigin: 'right',
+  },
 };
 export const ltrStyleChanges = {
   dir: 'ltr',
   textAlign: 'left',
+  MuiInputLabel: {
+    transformOrigin: 'left',
+  },
 };
 
 const theme: ThemeOptions = {
@@ -33,15 +41,7 @@ const theme: ThemeOptions = {
         variant: 'outlined',
       },
     },
-    // MuiInputLabel: {
-    //   styleOverrides: {
-    //     root: {
-    //       left: 'inherit',
-    //       right: '1.75rem',
-    //       transformOrigin: 'right',
-    //     },
-    //   },
-    // },
+
     MuiAppBar: {
       styleOverrides: {
         root: {
@@ -98,6 +98,22 @@ export const lightTheme = (directions: any) =>
         styleOverrides: {
           root: {
             direction: directions.dir,
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            left: directions.MuiInputLabel.left,
+            right: directions.MuiInputLabel.right,
+            transformOrigin: directions.MuiInputLabel.transformOrigin,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            textAlign: directions.textAlign,
           },
         },
       },
@@ -163,6 +179,22 @@ export const darkTheme = (directions: any) =>
         styleOverrides: {
           root: {
             direction: directions.dir,
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            left: directions.MuiInputLabel.left,
+            right: directions.MuiInputLabel.right,
+            transformOrigin: directions.MuiInputLabel.transformOrigin,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            textAlign: directions.textAlign,
           },
         },
       },
