@@ -424,7 +424,7 @@ const sampleData: Partial<Resume> = {
     },
     locale: 'en',
     date: {
-      format: 'MMMM DD, YYYY',
+      format: 'MM/YYYY',
     },
     theme: {
       text: '#000000',

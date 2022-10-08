@@ -138,7 +138,7 @@ const defaultState: Partial<Resume> = {
     },
     locale: 'en',
     date: {
-      format: 'MMMM DD, YYYY',
+      format: 'MM/YYYY',
     },
     layout: [
       [

@@ -1,11 +1,11 @@
 import { DarkMode, LightMode, Link as LinkIcon } from '@mui/icons-material';
 import { Masonry } from '@mui/lab';
 import { Button, IconButton, NoSsr } from '@mui/material';
-import Layout from 'landingPage/components/containers/Layout/Layout';
-import Footer from 'landingPage/components/organisms/Footer/Footer';
-import Header from 'landingPage/components/organisms/Header/Header';
-import { SectionMain } from 'landingPage/components/organisms/SectionMain/SectionMain';
-import { useBreakpoints } from 'landingPage/hooks/useBreakpoints';
+// import Layout from 'landingPage/components/containers/Layout/Layout';
+// import Footer from 'landingPage/components/organisms/Footer/Footer';
+// import Header from 'landingPage/components/organisms/Header/Header';
+// import { SectionMain } from 'landingPage/components/organisms/SectionMain/SectionMain';
+// import { useBreakpoints } from 'landingPage/hooks/useBreakpoints';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,34 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
     },
   };
 };
-const Content = React.memo(({ isMobile, isTablet }: { isMobile: boolean; isTablet: boolean }) => {
-  return (
-    <div style={{ maxWidth: '100vw', overflow: 'hidden' }}>
-      <div
-        style={{
-          minHeight: '100vh',
-          // backgroundColor: defaultTheme.colors.white,
-        }}
-      >
-        <SectionMain isMobile={isTablet || isMobile} />
-      </div>
-      {/* <SectionQuote />
-	
-			<SectionMap isMobile={isMobile} />
-	
-			<SectionShowcase isMobile={isMobile} />
-	
-			<SectionTechStack isMobile={isMobile} />
-	
-			<SectionLaunch isMobile={isMobile} />
-	
-			<SectionTrustedBy />*/}
 
-      <Footer isMobile={isMobile} />
-    </div>
-  );
-});
-Content.displayName = 'Content';
 const Home: NextPage = () => {
   const { t } = useTranslation();
 
@@ -78,16 +51,13 @@ const Home: NextPage = () => {
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
 
   const handleLogout = () => dispatch(logout());
-  const sectionH = typeof window !== 'undefined' ? window.innerHeight * 2.3 : 2000;
-  console.log(sectionH);
 
-  const { isMobile, isDesktop, isTablet } = useBreakpoints();
   return (
     <>
-      <Layout>
+      {/* <Layout>
         <Header isMobile={isMobile} isDesktop={isDesktop} isTablet={isTablet} customHeaderHeight={sectionH} />
         <Content isMobile={isMobile} isTablet={isTablet} />
-      </Layout>
+      </Layout> */}
       <main className={styles.container}>
         <div className={styles.header}>
           <div className={styles.logo}>
