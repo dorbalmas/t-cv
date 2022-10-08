@@ -1,14 +1,20 @@
 import { DarkMode, LightMode, Link as LinkIcon } from '@mui/icons-material';
 import { Masonry } from '@mui/lab';
 import { Button, IconButton, NoSsr } from '@mui/material';
+import Layout from 'landingPage/components/containers/Layout/Layout';
+import Footer from 'landingPage/components/organisms/Footer/Footer';
+import Header from 'landingPage/components/organisms/Header/Header';
+import { SectionMain } from 'landingPage/components/organisms/SectionMain/SectionMain';
+import { useBreakpoints } from 'landingPage/hooks/useBreakpoints';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import React from 'react';
 
 import Testimony from '@/components/landing/Testimony';
-import Footer from '@/components/shared/Footer';
+// import Footer from '@/components/shared/Footer';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import Logo from '@/components/shared/Logo';
 import { screenshots } from '@/config/screenshots';
@@ -29,7 +35,34 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
     },
   };
 };
+const Content = React.memo(({ isMobile, isTablet }: { isMobile: boolean; isTablet: boolean }) => {
+  return (
+    <div style={{ maxWidth: '100vw', overflow: 'hidden' }}>
+      <div
+        style={{
+          minHeight: '100vh',
+          // backgroundColor: defaultTheme.colors.white,
+        }}
+      >
+        <SectionMain isMobile={isTablet || isMobile} />
+      </div>
+      {/* <SectionQuote />
+	
+			<SectionMap isMobile={isMobile} />
+	
+			<SectionShowcase isMobile={isMobile} />
+	
+			<SectionTechStack isMobile={isMobile} />
+	
+			<SectionLaunch isMobile={isMobile} />
+	
+			<SectionTrustedBy />*/}
 
+      <Footer isMobile={isMobile} />
+    </div>
+  );
+});
+Content.displayName = 'Content';
 const Home: NextPage = () => {
   const { t } = useTranslation();
 
@@ -45,159 +78,168 @@ const Home: NextPage = () => {
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
 
   const handleLogout = () => dispatch(logout());
+  const sectionH = typeof window !== 'undefined' ? window.innerHeight * 2.3 : 2000;
+  console.log(sectionH);
 
+  const { isMobile, isDesktop, isTablet } = useBreakpoints();
   return (
-    <main className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.logo}>
-          <Logo size={256} />
+    <>
+      <Layout>
+        <Header isMobile={isMobile} isDesktop={isDesktop} isTablet={isTablet} customHeaderHeight={sectionH} />
+        <Content isMobile={isMobile} isTablet={isTablet} />
+      </Layout>
+      <main className={styles.container}>
+        <div className={styles.header}>
+          <div className={styles.logo}>
+            <Logo size={256} />
+          </div>
+
+          <div className={styles.main}>
+            <h1>TivlotCV</h1>
+
+            <h2>{t<string>('common.subtitle')}</h2>
+
+            <NoSsr>
+              <div className={styles.buttonWrapper}>
+                {isLoggedIn ? (
+                  <>
+                    <Link href="/dashboard" passHref>
+                      <Button>{t<string>('landing.actions.app')}</Button>
+                    </Link>
+
+                    <Button variant="outlined" onClick={handleLogout}>
+                      {t<string>('landing.actions.logout')}
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button onClick={handleLogin}>{t<string>('landing.actions.login')}</Button>
+
+                    <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
+                      {t<string>('landing.actions.register')}
+                    </Button>
+                  </>
+                )}
+              </div>
+            </NoSsr>
+          </div>
         </div>
 
-        <div className={styles.main}>
-          <h1>TivlotCV</h1>
+        <section className={styles.section}>
+          <h6>{t<string>('landing.summary.heading')}</h6>
 
-          <h2>{t<string>('common.subtitle')}</h2>
+          <p>{t<string>('landing.summary.body')}</p>
+        </section>
 
-          <NoSsr>
-            <div className={styles.buttonWrapper}>
-              {isLoggedIn ? (
-                <>
-                  <Link href="/dashboard" passHref>
-                    <Button>{t<string>('landing.actions.app')}</Button>
-                  </Link>
+        <section className={styles.section}>
+          <h6>{t<string>('landing.features.heading')}</h6>
 
-                  <Button variant="outlined" onClick={handleLogout}>
-                    {t<string>('landing.actions.logout')}
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button onClick={handleLogin}>{t<string>('landing.actions.login')}</Button>
+          <ul className="list-inside list-disc leading-loose">
+            <li>{t<string>('landing.features.list.free')}</li>
+            <li>{t<string>('landing.features.list.ads')}</li>
+            <li>{t<string>('landing.features.list.tracking')}</li>
+            <li>{t<string>('landing.features.list.languages')}</li>
+            <li>{t<string>('landing.features.list.import')}</li>
+            <li>{t<string>('landing.features.list.export')}</li>
+            <li>
+              <Trans t={t} i18nKey="landing.features.list.more">
+                And a lot of exciting features,
+                <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">
+                  click here to know more
+                </a>
+              </Trans>
+            </li>
+          </ul>
+        </section>
 
-                  <Button variant="outlined" onClick={handleRegister} disabled={FLAG_DISABLE_SIGNUPS}>
-                    {t<string>('landing.actions.register')}
-                  </Button>
-                </>
-              )}
-            </div>
-          </NoSsr>
-        </div>
-      </div>
+        <section className={styles.section}>
+          <h6>{t<string>('landing.screenshots.heading')}</h6>
 
-      <section className={styles.section}>
-        <h6>{t<string>('landing.summary.heading')}</h6>
-
-        <p>{t<string>('landing.summary.body')}</p>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t<string>('landing.features.heading')}</h6>
-
-        <ul className="list-inside list-disc leading-loose">
-          <li>{t<string>('landing.features.list.free')}</li>
-          <li>{t<string>('landing.features.list.ads')}</li>
-          <li>{t<string>('landing.features.list.tracking')}</li>
-          <li>{t<string>('landing.features.list.languages')}</li>
-          <li>{t<string>('landing.features.list.import')}</li>
-          <li>{t<string>('landing.features.list.export')}</li>
-          <li>
-            <Trans t={t} i18nKey="landing.features.list.more">
-              And a lot of exciting features,
-              <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">
-                click here to know more
+          <div className={styles.screenshots}>
+            {screenshots.map(({ src, alt }) => (
+              <a key={src} href={src} className={styles.image} target="_blank" rel="noreferrer">
+                <Image src={src} alt={alt} layout="fill" objectFit="cover" />
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <h6>{t<string>('landing.testimonials.heading')}</h6>
+
+          <p className="my-3">
+            <Trans t={t} i18nKey="landing.testimonials.body">
+              Good or bad, I would love to hear your opinion on Reactive Resume and how the experience has been for you.
+              <br />
+              Here are some of the messages sent in by users across the world.
             </Trans>
-          </li>
-        </ul>
-      </section>
+          </p>
 
-      <section className={styles.section}>
-        <h6>{t<string>('landing.screenshots.heading')}</h6>
+          <p className="my-3">
+            <Trans t={t} i18nKey="landing.testimonials.contact">
+              You can reach out to me through <a href="mailto:im.amruth@gmail.com">my email</a> or through the contact
+              form on <a href="https://www.amruthpillai.com">my website</a>.
+            </Trans>
+          </p>
 
-        <div className={styles.screenshots}>
-          {screenshots.map(({ src, alt }) => (
-            <a key={src} href={src} className={styles.image} target="_blank" rel="noreferrer">
-              <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+          <Masonry columns={{ xs: 1, sm: 2, lg: 4 }} spacing={2}>
+            {testimonials.map(({ name, message }, index) => (
+              <Testimony key={index} name={name} message={message} />
+            ))}
+          </Masonry>
+        </section>
+
+        <section className={styles.section}>
+          <h6>{t<string>('landing.links.heading')}</h6>
+
+          <div>
+            <Link href="/meta/privacy" passHref>
+              <Button variant="text" startIcon={<LinkIcon />}>
+                {t<string>('landing.links.links.privacy')}
+              </Button>
+            </Link>
+
+            <Link href="/meta/service" passHref>
+              <Button variant="text" startIcon={<LinkIcon />}>
+                {t<string>('landing.links.links.service')}
+              </Button>
+            </Link>
+
+            <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+              <Button variant="text" startIcon={<LinkIcon />}>
+                {t<string>('landing.links.links.github')}
+              </Button>
             </a>
-          ))}
-        </div>
-      </section>
 
-      <section className={styles.section}>
-        <h6>{t<string>('landing.testimonials.heading')}</h6>
+            <a href={DONATION_URL} target="_blank" rel="noreferrer">
+              <Button variant="text" startIcon={<LinkIcon />}>
+                {t<string>('landing.links.links.donate')}
+              </Button>
+            </a>
+          </div>
+        </section>
 
-        <p className="my-3">
-          <Trans t={t} i18nKey="landing.testimonials.body">
-            Good or bad, I would love to hear your opinion on Reactive Resume and how the experience has been for you.
-            <br />
-            Here are some of the messages sent in by users across the world.
-          </Trans>
-        </p>
-
-        <p className="my-3">
-          <Trans t={t} i18nKey="landing.testimonials.contact">
-            You can reach out to me through <a href="mailto:im.amruth@gmail.com">my email</a> or through the contact
-            form on <a href="https://www.amruthpillai.com">my website</a>.
-          </Trans>
-        </p>
-
-        <Masonry columns={{ xs: 1, sm: 2, lg: 4 }} spacing={2}>
-          {testimonials.map(({ name, message }, index) => (
-            <Testimony key={index} name={name} message={message} />
-          ))}
-        </Masonry>
-      </section>
-
-      <section className={styles.section}>
-        <h6>{t<string>('landing.links.heading')}</h6>
-
-        <div>
-          <Link href="/meta/privacy" passHref>
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t<string>('landing.links.links.privacy')}
-            </Button>
-          </Link>
-
-          <Link href="/meta/service" passHref>
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t<string>('landing.links.links.service')}
-            </Button>
-          </Link>
-
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t<string>('landing.links.links.github')}
-            </Button>
+        <section className={styles.section}>
+          <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
+            <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
           </a>
+        </section>
 
-          <a href={DONATION_URL} target="_blank" rel="noreferrer">
-            <Button variant="text" startIcon={<LinkIcon />}>
-              {t<string>('landing.links.links.donate')}
-            </Button>
-          </a>
-        </div>
-      </section>
+        <footer>
+          <div className={styles.version}>
+            {/* <Footer className="font-semibold leading-5 opacity-50" /> */}
 
-      <section className={styles.section}>
-        <a href={DIGITALOCEAN_URL} target="_blank" rel="noreferrer">
-          <Image src="/images/sponsors/digitalocean.svg" alt="Powered By DigitalOcean" width={200} height={40} />
-        </a>
-      </section>
+            <div>v{process.env.appVersion}</div>
+          </div>
 
-      <footer>
-        <div className={styles.version}>
-          <Footer className="font-semibold leading-5 opacity-50" />
+          <div className={styles.actions}>
+            <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
 
-          <div>v{process.env.appVersion}</div>
-        </div>
-
-        <div className={styles.actions}>
-          <IconButton onClick={handleToggle}>{theme === 'dark' ? <DarkMode /> : <LightMode />}</IconButton>
-
-          <LanguageSwitcher />
-        </div>
-      </footer>
-    </main>
+            <LanguageSwitcher />
+          </div>
+        </footer>
+      </main>
+    </>
   );
 };
 
