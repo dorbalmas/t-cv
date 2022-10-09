@@ -6,7 +6,7 @@ export type Testimony = {
 const testimonials: Testimony[] = [
   {
     name: 'Yogeshwar B.',
-    message: `Hi Amruth! First off, many thanks for making RxResume! It was love at first sight for me when I saw it was a FOSS resume-builder with such a polished UI. It's been of great help for me as I've been applying to MS programs in international universities. The generated resume is slick as hell, and I spent a fraction of the time building it that I would have spent, had I chosen the "Microsoft Word/Google Docs" route. And the best thing was I spent absolutely no money on it!`,
+    message: `Hi Amruth! First off, many thanks for making TivlotCV! It was love at first sight for me when I saw it was a FOSS resume-builder with such a polished UI. It's been of great help for me as I've been applying to MS programs in international universities. The generated resume is slick as hell, and I spent a fraction of the time building it that I would have spent, had I chosen the "Microsoft Word/Google Docs" route. And the best thing was I spent absolutely no money on it!`,
   },
   {
     name: 'Chandani B.',
@@ -31,7 +31,7 @@ As a new enthusiast with no previous background in coding, I thought it would be
   },
   {
     name: 'Joao R.',
-    message: `Hi Amruth, Let me congratulate you on the awesome RxResume. After long and extensive searches on the internet for a good and clean CV generator, RxResume is truly a gem. I've been using it to create all my CVs.`,
+    message: `Hi Amruth, Let me congratulate you on the awesome TivlotCV. After long and extensive searches on the internet for a good and clean CV generator, TivlotCV is truly a gem. I've been using it to create all my CVs.`,
   },
 ];
 

@@ -19,7 +19,7 @@ const DEBOUNCE_WAIT = 1000;
 const debouncedSync = debounce((resume: Resume) => updateResume(resume), DEBOUNCE_WAIT);
 
 function* handleSync() {
-  const resume: Resume = yield select((state) => state.resume);
+  const resume: Resume = yield select((state) => state.resume.present);
 
   debouncedSync(resume);
 }

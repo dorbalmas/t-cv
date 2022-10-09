@@ -20,9 +20,9 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: SectionType = useAppSelector((state) => get(state.resume, path, {}));
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const primaryColor: string = useAppSelector((state) => get(state.resume, 'metadata.theme.primary'));
+  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {}));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
 
   if (!section.visible) return null;
 

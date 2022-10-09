@@ -23,8 +23,8 @@ const Layout = () => {
 
   const dispatch = useAppDispatch();
 
-  const layout = useAppSelector((state) => state.resume.metadata.layout);
-  const resumeSections = useAppSelector((state) => state.resume.sections);
+  const layout = useAppSelector((state) => state.resume.present.metadata.layout);
+  const resumeSections = useAppSelector((state) => state.resume.present.sections);
 
   const onDragEnd = (dropResult: DropResult) => {
     const { source: srcLoc, destination: destLoc } = dropResult;

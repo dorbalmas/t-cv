@@ -11,7 +11,7 @@ import Section from './widgets/Section';
 const Leafish: React.FC<PageProps> = ({ page }) => {
   const isFirstPage = useMemo(() => page === 0, [page]);
 
-  const layout: string[][] = useAppSelector((state) => state.resume.metadata.layout[page]);
+  const layout: string[][] = useAppSelector((state) => state.resume.present.metadata.layout[page]);
 
   return (
     <div className={styles.page}>

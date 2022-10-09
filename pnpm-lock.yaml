@@ -96,6 +96,7 @@ importers:
       redux: ^4.2.0
       redux-persist: ^6.0.0
       redux-saga: ^1.2.1
+      redux-undo: ^1.0.1
       remark-gfm: ^3.0.1
       sass: ^1.54.5
       sharp: ^0.30.7
@@ -147,6 +148,7 @@ importers:
       redux: 4.2.0
       redux-persist: 6.0.0_redux@4.2.0
       redux-saga: 1.2.1
+      redux-undo: 1.0.1
       remark-gfm: 3.0.1
       sharp: 0.30.7
       uuid: 8.3.2
@@ -8116,6 +8118,10 @@ packages:
       redux: ^4
     dependencies:
       redux: 4.2.0
+    dev: false
+
+  /redux-undo/1.0.1:
+    resolution: {integrity: sha512-0yFPT+FUgwxCEiS0Mg5T1S4tkgjR8h6sJRY9CW4EMsbJOf1SxO289TbJmlzhRouCHacdDF+powPjrjLHoJYxWQ==}
     dev: false
 
   /redux/4.2.0:

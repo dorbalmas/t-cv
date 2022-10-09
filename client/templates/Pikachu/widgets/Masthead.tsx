@@ -17,8 +17,10 @@ import {
 } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const { email, phone, birthdate, website, location, profiles } = useAppSelector((state) => state.resume.basics);
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const { email, phone, birthdate, website, location, profiles } = useAppSelector(
+    (state) => state.resume.present.basics
+  );
 
   return (
     <div className="col-span-2 grid justify-items-left gap-4">
@@ -64,10 +66,10 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const theme: Theme = useAppSelector((state) => get(state.resume, 'metadata.theme', {}));
+  const theme: Theme = useAppSelector((state) => get(state.resume.present, 'metadata.theme', {}));
   const contrast = useMemo(() => getContrastColor(theme.primary), [theme.primary]);
 
-  const { name, summary, headline } = useAppSelector((state) => state.resume.basics);
+  const { name, summary, headline } = useAppSelector((state) => state.resume.present.basics);
 
   return (
     <div

@@ -21,7 +21,7 @@ type Props = PageProps & {
 const Page: React.FC<Props> = ({ page, showPageNumbers = false }) => {
   const { t, i18n } = useTranslation();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
   const breakLine: boolean = useAppSelector((state) => state.build.page.breakLine);
 
   const theme: Theme = get(resume, 'metadata.theme');

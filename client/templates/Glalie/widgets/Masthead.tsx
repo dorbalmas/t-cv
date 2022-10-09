@@ -14,10 +14,10 @@ import {
 } from '@/utils/template';
 
 export const MastheadSidebar: React.FC = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
-  const primaryColor: string = useAppSelector((state) => get(state.resume, 'metadata.theme.primary'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
+  const primaryColor: string = useAppSelector((state) => get(state.resume.present, 'metadata.theme.primary'));
   const { name, headline, email, phone, birthdate, website, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
 
   return (
@@ -69,7 +69,7 @@ export const MastheadSidebar: React.FC = () => {
 };
 
 export const MastheadMain: React.FC = () => {
-  const { summary } = useAppSelector((state) => state.resume.basics);
+  const { summary } = useAppSelector((state) => state.resume.present.basics);
 
   return <Markdown>{summary}</Markdown>;
 };

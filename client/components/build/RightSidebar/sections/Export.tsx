@@ -13,7 +13,7 @@ import { useAppSelector } from '@/store/hooks';
 const Export = () => {
   const { t } = useTranslation();
 
-  const resume = useAppSelector((state) => state.resume);
+  const resume = useAppSelector((state) => state.resume.present);
 
   const { mutateAsync, isLoading } = useMutation<string, ServerError, PrintResumeAsPdfParams>(printResumeAsPdf);
 
@@ -35,7 +35,7 @@ const Export = () => {
     const redactedResume = pick(resume, ['basics', 'sections', 'metadata', 'public']);
     const jsonString = JSON.stringify(redactedResume, null, 4);
     const jsonBlob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
-    const filename = `RxResume_JSONExport_${nanoid()}.json`;
+    const filename = `TivlotCV_JSONExport_${nanoid()}.json`;
 
     download(jsonBlob, filename);
   };

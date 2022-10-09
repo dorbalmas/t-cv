@@ -18,10 +18,10 @@ const Theme = () => {
   const dispatch = useAppDispatch();
 
   const { background, text, primary, gradient, isGradient } = useAppSelector<ThemeType>((state) =>
-    get(state.resume, 'metadata.theme')
+    get(state.resume.present, 'metadata.theme')
   );
   const templatesWithoutGradient = ['onyx', 'pikachu', 'gengar', 'kakuna', 'leafish'];
-  const template = useAppSelector((state) => state.resume.metadata.template);
+  const template = useAppSelector((state) => state.resume.present.metadata.template);
 
   const handleChange = (property: string, color: string) => {
     dispatch(setResumeState({ path: `metadata.theme.${property}`, value: color[0] !== '#' ? `#${color}` : color }));

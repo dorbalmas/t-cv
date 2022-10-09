@@ -16,7 +16,7 @@ const Templates = () => {
 
   const dispatch = useAppDispatch();
 
-  const currentTemplate: string = useAppSelector((state) => get(state.resume, 'metadata.template'));
+  const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
     dispatch(setResumeState({ path: 'metadata.template', value: template.id }));

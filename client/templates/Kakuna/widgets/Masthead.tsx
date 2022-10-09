@@ -14,9 +14,9 @@ import {
 } from '@/utils/template';
 
 const Masthead = () => {
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
   const { name, email, phone, website, birthdate, headline, location, profiles } = useAppSelector(
-    (state) => state.resume.basics
+    (state) => state.resume.present.basics
   );
 
   return (

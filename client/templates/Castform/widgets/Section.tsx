@@ -20,8 +20,8 @@ const Section: React.FC<SectionProps> = ({
   headlinePath = 'headline',
   keywordsPath = 'keywords',
 }) => {
-  const section: SectionType = useAppSelector((state) => get(state.resume, path, {}));
-  const dateFormat: string = useAppSelector((state) => get(state.resume, 'metadata.date.format'));
+  const section: SectionType = useAppSelector((state) => get(state.resume.present, path, {}));
+  const dateFormat: string = useAppSelector((state) => get(state.resume.present, 'metadata.date.format'));
 
   if (!section.visible) return null;
 

@@ -44,7 +44,7 @@ export class PrinterService implements OnModuleInit, OnModuleDestroy {
 
     const pdf = await PDFDocument.create();
     const directory = join(__dirname, '..', 'assets/exports');
-    const filename = `RxResume_PDFExport_${nanoid()}.pdf`;
+    const filename = `TivlotCV_PDF_Export_${nanoid()}.pdf`;
     const publicUrl = `/assets/exports/${filename}`;
 
     for (let index = 0; index < resumePages.length; index++) {

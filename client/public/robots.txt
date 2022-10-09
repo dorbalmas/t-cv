@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://rxresu.me
+Host: https://tivlotcv.com
 
 # Sitemaps
-Sitemap: https://rxresu.me/sitemap.xml
+Sitemap: https://tivlotcv.com/sitemap.xml
