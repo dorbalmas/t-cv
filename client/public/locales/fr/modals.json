@@ -98,14 +98,14 @@
         "actions": {
           "upload-json": "Mettre en ligne un JSON"
         },
-        "body": "Si vous avez un <1>JSON Resume valide</1> prêt à l'emploi, vous pouvez l'utiliser pour accélérer votre création sur Reactive Resume. Cliquez sur le bouton ci-dessous et mettez en ligne un fichier JSON valide pour commencer.",
+        "body": "Si vous avez un <1>JSON Resume valide</1> prêt à l'emploi, vous pouvez l'utiliser pour accélérer votre création sur TivlotCV. Cliquez sur le bouton ci-dessous et mettez en ligne un fichier JSON valide pour commencer.",
         "heading": "Importer depuis JSON Resume"
       },
       "linkedin": {
         "actions": {
           "upload-archive": "Mettre en ligne une archive ZIP"
         },
-        "body": "Vous pouvez gagner du temps en exportant vos données depuis LinkedIn et en les utilisant pour remplir automatiquement les champs sur Reactive Resume. Rendez-vous dans la section <1>Confidentialité des données</1> sur LinkedIn et demandez une archive de vos données. Une fois disponible, chargez le fichier ZIP ci-dessous.",
+        "body": "Vous pouvez gagner du temps en exportant vos données depuis LinkedIn et en les utilisant pour remplir automatiquement les champs sur TivlotCV. Rendez-vous dans la section <1>Confidentialité des données</1> sur LinkedIn et demandez une archive de vos données. Une fois disponible, chargez le fichier ZIP ci-dessous.",
         "heading": "Import depuis LinkedIn"
       },
       "reactive-resume": {
@@ -113,8 +113,8 @@
           "upload-json": "Mettre en ligne un JSON",
           "upload-json-v2": "Télécharger JSON à partir de la v2"
         },
-        "body": "Si vous avez un JSON qui a été exporté avec la version actuelle de Reactive Resume, vous pouvez le réimporter ici pour obtenir à nouveau une version modifiable.",
-        "heading": "Importer depuis Reactive Resume"
+        "body": "Si vous avez un JSON qui a été exporté avec la version actuelle de TivlotCV, vous pouvez le réimporter ici pour obtenir à nouveau une version modifiable.",
+        "heading": "Importer depuis TivlotCV"
       }
     },
     "rename-resume": {

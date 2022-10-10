@@ -237,7 +237,7 @@
         "heading": "Ekspor",
         "json": {
           "primary": "JSON",
-          "secondary": "Unduh versi JSON dari resume Anda yang dapat diimpor kembali ke Reactive Resume."
+          "secondary": "Unduh versi JSON dari resume Anda yang dapat diimpor kembali ke TivlotCV."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "Bugs? Request Fitur?"
         },
         "donate": {
-          "body": "Jika Anda suka menggunakan Reactive Resume, harap pertimbangkan untuk donasi sebanyak mungkin untuk menjaga aplikasi tetap berjalan, tanpa iklan dan gratis selamanya.",
+          "body": "Jika Anda suka menggunakan TivlotCV, harap pertimbangkan untuk donasi sebanyak mungkin untuk menjaga aplikasi tetap berjalan, tanpa iklan dan gratis selamanya.",
           "button": "Belikan Saya Kopi",
-          "heading": "Donasi ke Reactive Resume"
+          "heading": "Donasi ke TivlotCV"
         },
         "github": "Kode sumber",
         "heading": "Link"

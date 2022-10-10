@@ -237,7 +237,7 @@
         "heading": "Eksportuj",
         "json": {
           "primary": "JSON",
-          "secondary": "Preuzmi JSON verziju tvog rezimea koja se može importovati nazad u Reactive Resume."
+          "secondary": "Preuzmi JSON verziju tvog rezimea koja se može importovati nazad u TivlotCV."
         },
         "pdf": {
           "loading": {
@@ -263,9 +263,9 @@
           "heading": "Bagovi? Zahtevi za novu funkcionalnost?"
         },
         "donate": {
-          "body": "Ako ti se sviđa Reactive Resume, razmotri o donaciji kako bi aplikacija nastavila da funkcioniše i bude dostupna, bez reklama i besplatna zauvek.",
+          "body": "Ako ti se sviđa TivlotCV, razmotri o donaciji kako bi aplikacija nastavila da funkcioniše i bude dostupna, bez reklama i besplatna zauvek.",
           "button": "Kupi mi kafu",
-          "heading": "Doniraj za Reactive Resume"
+          "heading": "Doniraj za TivlotCV"
         },
         "github": "Izvorni Kod",
         "heading": "Linkovi"

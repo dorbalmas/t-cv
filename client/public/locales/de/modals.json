@@ -113,7 +113,7 @@
           "upload-json": "JSON hochladen",
           "upload-json-v2": "Laden Sie JSON von v2 hoch"
         },
-        "body": "Wenn Sie eine JSON haben, die mit der aktuellen Version von Reactive Resume exportiert wurde, können Sie sie hier wieder importieren, um wieder eine bearbeitbare Version zu erhalten.",
+        "body": "Wenn Sie eine JSON haben, die mit der aktuellen Version von TivlotCV exportiert wurde, können Sie sie hier wieder importieren, um wieder eine bearbeitbare Version zu erhalten.",
         "heading": "Import vom Reaktives Lebenslauf"
       }
     },
