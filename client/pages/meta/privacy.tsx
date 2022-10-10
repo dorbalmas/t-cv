@@ -5,8 +5,8 @@ const PrivacyPolicy: NextPage = () => (
     <h1>Privacy Policy</h1>
 
     <p>
-      Amruth Pillai built TivlotCV as a free and open source app. This service is provided by Amruth Pillai at no cost
-      and is intended for use as is.
+      built TivlotCV as a free and open source app. This service is provided by at no cost and is intended for use as
+      is.
     </p>
 
     <p>
@@ -117,7 +117,7 @@ const PrivacyPolicy: NextPage = () => (
 
     <p>
       If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at
-      im.amruth@gmail.com.
+      tivlotcv@gmail.com.
     </p>
   </div>
 );

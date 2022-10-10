@@ -26,7 +26,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import styles from '@/styles/pages/Home.module.scss';
 
-import { DIGITALOCEAN_URL, DONATION_URL, GITHUB_URL } from '../constants';
+import { DIGITALOCEAN_URL, DONATION_URL } from '../constants';
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
@@ -114,9 +114,6 @@ const Home: NextPage = () => {
             <li>
               <Trans t={t} i18nKey="landing.features.list.more">
                 And a lot of exciting features,
-                <a href={`${GITHUB_URL}#features`} target="_blank" rel="noreferrer">
-                  click here to know more
-                </a>
               </Trans>
             </li>
           </ul>
@@ -147,8 +144,8 @@ const Home: NextPage = () => {
 
           <p className="my-3">
             <Trans t={t} i18nKey="landing.testimonials.contact">
-              You can reach out to me through <a href="mailto:im.amruth@gmail.com">my email</a> or through the contact
-              form on <a href="https://www.amruthpillai.com">my website</a>.
+              You can reach out to me through <a href="mailto:tivlotcv@gmail.com">my email</a> or through the contact
+              form on <a href="https://dorbellmas.com">my website</a>.
             </Trans>
           </p>
 
@@ -174,12 +171,6 @@ const Home: NextPage = () => {
                 {t<string>('landing.links.links.service')}
               </Button>
             </Link>
-
-            <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-              <Button variant="text" startIcon={<LinkIcon />}>
-                {t<string>('landing.links.links.github')}
-              </Button>
-            </a>
 
             <a href={DONATION_URL} target="_blank" rel="noreferrer">
               <Button variant="text" startIcon={<LinkIcon />}>
