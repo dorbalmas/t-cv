@@ -22,7 +22,7 @@ jobs:
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.0.0
+        uses: docker/setup-qemu-action@v2.1.0
 
       - id: buildx
         name: Set up Docker Buildx
@@ -62,7 +62,7 @@ jobs:
           fetch-depth: 2
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2.0.0
+        uses: docker/setup-qemu-action@v2.1.0
 
       - id: buildx
         name: Set up Docker Buildx
