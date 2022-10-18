@@ -3,16 +3,21 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { HowToReg } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
+import { Resume } from '@reactive-resume/schema';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
+import { useRouter } from 'next/router';
 import { Trans, useTranslation } from 'next-i18next';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
 import BaseModal from '@/components/shared/BaseModal';
+import { RESUMES_QUERY } from '@/constants/index';
 import { loginWithGoogle, LoginWithGoogleParams, register as registerUser, RegisterParams } from '@/services/auth';
 import { ServerError } from '@/services/axios';
+import queryClient from '@/services/react-query';
+import { createResume, CreateResumeParams } from '@/services/resume';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 
@@ -23,7 +28,6 @@ type FormData = {
   password: string;
   confirmPassword: string;
 };
-
 const defaultState: FormData = {
   name: '',
   username: '',
@@ -60,6 +64,21 @@ const RegisterModal: React.FC = () => {
 
   const { mutateAsync, isLoading } = useMutation<void, ServerError, RegisterParams>(registerUser);
 
+  const router = useRouter();
+  const { mutateAsync: mutateAsyncResume } = useMutation<Resume, ServerError, CreateResumeParams>(createResume);
+  const onSubmitResume = async (user: string) => {
+    try {
+      await mutateAsyncResume({ name: 'First Resume', slug: 'tcv', public: true });
+      queryClient.invalidateQueries(RESUMES_QUERY);
+      router.push({
+        pathname: '/[username]/[slug]/build',
+        query: { username: user, slug: 'tcv' },
+      });
+    } catch (error: any) {
+      toast.error(error.message);
+    }
+  };
+
   const { mutateAsync: loginWithGoogleMutation } = useMutation<void, ServerError, LoginWithGoogleParams>(
     loginWithGoogle
   );
@@ -71,7 +90,8 @@ const RegisterModal: React.FC = () => {
 
   const onSubmit = async ({ name, username, email, password }: FormData) => {
     await mutateAsync({ name, username, email, password });
-    handleClose();
+    await onSubmitResume(username);
+    await handleClose();
   };
 
   const handleLogin = () => {
@@ -83,6 +103,7 @@ const RegisterModal: React.FC = () => {
     if (response.credential) {
       await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
 
+      //   await onSubmitResume();
       handleClose();
     }
   };

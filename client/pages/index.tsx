@@ -78,7 +78,6 @@ const Home: NextPage = () => {
 
   const handleLogout = () => dispatch(logout());
   const sectionH = typeof window !== 'undefined' ? window.innerHeight * 2.3 : 2000;
-  console.log(sectionH);
 
   const { isMobile, isTablet, isDesktop } = useBreakpoints();
   return (

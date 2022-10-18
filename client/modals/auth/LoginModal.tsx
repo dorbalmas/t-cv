@@ -5,6 +5,7 @@ import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
+import { useRouter } from 'next/router';
 import { Trans, useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -35,6 +36,8 @@ const schema = Joi.object({
 
 const LoginModal: React.FC = () => {
   const { t } = useTranslation();
+
+  const router = useRouter();
 
   const dispatch = useAppDispatch();
 
@@ -70,8 +73,8 @@ const LoginModal: React.FC = () => {
         },
       }
     );
-
     handleClose();
+    router.push({ pathname: '/dashboard' });
   };
 
   const handleCreateAccount = () => {
@@ -87,8 +90,8 @@ const LoginModal: React.FC = () => {
   const handleLoginWithGoogle = async (response: CredentialResponse) => {
     if (response.credential) {
       await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
-
       handleClose();
+      router.push({ pathname: '/dashboard' });
     }
   };
 

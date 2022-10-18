@@ -4,6 +4,8 @@
 import React from 'react';
 
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
+import { useAppDispatch } from '@/store/hooks';
+import { setModalState } from '@/store/modal/modalSlice';
 
 import * as S from './styles';
 // import { IProps } from './types';
@@ -22,7 +24,9 @@ import * as S from './styles';
 export const EcommerceIntroNew = React.forwardRef<HTMLDivElement>((_, ref) => {
   //   const data = useStaticQuery(globalsQuery);
   //   const { globals } = data.strapi;
+  const dispatch = useAppDispatch();
 
+  const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
   return (
     <S.Intro ref={ref}>
       <S.BlogPost>
@@ -40,9 +44,9 @@ export const EcommerceIntroNew = React.forwardRef<HTMLDivElement>((_, ref) => {
       </S.Text>
       <S.BottomPart>
         <div>
-          <a href="https://demo.saleor.io/dashboard">
-            <S.ButtonGetStarted>Try for free</S.ButtonGetStarted>
-          </a>
+          {/* <a href="https://demo.saleor.io/dashboard"> */}
+          <S.ButtonGetStarted onClick={handleRegister}>Try for free</S.ButtonGetStarted>
+          {/* </a> */}
         </div>
         {/* <S.SandboxLink> */}
         {/* <a href={REGISTER}> */}
@@ -56,3 +60,6 @@ export const EcommerceIntroNew = React.forwardRef<HTMLDivElement>((_, ref) => {
 
 EcommerceIntroNew.displayName = 'EcommerceIntroNew';
 export default EcommerceIntroNew;
+// function dispatch(arg0: any) {
+//   throw new Error('Function not implemented.');
+// }

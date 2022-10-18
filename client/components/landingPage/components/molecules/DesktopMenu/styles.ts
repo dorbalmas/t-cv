@@ -242,14 +242,14 @@ export const Menu = styled.nav`
   margin: 0;
   perspective: 2000px;
   ${media.md`
-    padding:  1rem 0 0 1rem;
+    padding:  1rem 0 0 0;
    
   `}
   ${media.lg`
-    padding:  1rem 0 0 1rem;
+    padding:  1rem 0 0 0;
   `}
   ${media.xlg`
-    padding: 1rem 0 0 1rem;
+    padding: 1rem 0 0 0;
   `}
   ul {
     font-size: 1.5rem;
