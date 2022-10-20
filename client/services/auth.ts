@@ -53,6 +53,8 @@ export const loginWithGoogle = async (loginWithGoogleParams: LoginWithGooglePara
 
   store.dispatch(setUser(user));
   store.dispatch(setAccessToken(accessToken));
+
+  return user;
 };
 
 export const register = async (registerParams: RegisterParams) => {

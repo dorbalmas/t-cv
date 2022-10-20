@@ -1,5 +1,5 @@
 import { Add, Star } from '@mui/icons-material';
-import { Button, Divider, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
+import { Button, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { Section as SectionRecord } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import Link from 'next/link';
@@ -7,7 +7,6 @@ import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { validate } from 'uuid';
 
-import Logo from '@/components/shared/Logo';
 import { rtlLanguages } from '@/config/languages';
 import { getCustomSections, left } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
@@ -69,11 +68,10 @@ const LeftSidebar = () => {
         <nav>
           <div>
             <Link href="/dashboard">
-              <a className="inline-flex">
-                <Logo size={40} />
-              </a>
+              <Button sx={{ backgroundColor: 'transparent' }} variant="text">
+                <Add sx={{ fontSize: '2rem' }} />
+              </Button>
             </Link>
-            <Divider />
           </div>
 
           <div className={styles.sections}>

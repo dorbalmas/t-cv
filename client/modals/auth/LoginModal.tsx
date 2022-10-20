@@ -3,6 +3,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { Login, Visibility, VisibilityOff } from '@mui/icons-material';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
+import { User } from '@reactive-resume/schema';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { useRouter } from 'next/router';
@@ -55,7 +56,7 @@ const LoginModal: React.FC = () => {
 
   const { mutateAsync: loginMutation } = useMutation<void, ServerError, LoginParams>(login);
 
-  const { mutateAsync: loginWithGoogleMutation } = useMutation<void, ServerError, LoginWithGoogleParams>(
+  const { mutateAsync: loginWithGoogleMutation } = useMutation<User, ServerError, LoginWithGoogleParams>(
     loginWithGoogle
   );
 
@@ -73,6 +74,7 @@ const LoginModal: React.FC = () => {
         },
       }
     );
+
     handleClose();
     router.push({ pathname: '/dashboard' });
   };

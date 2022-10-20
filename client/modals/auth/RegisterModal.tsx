@@ -3,7 +3,7 @@ import { joiResolver } from '@hookform/resolvers/joi';
 import { HowToReg } from '@mui/icons-material';
 import { Button, TextField } from '@mui/material';
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
-import { Resume } from '@reactive-resume/schema';
+import { Resume, User } from '@reactive-resume/schema';
 import Joi from 'joi';
 import { isEmpty } from 'lodash';
 import { useRouter } from 'next/router';
@@ -79,7 +79,7 @@ const RegisterModal: React.FC = () => {
     }
   };
 
-  const { mutateAsync: loginWithGoogleMutation } = useMutation<void, ServerError, LoginWithGoogleParams>(
+  const { mutateAsync: loginWithGoogleMutation } = useMutation<User, ServerError, LoginWithGoogleParams>(
     loginWithGoogle
   );
 
@@ -101,9 +101,12 @@ const RegisterModal: React.FC = () => {
 
   const handleLoginWithGoogle = async (response: CredentialResponse) => {
     if (response.credential) {
-      await loginWithGoogleMutation({ credential: response.credential }, { onError: handleLoginWithGoogleError });
+      const user = await loginWithGoogleMutation(
+        { credential: response.credential },
+        { onError: handleLoginWithGoogleError }
+      );
 
-      //   await onSubmitResume();
+      await onSubmitResume(user.username);
       handleClose();
     }
   };
