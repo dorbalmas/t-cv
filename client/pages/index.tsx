@@ -10,6 +10,7 @@ import React from 'react';
 
 import Testimony from '@/components/landing/Testimony';
 import Layout from '@/components/landingPage/components/containers/Layout/Layout';
+import FAQ from '@/components/landingPage/components/organisms/FAQ/FAQ';
 import Footer from '@/components/landingPage/components/organisms/Footer/Footer';
 import Header from '@/components/landingPage/components/organisms/Header/Header';
 import { SectionMain } from '@/components/landingPage/components/organisms/SectionMain/SectionMain';
@@ -56,6 +57,7 @@ const Content = React.memo(({ isMobile, isTablet }: { isMobile: boolean; isTable
 			  <SectionLaunch isMobile={isMobile} />
 	  
 			  <SectionTrustedBy />*/}
+      <FAQ />
 
       <Footer isMobile={isMobile} />
     </div>
