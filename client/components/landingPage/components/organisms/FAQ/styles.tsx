@@ -16,7 +16,6 @@ export const Title = styled.h2`
 export const FAQRowContent = styled.div<{ isOpen: boolean }>`
   font-size: calc(1.4rem * 0.625);
   text-align: left;
-  opacity: 0.6;
   width: 100%;
   overflow: hidden;
   will-change: max-height;

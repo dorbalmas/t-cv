@@ -92,8 +92,8 @@ export const MotionMenu = styled.div<{ open: boolean }>`
     position: absolute;
     right: 1.7rem;
     top: 1.7rem;
-    height: 5rem;
-    width: 5rem;
+    height: calc(5rem * 0.625);
+    width: calc(5rem * 0.625);
     border-radius: 50%;
     background-color: ${defaultTheme.colors.baseWhiteFont};
     transform-origin: center;
