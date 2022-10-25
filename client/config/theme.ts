@@ -123,6 +123,7 @@ export const lightTheme = (directions: any) =>
           variant: 'contained',
           disableElevation: true,
           fullWidth: true,
+          disableRipple: true,
         },
         styleOverrides: {
           root: {
@@ -204,6 +205,7 @@ export const darkTheme = (directions: any) =>
           variant: 'contained',
           disableElevation: true,
           fullWidth: true,
+          disableRipple: true,
         },
         styleOverrides: {
           root: {

@@ -30,7 +30,7 @@ const defaultState: FormData = {
 };
 
 const schema = Joi.object({
-  name: Joi.string().required(),
+  name: Joi.string().min(3).required(),
   slug: Joi.string()
     .lowercase()
     .min(3)
@@ -88,14 +88,14 @@ const CreateResumeModal: React.FC = () => {
       heading={t<string>('modals.dashboard.create-resume.heading')}
       handleClose={handleClose}
       footerChildren={
-        <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
+        <Button id="button" type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
           {t<string>('modals.dashboard.create-resume.actions.create-resume')}
         </Button>
       }
     >
       <p>{t<string>('modals.dashboard.create-resume.body')}</p>
 
-      <form className="grid gap-4">
+      <div className="grid gap-4">
         <Controller
           name="name"
           control={control}
@@ -110,7 +110,7 @@ const CreateResumeModal: React.FC = () => {
           )}
         />
 
-        <Controller
+        {/* <Controller
           name="slug"
           control={control}
           render={({ field, fieldState }) => (
@@ -121,7 +121,7 @@ const CreateResumeModal: React.FC = () => {
               {...field}
             />
           )}
-        />
+        /> */}
 
         <FormGroup>
           <FormControlLabel
@@ -135,7 +135,7 @@ const CreateResumeModal: React.FC = () => {
             }
           />
         </FormGroup>
-      </form>
+      </div>
     </BaseModal>
   );
 };

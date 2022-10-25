@@ -11,6 +11,7 @@ import { Trans, useTranslation } from 'next-i18next';
 import { Controller, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { ActionCreators } from 'redux-undo';
 
 import BaseModal from '@/components/shared/BaseModal';
 import { RESUMES_QUERY } from '@/constants/index';
@@ -74,6 +75,7 @@ const RegisterModal: React.FC = () => {
         pathname: '/[username]/[slug]/build',
         query: { username: user, slug: 'tcv' },
       });
+      dispatch(ActionCreators.clearHistory());
     } catch (error: any) {
       toast.error(error.message);
     }
@@ -127,7 +129,7 @@ const RegisterModal: React.FC = () => {
             <GoogleLogin onSuccess={handleLoginWithGoogle} onError={handleLoginWithGoogleError} />
           )}
 
-          <Button type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
+          <Button id="button" type="submit" onClick={handleSubmit(onSubmit)} disabled={isLoading}>
             {t<string>('modals.auth.register.actions.register')}
           </Button>
         </div>
@@ -135,7 +137,7 @@ const RegisterModal: React.FC = () => {
     >
       <p>{t<string>('modals.auth.register.body')}</p>
 
-      <form className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         <Controller
           name="name"
           control={control}
@@ -205,7 +207,7 @@ const RegisterModal: React.FC = () => {
             />
           )}
         />
-      </form>
+      </div>
 
       <p className="text-xs">
         <Trans t={t} i18nKey="modals.auth.register.loginText">

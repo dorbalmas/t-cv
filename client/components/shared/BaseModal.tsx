@@ -1,6 +1,7 @@
 import { Close as CloseIcon } from '@mui/icons-material';
 import { Fade, IconButton, Modal } from '@mui/material';
 import { useRouter } from 'next/router';
+import { KeyboardEvent } from 'react';
 
 import styles from './BaseModal.module.scss';
 
@@ -22,7 +23,11 @@ const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClo
 
     handleClose();
   };
-
+  const handleEnter = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.keyCode === 13) {
+      document.getElementById('button')?.click();
+    }
+  };
   return (
     <Modal
       open={isOpen}
@@ -45,7 +50,9 @@ const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClo
             </IconButton>
           </header>
 
-          <div className={styles.body}>{children}</div>
+          <div className={styles.body} onKeyUp={(event) => handleEnter(event)}>
+            {children}
+          </div>
 
           {footerChildren ? <footer className={styles.footer}>{footerChildren}</footer> : null}
         </div>

@@ -157,7 +157,7 @@ const Header = () => {
 
           <h1>{name}</h1>
 
-          <IconButton onClick={handleClick}>
+          <IconButton disableRipple onClick={handleClick}>
             <KeyboardArrowDownIcon />
           </IconButton>
 

@@ -68,7 +68,7 @@ const ResetPasswordModal: React.FC = () => {
       heading={t<string>('modals.auth.reset-password.heading')}
       handleClose={handleClose}
       footerChildren={
-        <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
+        <Button id="button" type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
           {t<string>('modals.auth.reset-password.actions.set-password')}
         </Button>
       }

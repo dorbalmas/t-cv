@@ -104,7 +104,11 @@ const EducationModal: React.FC = () => {
       isOpen={isOpen}
       handleClose={handleClose}
       heading={isEditMode ? editText : addText}
-      footerChildren={<Button onClick={handleSubmit(onSubmit)}>{isEditMode ? editText : addText}</Button>}
+      footerChildren={
+        <Button id="button" onClick={handleSubmit(onSubmit)}>
+          {isEditMode ? editText : addText}
+        </Button>
+      }
     >
       <form className="my-2 grid grid-cols-2 gap-4">
         <Controller

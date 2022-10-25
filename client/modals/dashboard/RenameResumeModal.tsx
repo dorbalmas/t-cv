@@ -24,7 +24,7 @@ type FormData = {
 };
 
 const schema = Joi.object({
-  name: Joi.string().required(),
+  name: Joi.string().min(3).required(),
   slug: Joi.string()
     .lowercase()
     .min(3)
@@ -95,12 +95,12 @@ const RenameResumeModal: React.FC = () => {
       heading={t<string>('modals.dashboard.rename-resume.heading')}
       handleClose={handleClose}
       footerChildren={
-        <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
+        <Button id="button" type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
           {t<string>('modals.dashboard.rename-resume.actions.rename-resume')}
         </Button>
       }
     >
-      <form className="grid gap-4">
+      <div className="grid gap-4">
         <Controller
           name="name"
           control={control}
@@ -115,7 +115,7 @@ const RenameResumeModal: React.FC = () => {
           )}
         />
 
-        <Controller
+        {/* <Controller
           name="slug"
           control={control}
           render={({ field, fieldState }) => (
@@ -126,8 +126,8 @@ const RenameResumeModal: React.FC = () => {
               {...field}
             />
           )}
-        />
-      </form>
+        /> */}
+      </div>
     </BaseModal>
   );
 };

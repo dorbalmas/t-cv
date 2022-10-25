@@ -98,6 +98,10 @@ export const FAQRowTitle = styled.button<{ active: boolean }>`
 export const PlusIcon = styled.div<{ active: boolean }>`
   transform: ${(props) => (props.active ? `rotate(135deg)` : `none`)};
   transition: transform 0.3s ease;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const FAQContainer = styled.section``;

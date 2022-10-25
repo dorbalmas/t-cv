@@ -57,7 +57,7 @@ const ForgotPasswordModal: React.FC = () => {
         heading={t<string>('modals.auth.forgot-password.heading')}
         handleClose={handleClose}
         footerChildren={
-          <Button type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
+          <Button id="button" type="submit" disabled={isLoading} onClick={handleSubmit(onSubmit)}>
             {t<string>('modals.auth.forgot-password.actions.send-email')}
           </Button>
         }
@@ -65,7 +65,7 @@ const ForgotPasswordModal: React.FC = () => {
         <div className="grid gap-4">
           <p>{t<string>('modals.auth.forgot-password.body')}</p>
 
-          <form className="grid gap-4 xl:w-2/3">
+          <div className="grid gap-4 xl:w-2/3">
             <Controller
               name="email"
               control={control}
@@ -79,7 +79,7 @@ const ForgotPasswordModal: React.FC = () => {
                 />
               )}
             />
-          </form>
+          </div>
 
           <p className="text-xs">{t<string>('modals.auth.forgot-password.help-text')}</p>
         </div>
