@@ -34,7 +34,7 @@ const schema = Joi.object({
   slug: Joi.string()
     .lowercase()
     .min(3)
-    .regex(/^[a-z0-9-]+$/, 'only lowercase characters, numbers and hyphens')
+    // .regex(/^[a-z0-9-]+$/, 'only lowercase characters, numbers and hyphens')
     .required(),
   isPublic: Joi.boolean().default(true).required(),
 });
@@ -58,7 +58,7 @@ const CreateResumeModal: React.FC = () => {
     const slug = name
       ? name
           .toLowerCase()
-          .replace(/[^\w\s]/gi, '')
+          //   .replace(/[^\w\s]/gi, '')
           .replace(/[ ]/gi, '-')
       : '';
 

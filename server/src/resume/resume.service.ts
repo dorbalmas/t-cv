@@ -65,10 +65,7 @@ export class ResumeService {
       return await this.resumeRepository.save(resume);
     } catch (error: any) {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
-        throw new HttpException(
-          'A resume with the same slug already exists, please enter a unique slug and try again.',
-          HttpStatus.BAD_REQUEST
-        );
+        throw new HttpException('A resume with the same Name already exists.', HttpStatus.BAD_REQUEST);
       }
 
       throw new HttpException(
@@ -201,10 +198,7 @@ export class ResumeService {
       return this.resumeRepository.save(resume);
     } catch (error: any) {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
-        throw new HttpException(
-          'A resume with the same slug already exists, please enter a unique slug and try again.',
-          HttpStatus.BAD_REQUEST
-        );
+        throw new HttpException('A resume with the same Name already exists.', HttpStatus.BAD_REQUEST);
       }
 
       throw new HttpException(
