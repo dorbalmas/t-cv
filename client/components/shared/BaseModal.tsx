@@ -1,7 +1,7 @@
 import { Close as CloseIcon } from '@mui/icons-material';
 import { Fade, IconButton, Modal } from '@mui/material';
 import { useRouter } from 'next/router';
-import { KeyboardEvent } from 'react';
+import { KeyboardEvent, useEffect } from 'react';
 
 import styles from './BaseModal.module.scss';
 
@@ -17,6 +17,10 @@ type Props = {
 const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClose, footerChildren }) => {
   const router = useRouter();
   const { pathname, query } = router;
+
+  useEffect(() => {
+    window.addEventListener('popstate', (e) => handleClose());
+  }, [handleClose]);
 
   const onClose = () => {
     router.push({ pathname, query }, '');
