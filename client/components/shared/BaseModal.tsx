@@ -16,11 +16,16 @@ type Props = {
 
 const BaseModal: React.FC<Props> = ({ icon, isOpen, heading, children, handleClose, footerChildren }) => {
   const router = useRouter();
-  const { pathname, query } = router;
+  const { events, pathname, query } = router;
 
   useEffect(() => {
-    window.addEventListener('popstate', (e) => handleClose());
-  }, [handleClose]);
+    // subscribe to next/router event
+    events.on('routeChangeStart', handleClose);
+    return () => {
+      // unsubscribe to event on unmount to prevent memory leak
+      events.off('routeChangeStart', handleClose);
+    };
+  }, [handleClose, events]);
 
   const onClose = () => {
     router.push({ pathname, query }, '');

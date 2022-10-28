@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Testimony from '@/components/landing/Testimony';
 import Layout from '@/components/landingPage/components/containers/Layout/Layout';
@@ -79,6 +79,17 @@ const Home: NextPage = () => {
   const handleToggle = () => dispatch(setTheme({ theme: theme === 'light' ? 'dark' : 'light' }));
 
   const handleLogout = () => dispatch(logout());
+
+  useEffect(() => {
+    const tempTheme = theme;
+
+    theme === 'dark' ? dispatch(setTheme({ theme: 'light' })) : '';
+
+    return () => {
+      dispatch(setTheme({ theme: tempTheme === 'light' ? 'light' : 'dark' }));
+    };
+  }, []);
+
   const sectionH = typeof window !== 'undefined' ? window.innerHeight * 2.3 : 2000;
 
   const { isMobile, isTablet, isDesktop } = useBreakpoints();
