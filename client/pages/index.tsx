@@ -13,6 +13,7 @@ import Layout from '@/components/landingPage/components/containers/Layout/Layout
 import FAQ from '@/components/landingPage/components/organisms/FAQ/FAQ';
 import Footer from '@/components/landingPage/components/organisms/Footer/Footer';
 import Header from '@/components/landingPage/components/organisms/Header/Header';
+import PricingContent from '@/components/landingPage/components/organisms/PricingContent/PricingContent';
 import { SectionMain } from '@/components/landingPage/components/organisms/SectionMain/SectionMain';
 import { useBreakpoints } from '@/components/landingPage/hooks/useBreakpoints';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
@@ -57,6 +58,7 @@ const Content = React.memo(({ isMobile, isTablet }: { isMobile: boolean; isTable
 			  <SectionLaunch isMobile={isMobile} />
 	  
 			  <SectionTrustedBy />*/}
+      <PricingContent />
       <FAQ />
 
       <Footer isMobile={isMobile} />
