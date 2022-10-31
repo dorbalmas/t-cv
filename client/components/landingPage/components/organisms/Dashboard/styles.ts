@@ -1,6 +1,6 @@
 import { ScatterElement } from '@/components/landingPage/components/molecules/ScatterElement/ScatterElement';
 import { media } from '@/components/landingPage/globalStyles/media';
-import { defaultTheme, styled } from '@/components/landingPage/globalStyles/theme';
+import { styled } from '@/components/landingPage/globalStyles/theme';
 
 export const OverflowingContainer = styled.div<{ width: number }>`
   position: relative;
@@ -78,7 +78,8 @@ export const Background = styled(ScatterElement)<{ isMobile: boolean }>`
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: ${defaultTheme.colors.hero};
+  border-radius: 11px;
+  background-color: #fafafa;
   transform-origin: ${({ isMobile }) => (isMobile ? 'top center' : 'center center')};
 `;
 

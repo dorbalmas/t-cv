@@ -95,6 +95,14 @@ export const PaddedContainer = styled(FluidContainer)`
   ${media.sm`
     align-items: center;
   `};
+  /* ::before {
+    content: '';
+    background: white;
+    transform: skew(60deg, -18deg);
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+  } */
 `;
 
 export const OrbWrapper = styled.div`
