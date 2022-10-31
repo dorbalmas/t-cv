@@ -9,7 +9,6 @@ import {
   Groups,
   Language,
   LinkedIn,
-  Map,
   Margin,
   MenuBook,
   Palette,
@@ -25,7 +24,6 @@ import { Section as SectionRecord } from '@reactive-resume/schema';
 import isEmpty from 'lodash/isEmpty';
 
 import Basics from '@/components/build/LeftSidebar/sections/Basics';
-import Location from '@/components/build/LeftSidebar/sections/Location';
 import Profiles from '@/components/build/LeftSidebar/sections/Profiles';
 import Section from '@/components/build/LeftSidebar/sections/Section';
 import Export from '@/components/build/RightSidebar/sections/Export';
@@ -43,11 +41,11 @@ export const left: SidebarSection[] = [
     icon: <Person />,
     component: <Basics />,
   },
-  {
-    id: 'location',
-    icon: <Map />,
-    component: <Location />,
-  },
+  //   {
+  //     id: 'location',
+  //     icon: <Map />,
+  //     component: <Location />,
+  //   },
   {
     id: 'profiles',
     icon: <LinkedIn />,

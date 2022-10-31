@@ -5,7 +5,7 @@ const sampleData: Partial<Resume> = {
     name: 'Alexis Jones',
     email: 'alexis.jones@gmail.com',
     phone: '+1 800 1200 3820',
-    birthdate: '1995-08-06T00:00:00.000Z',
+    birthdate: '',
     // photo: {
     //   url: `/images/sample-photo.jpg`,
     //   filters: {
@@ -22,10 +22,10 @@ const sampleData: Partial<Resume> = {
     headline: 'Highly Creative Frontend Web Developer',
     location: {
       city: 'Stuttgart',
-      region: 'Baden-Württemberg',
-      address: 'Ollenhauer Str. 51',
-      country: 'Germany',
-      postalCode: '70376',
+      region: '',
+      address: '',
+      country: '',
+      postalCode: '',
     },
     profiles: [
       {

@@ -26,19 +26,23 @@ const Basics = () => {
       <Heading path="sections.basics" name={t<string>('builder.leftSidebar.sections.basics.heading')} />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3">
-          {/* <div className="mx-auto">
+        {/* <div className="grid items-center gap-4 sm:col-span-2 sm:grid-cols-3"> */}
+        {/* <div className="mx-auto">
             <PhotoUpload />
           </div> */}
 
-          <div className="grid gap-2 w-full sm:col-span-2">
-            <ResumeInput label={t<string>('builder.leftSidebar.sections.basics.name.label')} path="basics.name" />
+        {/* <div className="grid gap-2 w-full sm:col-span-2"> */}
+        <ResumeInput
+          label={t<string>('builder.leftSidebar.sections.basics.name.label')}
+          path="basics.name"
+          className="sm:col-span-2"
+        />
 
-            {/* <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
+        {/* <Button variant="outlined" startIcon={<PhotoFilter />} onClick={handleClick}>
               {t<string>('builder.leftSidebar.sections.basics.actions.photo-filters')}
             </Button> */}
 
-            {/* <Popover
+        {/* <Popover
               open={Boolean(anchorEl)}
               anchorEl={anchorEl}
               onClose={handleClose}
@@ -53,8 +57,8 @@ const Basics = () => {
             >
               <PhotoFilters />
             </Popover> */}
-          </div>
-        </div>
+        {/* </div> */}
+        {/* </div> */}
 
         {/* <ResumeInput
           type="date"
@@ -68,7 +72,16 @@ const Basics = () => {
           className="sm:col-span-2"
         />
         <ResumeInput label={t<string>('builder.common.form.phone.label')} path="basics.phone" />
-        <ResumeInput label={t<string>('builder.common.form.url.label')} path="basics.website" />
+        <ResumeInput
+          label={t<string>('builder.leftSidebar.sections.location.city.label')}
+          path="basics.location.city"
+        />
+
+        <ResumeInput
+          label={t<string>('builder.common.form.url.label')}
+          path="basics.website"
+          className="sm:col-span-2"
+        />
 
         <Divider className="sm:col-span-2" />
 
