@@ -73,6 +73,11 @@ export const lightTheme = (directions: any) =>
   createTheme({
     ...theme,
     components: {
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: true,
+        },
+      },
       MuiMenu: {
         styleOverrides: {
           paper: {
@@ -157,6 +162,11 @@ export const darkTheme = (directions: any) =>
   createTheme({
     ...theme,
     components: {
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: true,
+        },
+      },
       MuiMenu: {
         styleOverrides: {
           paper: {
