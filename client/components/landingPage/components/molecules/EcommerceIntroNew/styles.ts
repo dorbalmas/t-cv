@@ -187,7 +187,6 @@ export const BottomPart = styled.div`
 //   `};
 // `;
 export const ButtonGetStarted = styled.button`
-  z-index: 1;
   cursor: pointer;
   position: relative;
   width: 200px;
@@ -242,11 +241,12 @@ export const ButtonGetStarted = styled.button`
   }
   &:hover::after {
     visibility: visible;
-    left: 150%;
+    left: 65%;
     transition: all 1s;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    -ms-transition: all 1s;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    opacity: 0;
   }
 `;
