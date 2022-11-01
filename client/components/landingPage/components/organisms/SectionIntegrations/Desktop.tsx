@@ -86,7 +86,7 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
   }, [step1Controls, step2Controls, step3Controls, step4Controls]);
 
   return (
-    <div ref={sectionRef}>
+    <S.DesktopContainer ref={sectionRef}>
       <S.PaddedContainer>
         <S.OrbWrapper>
           {/* <S.Orb0 src={Orb0} variants={variants.opacity} initial="hidden" animate={step4Controls} />
@@ -267,6 +267,6 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
           </S.VortexContainer>
         </S.OrbWrapper>
       </S.PaddedContainer>
-    </div>
+    </S.DesktopContainer>
   );
 };

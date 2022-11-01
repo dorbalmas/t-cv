@@ -86,6 +86,18 @@ export const LogoBlockContainer = styled.div`
 export const LogoBlock = styled.div`
   width: 50%;
 `;
+export const DesktopContainer = styled.div`
+  ${media.lg`
+	::before {
+		content: '';
+		background: white;
+		transform: skew(-60deg, -10deg);
+		height: 100%;
+		width: 100vw;
+		position: absolute;
+	}
+  `};
+`;
 
 export const PaddedContainer = styled(FluidContainer)`
   display: flex;
@@ -95,14 +107,17 @@ export const PaddedContainer = styled(FluidContainer)`
   ${media.sm`
     align-items: center;
   `};
-  /* ::before {
-    content: '';
-    background: white;
-    transform: skew(60deg, -18deg);
-    height: 100%;
-    width: 100vw;
-    position: absolute;
-  } */
+
+  ${media.lg`
+	::before {
+	  content: '';
+	  background: white;
+	  transform: skew(60deg, 10deg);
+      height: 100%;
+	  width: 100vw;
+	  position: absolute;
+	}
+  `};
 `;
 
 export const OrbWrapper = styled.div`
