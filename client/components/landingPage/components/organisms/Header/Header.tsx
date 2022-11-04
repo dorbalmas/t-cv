@@ -68,7 +68,7 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
       {isLoggedIn ? (
         <>
           <Link href="/dashboard" passHref>
-            <S.SignIn>{t<string>('landing.actions.app')}</S.SignIn>
+            <S.GoToActionButton>{t<string>('landing.actions.app')}</S.GoToActionButton>
           </Link>
 
           <S.SignUp onClick={handleLogout}>{t<string>('landing.actions.logout')}</S.SignUp>
@@ -77,7 +77,7 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
         <>
           <S.SignIn onClick={handleLogin}>{t<string>('landing.actions.login')}</S.SignIn>
 
-          <S.SignUp onClick={handleRegister}>{t<string>('landing.actions.register')}</S.SignUp>
+          <S.GoToActionButton onClick={handleRegister}>{t<string>('landing.actions.register')}</S.GoToActionButton>
         </>
       )}
     </S.RightPart>
