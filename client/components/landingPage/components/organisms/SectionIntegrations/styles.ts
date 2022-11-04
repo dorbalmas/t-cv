@@ -91,8 +91,8 @@ export const DesktopContainer = styled.div`
 	::before {
 		content: '';
 		background: white;
-		transform: skew(-60deg, -10deg);
-		height: 100%;
+		transform: skew(-60deg, 0deg);
+		height: 110%;
 		width: 100vw;
 		position: absolute;
 	}
@@ -112,8 +112,8 @@ export const PaddedContainer = styled(FluidContainer)`
 	::before {
 	  content: '';
 	  background: white;
-	  transform: skew(60deg, 10deg);
-      height: 100%;
+	  transform: skew(60deg, 0deg);
+      height: 110%;
 	  width: 100vw;
 	  position: absolute;
 	}

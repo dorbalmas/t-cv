@@ -79,7 +79,14 @@ export const Background = styled(ScatterElement)<{ isMobile: boolean }>`
   width: 100%;
   height: 100%;
   border-radius: 11px;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background: rgb(250, 250, 250);
+  background: radial-gradient(
+    circle,
+    rgba(250, 250, 250, 1) 32%,
+    rgba(228, 228, 228, 1) 44%,
+    rgba(255, 255, 255, 1) 100%
+  );
   transform-origin: ${({ isMobile }) => (isMobile ? 'top center' : 'center center')};
 `;
 
