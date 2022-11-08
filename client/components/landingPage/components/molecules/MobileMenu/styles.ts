@@ -11,7 +11,7 @@ export const MobileMenu = styled.div``;
 
 export const MenuContainer = styled.div`
   position: relative;
-  padding: 5rem 5rem 7rem 4rem;
+  padding: 1rem;
   overflow: auto;
 `;
 
@@ -147,4 +147,55 @@ export const MenuItem = styled.div<{
   transform: ${(props) => (props.isOpenMenu ? 'translateY(0)' : 'translateY(1rem)')};
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition-delay: ${(props) => (props.isOpenMenu ? 400 + props.index * 70 : 0)}ms;
+`;
+
+export const LoginButton = styled.button`
+  opacity: 1;
+  color: #ea3a60;
+  transition: opacity 0.3s ease;
+  letter-spacing: 0.15rem;
+`;
+
+export const GoToActionButton = styled.button`
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: solid 2px rgba(223, 78, 117, 0.08);
+  border-radius: 10rem;
+  color: #ea3a60;
+  opacity: 1;
+  /* text-transform: uppercase; */
+  font-size: x-large;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(223, 78, 117, 0.08);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
 `;

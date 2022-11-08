@@ -7,7 +7,7 @@ import { DesktopMenu } from '@/components/landingPage/components/molecules/Deskt
 import { MobileMenu } from '@/components/landingPage/components/molecules/MobileMenu/MobileMenu';
 import { FluidContainer } from '@/components/landingPage/components/style/FluidContainer/FluidContainer';
 import { useScrollDirection } from '@/components/landingPage/hooks/useScrollDirection';
-import { logout } from '@/store/auth/authSlice';
+// import { logout } from '@/store/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 
@@ -49,7 +49,7 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
   const handleLogin = () => dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
   const handleRegister = () => dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
-  const handleLogout = () => dispatch(logout());
+  //   const handleLogout = () => dispatch(logout());
 
   const renderMenu = () => (
     <DesktopMenu
@@ -71,11 +71,13 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
             <S.GoToActionButton>{t<string>('landing.actions.app')}</S.GoToActionButton>
           </Link>
 
-          <S.SignUp onClick={handleLogout}>{t<string>('landing.actions.logout')}</S.SignUp>
+          {/* <S.SignUp onClick={handleLogout}>{t<string>('landing.actions.logout')}</S.SignUp> */}
         </>
       ) : (
         <>
-          <S.SignIn onClick={handleLogin}>{t<string>('landing.actions.login')}</S.SignIn>
+          <S.SignIn onClick={handleLogin}>
+            <S.LoginButton>{t<string>('landing.actions.login')}</S.LoginButton>
+          </S.SignIn>
 
           <S.GoToActionButton onClick={handleRegister}>{t<string>('landing.actions.register')}</S.GoToActionButton>
         </>

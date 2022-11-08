@@ -15,11 +15,15 @@
 //   REGISTER,
 // } from '@core/url';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 import React, {
   useCallback,
   //  useRef,
   useState,
 } from 'react';
+
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setModalState } from '@/store/modal/modalSlice';
 
 import * as S from './styles';
 // import { IProps } from './types';
@@ -112,6 +116,20 @@ type IProps = {
 export const MobileMenu = ({ isFixed }: IProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const closeMenu = useCallback(() => setOpen(false), []);
+
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
+
+  const handleLogin = () => {
+    dispatch(setModalState({ modal: 'auth.login', state: { open: true } }));
+    closeMenu();
+  };
+  const handleRegister = () => {
+    dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
+    closeMenu();
+  };
+
   //   const scrollY = useRef(0);
 
   //   useEffect(() => {
@@ -203,28 +221,54 @@ export const MobileMenu = ({ isFixed }: IProps) => {
             >
               Blog
             </S.MenuItem> */}
-            <S.MenuItem
-              index={6}
-              isOpenMenu={open}
-              //   link={LOGIN}
-              //   external={true}
-              onClick={closeMenu}
-              className="gtm_signin"
-              //   page={page}
-            >
-              Login
-            </S.MenuItem>
-            <S.MenuItem
-              index={7}
-              isOpenMenu={open}
-              //   link={REGISTER}
-              //   external={true}
-              onClick={closeMenu}
-              //   page={page}
-              //   forceActive
-            >
-              Sign up
-            </S.MenuItem>
+            {isLoggedIn ? (
+              <>
+                <div></div>
+                <S.MenuItem
+                  index={6}
+                  isOpenMenu={open}
+                  //   link={LOGIN}
+                  //   external={true}
+                  onClick={closeMenu}
+                  className="gtm_signin"
+                  //   page={page}
+                >
+                  <Link href="/dashboard" passHref>
+                    <S.GoToActionButton>{t<string>('landing.actions.app')}</S.GoToActionButton>
+                  </Link>
+                </S.MenuItem>
+
+                {/* <S.SignUp onClick={handleLogout}>{t<string>('landing.actions.logout')}</S.SignUp> */}
+              </>
+            ) : (
+              <>
+                <S.MenuItem
+                  index={6}
+                  isOpenMenu={open}
+                  //   link={LOGIN}
+                  //   external={true}
+                  onClick={handleLogin}
+                  className="gtm_signin"
+                  //   page={page}
+                >
+                  <S.LoginButton>{t<string>('landing.actions.login')}</S.LoginButton>
+                </S.MenuItem>
+
+                <S.MenuItem
+                  index={7}
+                  isOpenMenu={open}
+                  //   link={REGISTER}
+                  //   external={true}
+                  onClick={handleRegister}
+                  //   page={page}
+                  //   forceActive
+                >
+                  <S.GoToActionButton onClick={handleRegister}>
+                    {t<string>('landing.actions.register')}
+                  </S.GoToActionButton>
+                </S.MenuItem>
+              </>
+            )}
           </S.Menu>
         </S.MenuContainer>
       </S.MotionMenu>

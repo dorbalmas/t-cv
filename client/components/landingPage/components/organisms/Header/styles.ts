@@ -28,7 +28,8 @@ export const SignIn = styled.a`
   padding-right: 3.6rem;
   text-decoration: none;
   display: block;
-  opacity: 0.6;
+  opacity: 1;
+  color: #ea3a60;
   will-change: opacity;
   transition: opacity 0.3s ease;
   ${media.sm`
@@ -36,7 +37,7 @@ export const SignIn = styled.a`
   `}
   &:hover {
     color: ${defaultTheme.colors.dark};
-    opacity: 1;
+    opacity: 0.6;
     text-decoration: none;
   }
 `;
@@ -56,6 +57,58 @@ export const SignUp = styled.a`
     color: ${defaultTheme.colors.blue};
     opacity: 1;
     text-decoration: none;
+  }
+`;
+export const LoginButton = styled.button`
+  opacity: 1;
+  color: #ea3a60;
+  transition: opacity 0.3s ease;
+  :hover {
+    opacity: 0.6;
+  }
+`;
+
+export const GoToActionButton = styled.button`
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: solid 2px rgba(223, 78, 117, 0.08);
+  border-radius: 10rem;
+  color: #ea3a60;
+  opacity: 1;
+  /* text-transform: uppercase; */
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(223, 78, 117, 0.08);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+    }
   }
 `;
 
@@ -153,48 +206,4 @@ export const MobileRightPart = styled.div`
   ${media.sm`
     padding-right: 5rem;
   `};
-`;
-
-export const GoToActionButton = styled.button`
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border: solid 1px #ea3a60;
-  border-radius: 10rem;
-  color: #ea3a60;
-  /* text-transform: uppercase; */
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #ea3a60;
-    transition: all 0.3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
-    }
-  }
 `;
