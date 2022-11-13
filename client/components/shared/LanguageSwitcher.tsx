@@ -35,7 +35,7 @@ const LanguageSwitcher = () => {
       <IconButton style={{ paddingBottom: 0 }} onClick={handleClick}>
         <Language />
         {languages.map(({ code, name }) =>
-          i18n.language == code ? <div className="text-sm text-gray-900">{name}</div> : ''
+          i18n.language == code ? <div className="text-sm text-gray-900 font-light">{name}</div> : ''
         )}
       </IconButton>
 
