@@ -158,7 +158,7 @@ export const Content = styled.div`
 export const LeftPart = styled.div`
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 300px;
 `;
 
 export const RightPart = styled.div`
@@ -166,7 +166,7 @@ export const RightPart = styled.div`
   padding-top: 0;
   justify-content: end;
   align-items: center;
-  width: 200px;
+  width: 300px;
 
   a,
   button {
