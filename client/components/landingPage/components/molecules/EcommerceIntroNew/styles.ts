@@ -93,7 +93,7 @@ export const LanguageSwitcherContainer = styled.div`
     display: block;
     background-color: white;
     scale: 1.5;
-
+    padding: 15px 0 0 0;
     &:hover {
       background-color: white;
     }

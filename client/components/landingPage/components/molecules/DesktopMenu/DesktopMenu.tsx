@@ -77,27 +77,13 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
   const animationProps = { initialAnimation, endAnimation };
   //   const props = { activeItem, setPositionData, variant };
   //   const ActiveComponent = activeItem ? components[activeItem] : null;
-  const sizeVariant =
-    activeItem === 'product' || activeItem === 'blog' ? 'lg' : activeItem === 'developers' ? 'md' : 'sm';
+  //   const sizeVariant =
+  //     activeItem === 'product' || activeItem === 'blog' ? 'lg' : activeItem === 'developers' ? 'md' : 'sm';
 
   return (
     <S.Menu ref={menuRef}>
       <S.AnimatedBlock {...hoverData} {...animationProps}>
-        <AnimatePresence exitBeforeEnter>
-          {activeItem && (
-            <S.AnimatedBlockContent
-              key={activeItem}
-              //   type={activeItem}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, visibility: 'visible' }}
-              exit={{ opacity: 0, visibility: 'hidden' }}
-              variant={sizeVariant}
-              {...hoverData}
-            >
-              {/* {!!ActiveComponent && <ActiveComponent resetMenu={resetMenu} />} */}
-            </S.AnimatedBlockContent>
-          )}
-        </AnimatePresence>
+        <AnimatePresence exitBeforeEnter></AnimatePresence>
       </S.AnimatedBlock>
       {/* <Product item="product" onMouseOver={onMouseOver('product')} {...props} /> */}
       <S.Item>

@@ -1,12 +1,15 @@
 import { Language } from '@mui/icons-material';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
 // import { TRANSLATE_URL } from '@/constants/index';
 
 const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
+
   const router = useRouter();
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -29,8 +32,11 @@ const LanguageSwitcher = () => {
 
   return (
     <div>
-      <IconButton onClick={handleClick}>
+      <IconButton style={{ paddingBottom: 0 }} onClick={handleClick}>
         <Language />
+        {languages.map(({ code, name }) =>
+          i18n.language == code ? <div className="text-sm text-gray-900">{name}</div> : ''
+        )}
       </IconButton>
 
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>

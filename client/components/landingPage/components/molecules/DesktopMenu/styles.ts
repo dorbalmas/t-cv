@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { css } from 'styled-components';
 
 import { rotateMenu } from '@/components/landingPage/globalStyles/animations';
@@ -423,10 +422,11 @@ export const ItemLanguageSwitcher = styled.div`
     font-weight: ${defaultTheme.typography.semiLightFontWeight};
     font-family: ${defaultTheme.typography.baseFontFamily};
     will-change: opacity;
+    transition: opacity 0.3s ease;
     ${media.md`
     &:hover {
       background-color: white;
-      color: #0084c7;
+      /* color: #0084c7; */
       opacity: 0.6;
     }
       color: defaultTheme.colors.baseDarkFont;
@@ -454,40 +454,40 @@ export const ArrowLink = styled.div`
   }
 `;
 
-export const AnimatedBlockContent = styled(motion.div)<IHover & { variant: 'lg' | 'md' | 'sm' }>`
-  transform-origin: top left;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  min-width: ${(props) => (props.variant === 'lg' ? '68rem' : props.variant === 'md' ? '44rem' : '41rem')};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+// export const AnimatedBlockContent = styled(motion.div)<IHover & { variant: 'lg' | 'md' | 'sm' }>`
+//   transform-origin: top left;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   min-height: 100%;
+//   min-width: ${(props) => (props.variant === 'lg' ? '68rem' : props.variant === 'md' ? '44rem' : '41rem')};
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
 
-  a,
-  button {
-    color: ${defaultTheme.colors.dark};
-    will-change: color;
-    transition: color 0.2s ease;
-    &:hover {
-      color: ${defaultTheme.link.color};
-    }
-  }
-  ${ArrowLink} {
-    a,
-    button {
-      &:hover {
-        svg {
-          path {
-            stroke: ${defaultTheme.link.color};
-          }
-        }
-      }
-    }
-  }
-`;
+//   a,
+//   button {
+//     color: ${defaultTheme.colors.dark};
+//     will-change: color;
+//     transition: color 0.2s ease;
+//     &:hover {
+//       color: ${defaultTheme.link.color};
+//     }
+//   }
+//   ${ArrowLink} {
+//     a,
+//     button {
+//       &:hover {
+//         svg {
+//           path {
+//             stroke: ${defaultTheme.link.color};
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 // export const New = styled.em`
 //   display: inline-block;
