@@ -83,6 +83,7 @@ export const LanguageSwitcherContainer = styled.div`
   justify-content: center;
   position: relative;
   bottom: 6.7rem;
+  font-weight: 300;
   ${media.md`
     display: none;
   `}
