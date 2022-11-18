@@ -1,3 +1,4 @@
+import Img from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 // import { IData, IHeaderProps } from './types';
@@ -11,6 +12,7 @@ import { useScrollDirection } from '@/components/landingPage/hooks/useScrollDire
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 
+import logo from '../../../assets/logo.png';
 import * as S from './styles';
 type IHeaderProps = {
   isMobile: boolean;
@@ -98,7 +100,9 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
         <S.Content>
           <S.LeftPart>
             <S.Logo>
-              <Link href={''}>tivlotcv</Link>
+              <Link href={''}>
+                <Img src={logo} alt="TivlotCV" width="130" height="30" />
+              </Link>
             </S.Logo>
           </S.LeftPart>
           {isDesktop && renderMenu()}

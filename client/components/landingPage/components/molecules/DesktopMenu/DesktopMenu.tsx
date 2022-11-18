@@ -87,7 +87,7 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
       </S.AnimatedBlock>
       {/* <Product item="product" onMouseOver={onMouseOver('product')} {...props} /> */}
       <S.Item>
-        <Link className="gtm_integrations" href={''}>
+        <Link className="gtm_integrations" href={'#Home'}>
           <S.Decoration>Home</S.Decoration>
         </Link>
       </S.Item>
@@ -97,20 +97,19 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
           <S.Decoration>Features</S.Decoration>
         </Link>
       </S.Item>
+      <S.Item>
+        <Link href={'#Pricing'}>
+          <S.Decoration>Pricing</S.Decoration>
+        </Link>
+      </S.Item>
+      <S.Item>
+        <Link href={'#FAQs'}>
+          <S.Decoration>FAQs</S.Decoration>
+        </Link>
+      </S.Item>
       <S.ItemLanguageSwitcher>
         <LanguageSwitcher />
       </S.ItemLanguageSwitcher>
-
-      <S.Item>
-        <Link href={''}>
-          <S.Decoration>Pricing</S.Decoration>
-        </Link>
-      </S.Item>
-      <S.Item>
-        <Link href={''}>
-          <S.Decoration>Pricing</S.Decoration>
-        </Link>
-      </S.Item>
       {/* <div onMouseOver={onMouseOver('blog')} {...props} /> */}
     </S.Menu>
   );

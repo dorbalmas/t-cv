@@ -19,7 +19,7 @@ export const SectionMain: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
   });
 
   return (
-    <S.Container>
+    <S.Container id="Home">
       <S.Section ref={sectionRef}>
         <S.FirstSection>
           <EcommerceIntroNew />

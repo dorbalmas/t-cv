@@ -75,6 +75,12 @@ const Plan = ({ plan }: any) => {
           <S.Icon planKind={plan.kind}>
             <Check fontSize="small" />
           </S.Icon>
+          No User Tracking
+        </S.Feature>
+        <S.Feature>
+          <S.Icon planKind={plan.kind}>
+            <Check fontSize="small" />
+          </S.Icon>
           Cancel free at any time
         </S.Feature>
         <S.Feature>
@@ -129,11 +135,10 @@ export const PricingContent = () => {
           animate={entryAnimation}
           initial={initialAnimationData}
           // key needed for remount
-          id="pricing"
         >
           <FluidContainer>
             <S.PricingContainer>
-              <S.PricingContainerHeader>
+              <S.PricingContainerHeader id="Pricing">
                 <S.PricingHeaderSubtitle>Subscription plans</S.PricingHeaderSubtitle>
                 <S.Title>
                   Ready to <S.StandOut>standout</S.StandOut>?

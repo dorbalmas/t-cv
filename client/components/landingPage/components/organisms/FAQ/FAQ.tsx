@@ -8,8 +8,8 @@ import * as S from './styles';
 
 export const FAQ: React.FC = () => {
   return (
-    <S.FAQContainer id="faq">
-      <S.FAQContainerContent>
+    <S.FAQContainer>
+      <S.FAQContainerContent id="FAQs">
         <FluidContainer>
           <S.FAQContainerInner>
             <S.FAQContainerHeader>

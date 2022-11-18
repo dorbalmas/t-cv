@@ -8,6 +8,6 @@ export const FluidContainer = styled.div`
   padding-left: 2rem;
   max-width: 100%;
   ${media.lg`
-    max-width: 131.6rem;
+    max-width: calc(131.6rem * 0.625);
   `}
 `;

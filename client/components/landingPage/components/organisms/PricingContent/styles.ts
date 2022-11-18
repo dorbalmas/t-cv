@@ -199,8 +199,8 @@ export const Icon = styled.div<{
 export const ButtonCTA = styled.button<{
   planKind: string;
 }>`
-  background-color: white;
-  color: ${(props) => planColors[props.planKind]};
+  background-color: ${(props) => planColors[props.planKind]};
+  color: white;
   border: 2px solid ${(props) => planColors[props.planKind]};
   width: 100%;
   padding: 0.75rem 1rem;
@@ -215,7 +215,7 @@ export const ButtonCTA = styled.button<{
   transform: scale(1);
   &:hover:not(:disabled),
   &:active {
-    background-color: ${(props) => planColors[props.planKind]};
-    color: white;
+    background-color: white;
+    color: ${(props) => planColors[props.planKind]};
   }
 `;

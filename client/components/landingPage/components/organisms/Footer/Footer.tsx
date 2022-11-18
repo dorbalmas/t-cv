@@ -24,7 +24,7 @@ export const Footer = ({ isMobile }: IProps) => {
       )}
       <S.Footer>
         <S.BottomPart>
-          <span>&copy; Copyright 2020 - {new Date().getFullYear()} TivlotCV</span>
+          <span>&copy; TivlotCV &bull; 2020 - {new Date().getFullYear()} </span>
         </S.BottomPart>
 
         {!isMobile && (
