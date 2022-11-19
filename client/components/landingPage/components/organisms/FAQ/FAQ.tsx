@@ -9,11 +9,11 @@ import * as S from './styles';
 export const FAQ: React.FC = () => {
   return (
     <S.FAQContainer>
-      <S.FAQContainerContent id="FAQs">
+      <S.FAQContainerContent id="FAQ">
         <FluidContainer>
           <S.FAQContainerInner>
             <S.FAQContainerHeader>
-              <S.Title>FAQs</S.Title>
+              <S.Title>FAQ</S.Title>
             </S.FAQContainerHeader>
             {faqData.map((data, index) => (
               <FAQRow key={index} {...data} />

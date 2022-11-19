@@ -103,8 +103,8 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
         </Link>
       </S.Item>
       <S.Item>
-        <Link href={'#FAQs'}>
-          <S.Decoration>FAQs</S.Decoration>
+        <Link href={'#FAQ'}>
+          <S.Decoration>FAQ</S.Decoration>
         </Link>
       </S.Item>
       <S.ItemLanguageSwitcher>

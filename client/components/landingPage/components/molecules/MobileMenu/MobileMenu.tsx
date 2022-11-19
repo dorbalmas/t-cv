@@ -209,7 +209,7 @@ export const MobileMenu = ({ isFixed }: IProps) => {
               className="gtm_developers"
               //   page={page}
             >
-              <Link href={'#FAQs'}>FAQs</Link>
+              <Link href={'#FAQ'}>FAQ</Link>
             </S.MenuItem>
             {/* <S.MenuItem
               index={3}
