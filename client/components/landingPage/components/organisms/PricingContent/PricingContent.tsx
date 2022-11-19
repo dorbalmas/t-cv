@@ -75,12 +75,6 @@ const Plan = ({ plan }: any) => {
           <S.Icon planKind={plan.kind}>
             <Check fontSize="small" />
           </S.Icon>
-          No User Tracking
-        </S.Feature>
-        <S.Feature>
-          <S.Icon planKind={plan.kind}>
-            <Check fontSize="small" />
-          </S.Icon>
           Cancel free at any time
         </S.Feature>
         <S.Feature>

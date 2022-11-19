@@ -19,6 +19,8 @@ import ssss from '@/components/landingPage/assets/logo.svg';
 // brand logos
 // elements
 import Containers from '@/components/landingPage/assets/logo.svg';
+import pdf from '@/components/landingPage/assets/pdf.jpg';
+import ThinkupDesktop from '@/components/landingPage/assets/ThinkupDesktop.gif';
 import { createThresholdArray } from '@/components/landingPage/core/utils';
 
 import { AnimationKeys, animationMap, variants } from './desktopAnimationConfig';
@@ -182,6 +184,7 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
             </S.SocialElement>
             <S.ContainersElement variants={variants.containers} initial="hidden" animate={step4Controls}>
               {/* <SVG src={Containers} /> */}
+              <Img src={ThinkupDesktop} alt="Social" width={400} height={300} />
               <S.TextElement
                 inherit={false}
                 variants={variants.opacity}
@@ -202,7 +205,7 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
               }}
             >
               {/* <SVG src={Stripe} /> */}
-              <Img src={ssss} />
+              <Img src={ssss} alt="2" />
             </S.LogoElement>
             <S.LogoElement
               variants={variants.algolia}
@@ -245,12 +248,14 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
               initial="hidden"
               animate={step4Controls}
               style={{
-                right: 200,
-                bottom: 150,
+                right: -100,
+                bottom: -10,
+                width: '300px',
+                objectFit: 'cover',
               }}
             >
               {/* <SVG src={Avalara} /> */}
-              <Img src={ssss} />
+              <Img src={pdf} alt="1" />
             </S.LogoElement>
             <S.LogoElement
               variants={variants.strapi}

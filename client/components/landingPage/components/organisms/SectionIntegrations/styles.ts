@@ -191,8 +191,7 @@ export const ApplePayElement = styled(motion.div)`
 
 export const ContainersElement = styled(motion.div)`
   position: absolute;
-  left: 280px;
-  bottom: 100px;
+  bottom: -10px;
 `;
 
 export const SocialElement = styled(motion.div)`
