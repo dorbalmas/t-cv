@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 
 import logo from '../../../assets/logo.png';
+import logoSmall from '../../../assets/logoSmall.png';
 import * as S from './styles';
 type IHeaderProps = {
   isMobile: boolean;
@@ -100,9 +101,15 @@ export const Header = ({ isMobile, isDesktop, isTablet, customHeaderHeight }: IH
         <S.Content>
           <S.LeftPart>
             <S.Logo>
-              <Link href={''}>
-                <Img src={logo} alt="TivlotCV" width="130" height="30" />
-              </Link>
+              {isMobile ? (
+                <Link href={'/'}>
+                  <Img src={logoSmall} alt="TivlotCV" />
+                </Link>
+              ) : (
+                <Link href={'/'}>
+                  <Img src={logo} alt="TivlotCV" />
+                </Link>
+              )}
             </S.Logo>
           </S.LeftPart>
           {isDesktop && renderMenu()}
