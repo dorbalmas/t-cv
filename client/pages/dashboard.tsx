@@ -49,7 +49,7 @@ const Dashboard: NextPage = () => {
       <header>
         <Link href="/">
           <a>
-            <Logo size={40} />
+            <Logo size={48} />
           </a>
         </Link>
 

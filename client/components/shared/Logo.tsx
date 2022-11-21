@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Logo: React.FC<Props> = ({ size = 64 }) => {
-  return <Image alt="TivlotCV" src="/images/logos/logo.png" className="rounded" width={size} height={size} />;
+  return <Image alt="TivlotCV" src="/images/logos/logo.png" width={size + 5} height={size} />;
 };
 
 export default Logo;

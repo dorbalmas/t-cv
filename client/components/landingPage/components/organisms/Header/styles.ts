@@ -142,8 +142,8 @@ export const Header = styled.header<{
 export const Logo = styled.div`
   position: relative;
   top: 1.1rem;
-  left: 0.7rem;
-  width: 40px;
+  left: 0.2rem;
+  width: 120px;
   ${media.sm`
   	top: 0;
   	left: 0;
