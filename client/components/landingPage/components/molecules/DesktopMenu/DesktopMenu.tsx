@@ -1,6 +1,5 @@
 // import { ENTERPRISE, INTEGRATIONS, PRICING } from '@core/url';
 import { AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
@@ -79,7 +78,14 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
   //   const ActiveComponent = activeItem ? components[activeItem] : null;
   //   const sizeVariant =
   //     activeItem === 'product' || activeItem === 'blog' ? 'lg' : activeItem === 'developers' ? 'md' : 'sm';
+  const handleClick = (id: string) => {
+    const elementId = `#${id}`;
+    const section = document.querySelector(elementId);
 
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <S.Menu ref={menuRef}>
       <S.AnimatedBlock {...hoverData} {...animationProps}>
@@ -87,25 +93,17 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
       </S.AnimatedBlock>
       {/* <Product item="product" onMouseOver={onMouseOver('product')} {...props} /> */}
       <S.Item>
-        <Link className="gtm_integrations" href={''} passHref>
-          <S.Decoration>Home</S.Decoration>
-        </Link>
+        <S.Decoration onClick={() => handleClick('Home')}>Home</S.Decoration>
       </S.Item>
       {/* <Developers item="developers" onMouseOver={onMouseOver('developers')} {...props} /> */}
       <S.Item>
-        <Link className="gtm_pricing" href={''} passHref>
-          <S.Decoration>Features</S.Decoration>
-        </Link>
+        <S.Decoration onClick={() => handleClick('Features')}>Features</S.Decoration>
       </S.Item>
       <S.Item>
-        <Link href={'#Pricing'} passHref>
-          <S.Decoration>Pricing</S.Decoration>
-        </Link>
+        <S.Decoration onClick={() => handleClick('Pricing')}>Pricing</S.Decoration>
       </S.Item>
       <S.Item>
-        <Link href={'#FAQ'} passHref>
-          <S.Decoration>FAQ</S.Decoration>
-        </Link>
+        <S.Decoration onClick={() => handleClick('FAQ')}>FAQ</S.Decoration>
       </S.Item>
       <S.ItemLanguageSwitcher>
         <LanguageSwitcher />

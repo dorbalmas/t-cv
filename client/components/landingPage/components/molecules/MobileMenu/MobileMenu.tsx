@@ -129,6 +129,14 @@ export const MobileMenu = ({ isFixed }: IProps) => {
     dispatch(setModalState({ modal: 'auth.register', state: { open: true } }));
     closeMenu();
   };
+  const handleClick = (id: string) => {
+    const elementId = `#${id}`;
+    const section = document.querySelector(elementId);
+    closeMenu();
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   //   const scrollY = useRef(0);
 
@@ -170,46 +178,46 @@ export const MobileMenu = ({ isFixed }: IProps) => {
         <S.MenuContainer>
           <S.Menu open={open}>
             <S.MenuItem
-              onClick={closeMenu}
               index={0}
               isOpenMenu={open}
               //   submenuList={productSubmenu}
+              onClick={() => handleClick('Home')}
               className="gtm_product"
               //   page={page}
             >
-              <Link href={''}>Home</Link>
+              Home
             </S.MenuItem>
             <S.MenuItem
               index={2}
               isOpenMenu={open}
               //   link={INTEGRATIONS}
-              onClick={closeMenu}
+              onClick={() => handleClick('Features')}
               className="gtm_integrations"
               //   page={page}
             >
-              <Link href={'#Features'}>Features</Link>
+              Features
             </S.MenuItem>
             <S.MenuItem
               index={1}
               isOpenMenu={open}
               //   link={OPEN_SOURCE}
               //   submenuList={developersMenu}
-              onClick={closeMenu}
+              onClick={() => handleClick('Pricing')}
               className="gtm_developers"
               //   page={page}
             >
-              <Link href={'#Pricing'}>Pricing</Link>
+              Pricing
             </S.MenuItem>
             <S.MenuItem
               index={1}
               isOpenMenu={open}
               //   link={OPEN_SOURCE}
               //   submenuList={developersMenu}
-              onClick={closeMenu}
+              onClick={() => handleClick('FAQ')}
               className="gtm_developers"
               //   page={page}
             >
-              <Link href={'#FAQ'}>FAQ</Link>
+              FAQ
             </S.MenuItem>
             {/* <S.MenuItem
               index={3}
