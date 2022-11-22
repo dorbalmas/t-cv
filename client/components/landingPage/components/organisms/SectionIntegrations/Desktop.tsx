@@ -252,6 +252,7 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
                 bottom: -10,
                 width: '300px',
                 objectFit: 'cover',
+                boxShadow: '0 7px 30px rgba(52, 31, 97, 0.1)',
               }}
             >
               {/* <SVG src={Avalara} /> */}

@@ -15,7 +15,7 @@ import * as S from './styles';
 const Plan = ({ plan }: any) => {
   return (
     <>
-      <S.PriceColumn planKind={plan.kind}>
+      <S.PriceColumn planKind={plan.kind} onClick={() => console.log('click on all of the card')}>
         <S.PriceHeder>
           {plan.name === 'premium' ? <S.MostPopular planKind={plan.kind}>most popular</S.MostPopular> : ''}
           <S.Price>
