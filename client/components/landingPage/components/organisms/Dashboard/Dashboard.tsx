@@ -114,7 +114,9 @@ export const Dashboard: React.FC<Props> = ({ progress, isMobile }) => {
       {!isMobile && (
         <>
           <S.Variants progress={slowScatterProgress} offset={offsets.variants}>
-            <Img src={Containers} alt="Dashboard variants" />
+            <div>
+              <Img src={Containers} alt="Dashboard variants" />
+            </div>
           </S.Variants>
           <S.Channels progress={slowScatterProgress} offset={offsets.channels}>
             <Img src={Containers} alt="Dashboard channels" />
