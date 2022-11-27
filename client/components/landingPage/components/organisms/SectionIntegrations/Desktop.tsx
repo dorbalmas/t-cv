@@ -250,8 +250,8 @@ export const Desktop: React.FC<{ scrollProgress: MotionValue }> = ({ scrollProgr
               style={{
                 right: -100,
                 bottom: -10,
-                width: '300px',
-                objectFit: 'cover',
+                width: 300,
+                height: 389,
                 boxShadow: '0 7px 30px rgba(52, 31, 97, 0.1)',
               }}
             >

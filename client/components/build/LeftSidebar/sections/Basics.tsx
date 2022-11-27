@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import Heading from '@/components/shared/Heading';
 import ResumeInput from '@/components/shared/ResumeInput';
+import Tips from '@/components/shared/Tips';
 
 // import PhotoFilters from './PhotoFilters';
 // import PhotoUpload from './PhotoUpload';
@@ -77,11 +78,9 @@ const Basics = () => {
           path="basics.location.city"
         />
 
-        <ResumeInput
-          label={t<string>('builder.common.form.url.label')}
-          path="basics.website"
-          className="sm:col-span-2"
-        />
+        <Tips tipsTitle="website">
+          <ResumeInput label={t<string>('builder.common.form.url.label')} path="basics.website" />
+        </Tips>
 
         <Divider className="sm:col-span-2" />
 
@@ -90,13 +89,15 @@ const Basics = () => {
           path="basics.headline"
           className="sm:col-span-2"
         />
-        <ResumeInput
-          type="textarea"
-          label={t<string>('builder.common.form.summary.label')}
-          path="basics.summary"
-          className="sm:col-span-2"
-          markdownSupported
-        />
+
+        <Tips tipsTitle="summary">
+          <ResumeInput
+            type="textarea"
+            label={t<string>('builder.common.form.summary.label')}
+            path="basics.summary"
+            //   markdownSupported
+          />
+        </Tips>
       </div>
     </>
   );

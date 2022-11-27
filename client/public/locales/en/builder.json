@@ -84,7 +84,9 @@
       "toggle-page-break-line": "Toggle Page Break Line",
       "toggle-sidebars": "Toggle Sidebars",
       "zoom-in": "Zoom In",
-      "zoom-out": "Zoom Out"
+      "zoom-out": "Zoom Out",
+      "undo": "Undo",
+      "redo": "Redo"
     }
   },
   "header": {
@@ -364,6 +366,21 @@
           }
         }
       }
+    }
+  },
+  "tips": {
+    "header": "Tips & Guidance",
+    "markdown": {},
+    "website": {
+      "intro": "Our expert team found the best way for you to quickly build your website",
+      "li": "Unique and modern templates",
+      "free": "for free",
+      "remember": "Remember the goal here is to show that you put in the effort."
+    },
+    "summary": {
+      "intro": "ffffff",
+      "free": "for free",
+      "importance": ""
     }
   }
 }

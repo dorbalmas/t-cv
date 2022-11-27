@@ -1,0 +1,16 @@
+.header {
+  @apply sticky top-0 left-0 right-0 z-50;
+  @apply flex items-center justify-between;
+
+  > div {
+    @apply flex items-center gap-2;
+  }
+
+  button {
+    @apply flex items-center justify-center;
+    @apply rotate-0 transition-transform hover:rotate-90;
+  }
+  h3 {
+    @apply mt-3;
+  }
+}

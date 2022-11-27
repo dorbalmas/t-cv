@@ -28,6 +28,7 @@ export const FAQRowContent = styled.div<{ isOpen: boolean }>`
     font-size: calc(1.5rem * 0.625);
     line-height: 1.5;
     max-width: 96%;
+    margin-bottom: 1rem;
     @media (min-width: ${breakpoints.sm}em) {
       font-size: calc(1.6rem * 0.625);
       font-weight: 300;
@@ -96,7 +97,7 @@ export const FAQRowTitle = styled.button<{ active: boolean }>`
 `;
 
 export const PlusIcon = styled.div<{ active: boolean }>`
-  transform: ${(props) => (props.active ? `rotate(135deg)` : `none`)};
+  transform: ${(props) => (props.active ? `rotate(180deg)` : `none`)};
   transition: transform 0.3s ease;
   opacity: 0.6;
   &:hover {

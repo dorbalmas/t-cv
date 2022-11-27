@@ -1,4 +1,4 @@
-import AddIcon from '@mui/icons-material/Add';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import React, { useState } from 'react';
 
 // import plus from '../../../../images/plus_icon.svg';
@@ -19,7 +19,7 @@ export const FAQRow = ({ title, content: Content }: IFAQ) => {
       <S.FAQRowTitle active={isOpen} aria-controls={id} {...ariaProps} onClick={() => setOpen((isOpen) => !isOpen)}>
         <h5>{title}</h5>
         <S.PlusIcon active={isOpen}>
-          <AddIcon sx={{ float: 'right', fontSize: '2rem' }} />
+          <KeyboardArrowDownIcon sx={{ float: 'right', fontSize: '2rem' }} />
         </S.PlusIcon>
       </S.FAQRowTitle>
       {!!Content && (
