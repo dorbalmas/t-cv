@@ -14,6 +14,7 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
+import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
 import styles from './Tips.module.scss';
@@ -25,6 +26,7 @@ type Props = {
 const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const { isMobile } = useBreakpoints();
 
   const handleTooltipClose = () => {
     setOpen(false);
@@ -69,7 +71,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
         <span className=" absolute top-3 right-0 z-10">
           <HtmlTooltip
             arrow
-            placement="top-start"
+            placement={isMobile ? 'top-start' : 'right'}
             title={
               <div className="mx-auto pb-2 prose prose-invert text-neutral-50 mt-0">
                 <header className={styles.header}>
