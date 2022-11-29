@@ -370,7 +370,19 @@
   },
   "tips": {
     "header": "Tips & Guidance",
-    "markdown": {},
+    "shared": {
+      "markdown": "Markdown Syntax",
+      "intro": "Catch the reader's eye using the following ways:",
+      "table": {
+        "header1": "Markdown",
+        "header2": "Results",
+        "bold": "bold text",
+        "italic": "italic text",
+        "bull1": "First sentence",
+        "bull2": "Second sentence",
+        "bull3": "Third sentence"
+      }
+    },
     "website": {
       "intro": "Our expert team found the best way for you to quickly build your website",
       "li": "Unique and modern templates",
@@ -378,7 +390,6 @@
       "remember": "Remember the goal here is to show that you put in the effort."
     },
     "summary": {
-      "intro": "ffffff",
       "free": "for free",
       "importance": ""
     }
