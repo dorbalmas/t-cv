@@ -14,6 +14,8 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
+import { rtlLanguages } from '@/config/languages';
+
 import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
@@ -24,7 +26,7 @@ type Props = {
   children?: React.ReactNode;
 };
 const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const { isMobile } = useBreakpoints();
 
@@ -68,12 +70,27 @@ const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
     <ClickAwayListener onClickAway={handleTooltipClose}>
       <div className=" relative grid gap-2 w-full sm:col-span-2">
         {children}
-        <span className=" absolute top-3 right-0 z-10">
+        <span
+          className={
+            rtlLanguages.includes(i18n.language) ? ' absolute  top-3 left-0 z-10' : ' absolute  top-3 right-0 z-10'
+          }
+        >
           <HtmlTooltip
             arrow
-            placement={isMobile ? 'top-start' : 'right'}
+            placement={
+              rtlLanguages.includes(i18n.language)
+                ? isMobile
+                  ? 'top-start'
+                  : 'left'
+                : isMobile
+                ? 'top-start'
+                : 'right'
+            }
             title={
-              <div className="mx-auto pb-2 prose prose-invert text-neutral-50 mt-0">
+              <div
+                dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}
+                className="mx-auto pb-2 prose prose-invert text-neutral-50 mt-0"
+              >
                 <header className={styles.header}>
                   <div>
                     <h3>{t<string>('builder.tips.header')}</h3>

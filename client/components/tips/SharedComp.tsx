@@ -2,6 +2,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import styled from 'styled-components';
+
+import { rtlLanguages } from '@/config/languages';
 type Props = {
   open?: boolean;
 };
@@ -41,7 +43,7 @@ const FAQRowContent = styled.div<{ isOpen: boolean }>`
   transition: max-height 0.4s ease-in-out;
 `;
 const SharedComp: React.FC<Props> = ({ open }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setOpen] = useState<boolean>(open || false);
   return (
     <>
@@ -54,7 +56,13 @@ const SharedComp: React.FC<Props> = ({ open }) => {
       <FAQRowContent isOpen={isOpen}>
         {t<string>('builder.tips.shared.intro')}
 
-        <table className="table-auto text-neutral-900 bg-neutral-50 divide-slate-700 sm:rounded-md">
+        <table
+          className={
+            rtlLanguages.includes(i18n.language)
+              ? 'table-auto text-neutral-900 bg-neutral-50 divide-slate-700 sm:rounded-md text-right'
+              : 'table-auto text-neutral-900 bg-neutral-50 divide-slate-700 sm:rounded-md text-left'
+          }
+        >
           <thead>
             <tr>
               <th className="text-base text-neutral-700 py-2 pl-2">{t<string>('builder.tips.shared.table.header1')}</th>
