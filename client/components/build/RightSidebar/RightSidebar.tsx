@@ -37,14 +37,14 @@ const RightSidebar = () => {
   return (
     <SwipeableDrawer
       open={open}
-      anchor="right"
+      anchor={rtlLanguages.includes(i18n.language) ? 'left' : 'right'}
       onOpen={handleOpen}
       onClose={handleClose}
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
-        <nav>
+        <nav className={rtlLanguages.includes(i18n.language) ? 'left-0' : 'right-0'}>
           <div>
             <Avatar size={40} />
             <Divider />
@@ -66,7 +66,11 @@ const RightSidebar = () => {
           <div />
         </nav>
 
-        <main>
+        <main
+          className={
+            rtlLanguages.includes(i18n.language) ? 'left-12 right-0 md:left-16' : 'right-12 left-0 md:right-16'
+          }
+        >
           {right.map(({ id, component }) => (
             <section key={id} id={id}>
               {component}

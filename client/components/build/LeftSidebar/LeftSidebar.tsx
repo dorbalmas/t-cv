@@ -58,14 +58,14 @@ const LeftSidebar = () => {
   return (
     <SwipeableDrawer
       open={open}
-      anchor="left"
+      anchor={rtlLanguages.includes(i18n.language) ? 'right' : 'left'}
       onOpen={handleOpen}
       onClose={handleClose}
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
     >
       <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
-        <nav>
+        <nav className={rtlLanguages.includes(i18n.language) ? 'right-0' : 'left-0'}>
           <div>
             <Link href="/dashboard">
               <Button sx={{ backgroundColor: 'transparent' }} variant="text">
@@ -98,7 +98,11 @@ const LeftSidebar = () => {
           <div />
         </nav>
 
-        <main>
+        <main
+          className={
+            rtlLanguages.includes(i18n.language) ? 'right-12 left-0 md:right-16' : 'left-12 right-0 md:left-16'
+          }
+        >
           {left.map(({ id, component }) => (
             <section key={id} id={id}>
               {component}

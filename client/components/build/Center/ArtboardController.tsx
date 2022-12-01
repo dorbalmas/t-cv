@@ -20,6 +20,7 @@ import { useMutation } from 'react-query';
 import { ReactZoomPanPinchRef } from 'react-zoom-pan-pinch';
 import { ActionCreators } from 'redux-undo';
 
+import { rtlLanguages } from '@/config/languages';
 import { ServerError } from '@/services/axios';
 import { printResumeAsPdf, PrintResumeAsPdfParams } from '@/services/printer';
 import { togglePageBreakLine, togglePageOrientation, toggleSidebar } from '@/store/build/buildSlice';
@@ -29,7 +30,7 @@ import getResumeUrl from '@/utils/getResumeUrl';
 import styles from './ArtboardController.module.scss';
 
 const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, centerView }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const theme = useTheme();
   const dispatch = useAppDispatch();
@@ -77,8 +78,8 @@ const ArtboardController: React.FC<ReactZoomPanPinchRef> = ({ zoomIn, zoomOut, c
     <div
       className={clsx({
         [styles.container]: true,
-        [styles.pushLeft]: left.open,
-        [styles.pushRight]: right.open,
+        [styles.pushLeft]: rtlLanguages.includes(i18n.language) ? right.open : left.open,
+        [styles.pushRight]: rtlLanguages.includes(i18n.language) ? left.open : right.open,
       })}
     >
       <div className={styles.controller}>

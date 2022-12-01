@@ -89,7 +89,6 @@ const SharedComp: React.FC<Props> = ({ open }) => {
           </tbody>
         </table>
       </FAQRowContent>
-      <div>{t<string>('builder.tips.shared.intro1')} dfdf</div>
     </>
   );
 };

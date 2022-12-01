@@ -4,7 +4,7 @@
   @apply relative flex border-l-2 border-neutral-50/10;
 
   nav {
-    @apply absolute inset-y-0 right-0;
+    @apply absolute inset-y-0;
     @apply w-12 py-4 md:w-16 md:px-2;
     @apply shadow dark:bg-slate-800;
     @apply flex flex-col items-center justify-between;
@@ -25,7 +25,7 @@
 
   main {
     @apply overflow-y-scroll p-4;
-    @apply absolute inset-y-0 right-12 left-0 md:right-16;
+    @apply absolute inset-y-0;
 
     > section {
       @apply grid gap-4;

@@ -29,6 +29,7 @@ import { useEffect, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
+import { rtlLanguages } from '@/config/languages';
 import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
@@ -45,7 +46,7 @@ const Header = () => {
 
   const router = useRouter();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -142,11 +143,17 @@ const Header = () => {
         variant="regular"
         className={clsx({
           [styles.header]: true,
-          [styles.pushLeft]: left.open,
-          [styles.pushRight]: right.open,
+          [styles.pushLeft]: rtlLanguages.includes(i18n.language) ? right.open : left.open,
+          [styles.pushRight]: rtlLanguages.includes(i18n.language) ? left.open : right.open,
         })}
       >
-        <IconButton onClick={toggleLeftSidebar}>{left.open ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+        {rtlLanguages.includes(i18n.language) ? (
+          <IconButton onClick={toggleRightSidebar}>
+            {right.open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        ) : (
+          <IconButton onClick={toggleLeftSidebar}>{left.open ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+        )}
 
         <div className={styles.title}>
           <IconButton className="opacity-50 hover:opacity-100" onClick={goBack}>
@@ -207,7 +214,13 @@ const Header = () => {
           </Menu>
         </div>
 
-        <IconButton onClick={toggleRightSidebar}>{right.open ? <ChevronRightIcon /> : <ChevronLeftIcon />}</IconButton>
+        {rtlLanguages.includes(i18n.language) ? (
+          <IconButton onClick={toggleLeftSidebar}>{left.open ? <ChevronRightIcon /> : <ChevronLeftIcon />}</IconButton>
+        ) : (
+          <IconButton onClick={toggleRightSidebar}>
+            {right.open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+        )}
       </Toolbar>
     </AppBar>
   );
