@@ -1,11 +1,15 @@
 .container {
-  @apply m-4 grid gap-6 sm:mx-6;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @apply p-4 gap-6 sm:px-6 min-h-screen;
 
   header {
-    @apply flex items-center justify-between;
+    @apply flex h-11 justify-between;
   }
 }
 
 .resumes {
-  @apply grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6;
+  @apply pt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6;
 }

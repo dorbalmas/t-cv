@@ -110,7 +110,7 @@ export const FAQContainer = styled.section``;
 export const FAQContainerContent = styled.div`
   position: relative;
   overflow-x: hidden;
-  background: #fafafa;
+  background: #f5f5f5;
   border-top: 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
   padding-top: calc(18rem * 0.625);

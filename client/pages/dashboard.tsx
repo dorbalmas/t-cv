@@ -13,10 +13,11 @@ import ResumePreview from '@/components/dashboard/ResumePreview';
 import Avatar from '@/components/shared/Avatar';
 import Logo from '@/components/shared/Logo';
 import { RESUMES_QUERY } from '@/constants/index';
+import layered from '@/public/images/layered-waves-haikei.svg';
+import layeredLight from '@/public/images/layered-waves-haikei-light.svg';
 import { fetchResumes } from '@/services/resume';
-import { useAppDispatch } from '@/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import styles from '@/styles/pages/Dashboard.module.scss';
-
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
     props: {
@@ -30,6 +31,8 @@ const Dashboard: NextPage = () => {
 
   const dispatch = useAppDispatch();
 
+  const theme = useAppSelector((state) => state.build.theme);
+
   const { data } = useQuery(RESUMES_QUERY, fetchResumes);
 
   useEffect(() => {
@@ -39,7 +42,12 @@ const Dashboard: NextPage = () => {
   if (!data) return null;
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        backgroundImage: theme === 'dark' ? `url(${layered.src})` : `url(${layeredLight.src})`,
+      }}
+    >
       <Head>
         <title>
           {t<string>('dashboard.title')} | {t<string>('common.title')}
