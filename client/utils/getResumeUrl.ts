@@ -27,7 +27,7 @@ const getResumeUrl = (resume: Resume, options: Options = defaultOptions): string
   }
 
   url = options.withHost ? `${hostname}` : url;
-  url = options.shortUrl ? `${url}/r/${shortId}` : `${url}/${username}/${slug}`;
+  url = options.shortUrl ? `${url}/t/${shortId}` : `${url}/${username}/${slug}`;
   url = options.buildUrl ? `${url}/build` : url;
 
   return url;

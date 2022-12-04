@@ -1,0 +1,8 @@
+.list {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  li::marker {
+    content: '✦';
+    color: #fafafa;
+  }
+}

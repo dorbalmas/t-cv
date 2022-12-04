@@ -1,4 +1,4 @@
-import { Add, ImportExport } from '@mui/icons-material';
+import { Add } from '@mui/icons-material';
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -21,7 +21,7 @@ import styles from '@/styles/pages/Dashboard.module.scss';
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'modals', 'dashboard'])),
+      ...(await serverSideTranslations(locale, ['common', 'modals', 'dashboard', 'builder'])),
     },
   };
 };
@@ -72,12 +72,12 @@ const Dashboard: NextPage = () => {
           subtitle={t<string>('dashboard.create-resume.subtitle')}
         />
 
-        <ResumeCard
+        {/* <ResumeCard
           modal="dashboard.import-external"
           icon={ImportExport}
           title={t<string>('dashboard.import-external.title')}
           subtitle={t<string>('dashboard.import-external.subtitle')}
-        />
+        /> */}
 
         {data.map((resume) => (
           <ResumePreview key={resume.id} resume={resume} />

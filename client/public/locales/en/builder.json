@@ -369,7 +369,8 @@
     }
   },
   "tips": {
-    "header": "Tips & Guidance",
+    "header": "Experts Tips & Guidance",
+    "iconText": "TIPS",
     "shared": {
       "markdown": "Markdown Syntax",
       "intro": "Catch the reader's eye using the following ways:",
@@ -384,7 +385,7 @@
       }
     },
     "website": {
-      "intro": "Our expert team found the best way for you to quickly build your website",
+      "intro": "Our expert team found the best way for you to quickly build your website.",
       "li": "Unique and modern templates",
       "free": "for free",
       "remember": "Remember the goal here is to show that you put in the effort."
@@ -392,6 +393,12 @@
     "summary": {
       "free": "for free",
       "importance": ""
+    },
+    "addResume": {
+      "intro": "Show a personal attitude to the company you want to join!",
+      "li1": "After you have finished preparing your resume, click on the 'Duplicate' option and start making the necessary adjustments according to the company's requirements detailed in the job description.",
+
+      "closure": "Studies has shown that hiring managers will rate your resume higher if you make adjustments by job description."
     }
   }
 }

@@ -6,7 +6,7 @@ import {
   MoreVert,
   OpenInNew,
 } from '@mui/icons-material';
-import { ButtonBase, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
+import { ButtonBase, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, Tooltip } from '@mui/material';
 import { Resume } from '@reactive-resume/schema';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -107,6 +107,11 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
 
   return (
     <section className={styles.resume}>
+      <span>
+        <IconButton className={styles.menu} onClick={handleOpenMenu}>
+          <MoreVert />
+        </IconButton>
+      </span>
       <Link
         passHref
         href={{
@@ -126,10 +131,6 @@ const ResumePreview: React.FC<Props> = ({ resume }) => {
           <p>{resume.name}</p>
           <p>{t<string>('dashboard.resume.timestamp', { timestamp: getRelativeTime(resume.updatedAt) })}</p>
         </div>
-
-        <ButtonBase className={styles.menu} onClick={handleOpenMenu}>
-          <MoreVert />
-        </ButtonBase>
 
         <Menu anchorEl={anchorEl} onClose={handleClose} open={Boolean(anchorEl)}>
           <MenuItem onClick={handleOpen}>

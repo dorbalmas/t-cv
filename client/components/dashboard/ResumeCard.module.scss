@@ -1,15 +1,14 @@
 .resume {
-  @apply flex flex-col gap-2;
-
+  @apply flex flex-col;
   .preview {
     aspect-ratio: 1 / 1.41;
 
     @apply flex items-center justify-center shadow;
-    @apply cursor-pointer rounded-sm bg-neutral-100 transition-opacity hover:opacity-80 dark:bg-neutral-800;
+    @apply cursor-pointer rounded-sm bg-neutral-50 transition-opacity hover:opacity-50 dark:bg-slate-900;
   }
 
   footer {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-center text-center pt-2;
 
     .meta {
       p:first-child {

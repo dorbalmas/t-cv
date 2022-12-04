@@ -17,15 +17,17 @@ import { useState } from 'react';
 import { rtlLanguages } from '@/config/languages';
 
 import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
+import AddResume from '../tips/AddResume';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
 import styles from './Tips.module.scss';
 
 type Props = {
   tipsTitle: string;
+  top?: string;
   children?: React.ReactNode;
 };
-const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
+const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const { isMobile } = useBreakpoints();
@@ -72,8 +74,11 @@ const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
         {children}
         <span
           className={
-            rtlLanguages.includes(i18n.language) ? ' absolute  top-3 left-0 z-10' : ' absolute  top-3 right-0 z-10'
+            rtlLanguages.includes(i18n.language)
+              ? `absolute ${tipsTitle === 'addResume' ? 'right-0' : 'left-0'} z-10`
+              : `absolute right-0 z-10`
           }
+          style={{ top: top ? top : '0.75rem' }}
         >
           <HtmlTooltip
             arrow
@@ -89,7 +94,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
             title={
               <div
                 dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}
-                className="mx-auto pb-2 prose prose-invert text-neutral-50 mt-0"
+                className="mx-auto pb-2 prose prose-invert text-neutral-50 text-sm mt-0"
               >
                 <header className={styles.header}>
                   <div>
@@ -100,14 +105,22 @@ const Tips: React.FC<Props> = ({ tipsTitle, children }) => {
                   </IconButton>
                 </header>
                 <Divider style={{ marginBottom: '0.7rem' }} />
-                {tipsTitle === 'website' ? <Website /> : ''}
-                {tipsTitle === 'summary' ? <Summary /> : ''}
+                {tipsTitle === 'website' ? <Website /> : null}
+                {tipsTitle === 'summary' ? <Summary /> : null}
+                {tipsTitle === 'addResume' ? <AddResume /> : null}
               </div>
             }
           >
             <InputAdornment position="start">
-              <IconButton edge="end" color="info" onClick={handleTooltipOpen}>
-                <TipsAndUpdatesIcon htmlColor="#36BBF7" fontSize="small" />
+              <IconButton edge="end" disableRipple style={{ color: '#36BBF7' }} onClick={handleTooltipOpen}>
+                {tipsTitle === 'addResume' ? (
+                  <span className="text-lg font-semibold tracking-wide	">
+                    {t<string>('builder.tips.iconText')}&nbsp;
+                  </span>
+                ) : (
+                  ''
+                )}
+                <TipsAndUpdatesIcon htmlColor="#36BBF7" fontSize={tipsTitle === 'addResume' ? 'large' : 'small'} />
               </IconButton>
             </InputAdornment>
           </HtmlTooltip>

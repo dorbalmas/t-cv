@@ -4,6 +4,7 @@ import { ButtonBase } from '@mui/material';
 import { useAppDispatch } from '@/store/hooks';
 import { ModalName, setModalState } from '@/store/modal/modalSlice';
 
+import Tips from '../shared/Tips';
 import styles from './ResumeCard.module.scss';
 
 type Props = {
@@ -22,8 +23,9 @@ const ResumeCard: React.FC<Props> = ({ modal, icon: Icon, title, subtitle }) => 
 
   return (
     <section className={styles.resume}>
+      <Tips tipsTitle="addResume" top="1.2rem" />
       <ButtonBase className={styles.preview} onClick={handleClick}>
-        <Icon sx={{ fontSize: 64 }} />
+        <Icon sx={{ fontSize: 84 }} />
       </ButtonBase>
 
       <footer>

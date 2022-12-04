@@ -54,7 +54,7 @@ const SharedComp: React.FC<Props> = ({ open }) => {
         </PlusIcon>
       </Button>
       <FAQRowContent isOpen={isOpen}>
-        {t<string>('builder.tips.shared.intro')}
+        <div className="rtl:text-right">{t<string>('builder.tips.shared.intro')}</div>
 
         <table
           className={

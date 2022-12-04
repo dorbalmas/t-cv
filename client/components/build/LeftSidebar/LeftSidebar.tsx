@@ -2,6 +2,7 @@ import { Add, Star } from '@mui/icons-material';
 import { Button, IconButton, SwipeableDrawer, Tooltip, useMediaQuery, useTheme } from '@mui/material';
 import { Section as SectionRecord } from '@reactive-resume/schema';
 import get from 'lodash/get';
+import Img from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
@@ -9,6 +10,8 @@ import { validate } from 'uuid';
 
 import { rtlLanguages } from '@/config/languages';
 import { getCustomSections, left } from '@/config/sections';
+import paperDark from '@/public/images/paperDark.png';
+import paperLight from '@/public/images/paperLight.png';
 import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { addSection } from '@/store/resume/resumeSlice';
@@ -68,9 +71,9 @@ const LeftSidebar = () => {
         <nav className={rtlLanguages.includes(i18n.language) ? 'right-0' : 'left-0'}>
           <div>
             <Link href="/dashboard">
-              <Button sx={{ backgroundColor: 'transparent' }} variant="text">
-                <Add sx={{ fontSize: '2rem' }} />
-              </Button>
+              <IconButton>
+                {theme.palette.mode === 'dark' ? <Img src={paperDark} /> : <Img src={paperLight} />}
+              </IconButton>
             </Link>
           </div>
 
