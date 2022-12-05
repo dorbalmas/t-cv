@@ -32,7 +32,7 @@ import { DIGITALOCEAN_URL, DONATION_URL } from '../constants';
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'modals', 'landing'])),
+      ...(await serverSideTranslations(locale, ['common', 'modals', 'landing', 'builder'])),
     },
   };
 };

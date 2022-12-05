@@ -9,8 +9,8 @@ const AddResume = () => {
     <>
       <div>{t<string>('builder.tips.addResume.intro')}</div>
       <ul className={styles.list}>
-        <li className="rtl:mr-4">
-          <div className="rtl:mr-1">{t<string>('builder.tips.addResume.li1')}</div>
+        <li>
+          <div>{t<string>('builder.tips.addResume.li1')}</div>
         </li>
       </ul>
       <div>{t<string>('builder.tips.addResume.closure')}</div>

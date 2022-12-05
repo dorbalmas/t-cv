@@ -10,6 +10,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
+import Tips from '@/components/shared/Tips';
 import { VALID_URL_REGEX } from '@/constants/index';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -130,14 +131,16 @@ const ProfileModal: React.FC = () => {
           name="url"
           control={control}
           render={({ field, fieldState }) => (
-            <TextField
-              label={t<string>('builder.common.form.url.label')}
-              className="col-span-2"
-              placeholder="https://"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
+            <Tips tipsTitle="profiles">
+              <TextField
+                label={t<string>('builder.common.form.url.label')}
+                className="col-span-2"
+                placeholder="https://"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            </Tips>
           )}
         />
       </form>

@@ -18,6 +18,7 @@ import { rtlLanguages } from '@/config/languages';
 
 import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
 import AddResume from '../tips/AddResume';
+import Profiles from '../tips/Profiles';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
 import styles from './Tips.module.scss';
@@ -108,6 +109,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'website' ? <Website /> : null}
                 {tipsTitle === 'summary' ? <Summary /> : null}
                 {tipsTitle === 'addResume' ? <AddResume /> : null}
+                {tipsTitle === 'profiles' ? <Profiles /> : null}
               </div>
             }
           >

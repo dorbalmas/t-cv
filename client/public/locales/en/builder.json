@@ -396,9 +396,13 @@
     },
     "addResume": {
       "intro": "Show a personal attitude to the company you want to join!",
-      "li1": "After you have finished preparing your resume, click on the 'Duplicate' option and start making the necessary adjustments according to the company's requirements detailed in the job description.",
-
+      "li1": "After you have finished preparing your resume, click on the 'Duplicate' option and start making the necessary adjustments according to the job description.",
       "closure": "Studies has shown that hiring managers will rate your resume higher if you make adjustments by job description."
+    },
+    "profiles": {
+      "li1": "Add only relevant links to your position.",
+      "li2": "Hiring managers can easily find all your other social networks ,so clean them from anything that could make you look bad.",
+      "li3": "Community that allows employers and employees to contact each other directly, it is a great opportunity to surround yourself with people in your field."
     }
   }
 }

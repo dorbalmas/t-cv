@@ -1,8 +1,13 @@
 .list {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  li::marker {
-    content: '✦';
-    color: #fafafa;
+  @apply list-outside mt-1 mb-1;
+  li {
+    @apply rtl:mr-4;
+    div {
+      @apply rtl:mr-1;
+    }
+    &::marker {
+      content: '✦';
+      color: #fafafa;
+    }
   }
 }
