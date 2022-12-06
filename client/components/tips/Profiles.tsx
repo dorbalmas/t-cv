@@ -17,12 +17,15 @@ const Profiles = () => {
           <div>{t<string>('builder.tips.profiles.li2')}</div>
         </li>
         <li>
-          <Link href={'https://www.linkedin.com/'} passHref>
-            <a className="rtl:mr-1" target="_blank" rel="noopener noreferrer">
-              Linkedin
-            </a>
-          </Link>
-          <span> - {t<string>('builder.tips.profiles.li3')}</span>
+          <div>
+            {' '}
+            <Link href={'https://www.linkedin.com/'} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                Linkedin
+              </a>
+            </Link>
+            <span> - {t<string>('builder.tips.profiles.li3')}</span>
+          </div>
         </li>
       </ul>
     </>

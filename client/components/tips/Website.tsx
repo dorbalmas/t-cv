@@ -10,14 +10,17 @@ const Website = () => {
     <>
       <div>{t<string>('builder.tips.website.intro')}</div>
       <ul className={styles.list}>
-        <li className="text-neutral-50 rtl:mr-4">
-          <Link href={'https://carrd.co/build'} passHref>
-            <a className="text-neutral-50 rtl:mr-1" target="_blank" rel="noopener noreferrer">
-              carrd.co
-            </a>
-          </Link>{' '}
-          - {t<string>('builder.tips.website.li')}
-          <b className="tracking-wide"> {t<string>('builder.tips.website.free')}!!!</b>
+        <li>
+          <div>
+            {' '}
+            <Link href={'https://carrd.co/build'} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                carrd.co
+              </a>
+            </Link>{' '}
+            - {t<string>('builder.tips.website.li')}
+            <b className="tracking-wide"> {t<string>('builder.tips.website.free')}!!!</b>
+          </div>
         </li>
       </ul>
       <div className="text-sm">{t<string>('builder.tips.website.remember')}</div>

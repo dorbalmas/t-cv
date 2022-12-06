@@ -1,9 +1,8 @@
 .list {
-  @apply list-outside mt-1 mb-1;
+  @apply list-outside mt-1 mb-1 rtl:mr-3;
   li {
-    @apply rtl:mr-4;
     div {
-      @apply rtl:mr-1;
+      @apply rtl:mr-2;
     }
     &::marker {
       content: '✦';

@@ -78,6 +78,44 @@ export const lightTheme = (directions: any) =>
           disableRipple: true,
         },
       },
+      MuiSwitch: {
+        styleOverrides: {
+          root: {
+            width: 42,
+            height: 26,
+            padding: 0,
+          },
+          switchBase: {
+            padding: 0,
+            margin: 2,
+            transitionDuration: '300ms',
+            '&.Mui-checked': {
+              transform: 'translateX(16px)',
+              color: '#fff',
+              '& + .MuiSwitch-track': {
+                backgroundColor: '#37BCF8',
+                opacity: 1,
+                border: 0,
+              },
+              '&.Mui-disabled + .MuiSwitch-track': {
+                opacity: 0.5,
+              },
+            },
+          },
+          track: {
+            borderRadius: 26 / 2,
+            backgroundColor: '#8796A5',
+
+            opacity: 1,
+            transitionDuration: '300ms',
+          },
+          thumb: {
+            boxSizing: 'border-box',
+            width: 22,
+            height: 22,
+          },
+        },
+      },
       MuiMenu: {
         styleOverrides: {
           paper: {
@@ -134,10 +172,10 @@ export const lightTheme = (directions: any) =>
           root: {
             textTransform: 'none',
             padding: '6px 20px',
-            color: '#0084c7',
+            color: '#37BCF8',
             backgroundColor: '#DCF2FE',
             '&:hover': {
-              backgroundColor: '#0084c7',
+              backgroundColor: '#37BCF8',
               color: '#fff',
             },
           },
@@ -165,6 +203,44 @@ export const darkTheme = (directions: any) =>
       MuiButtonBase: {
         defaultProps: {
           disableRipple: true,
+        },
+      },
+      MuiSwitch: {
+        styleOverrides: {
+          root: {
+            width: 42,
+            height: 26,
+            padding: 0,
+          },
+          switchBase: {
+            padding: 0,
+            margin: 2,
+            transitionDuration: '300ms',
+            '&.Mui-checked': {
+              transform: 'translateX(16px)',
+              color: '#fff',
+              '& + .MuiSwitch-track': {
+                backgroundColor: '#37BCF8',
+                opacity: 1,
+                border: 0,
+              },
+              '&.Mui-disabled + .MuiSwitch-track': {
+                opacity: 0.5,
+              },
+            },
+          },
+          track: {
+            borderRadius: 26 / 2,
+            backgroundColor: '#8796A5',
+
+            opacity: 1,
+            transitionDuration: '300ms',
+          },
+          thumb: {
+            boxSizing: 'border-box',
+            width: 22,
+            height: 22,
+          },
         },
       },
       MuiMenu: {
