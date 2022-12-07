@@ -4,7 +4,6 @@ import {
   CopyAll,
   Delete,
   DriveFileRenameOutline,
-  Home as HomeIcon,
   KeyboardArrowDown as KeyboardArrowDownIcon,
   Link as LinkIcon,
 } from '@mui/icons-material';
@@ -29,6 +28,7 @@ import { useEffect, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 import { rtlLanguages } from '@/config/languages';
 import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
@@ -156,16 +156,15 @@ const Header = () => {
         )}
 
         <div className={styles.title}>
-          <IconButton className="opacity-50 hover:opacity-100" onClick={goBack}>
-            <HomeIcon />
-          </IconButton>
+          <span className="mr-2 mb-1 transition ease-in-out duration-500 hover:scale-125 duration-300">
+            <LanguageSwitcher />
+          </span>
 
           <span className="opacity-50">{'/'}</span>
 
           <h1>{name}</h1>
-
           <IconButton disableRipple onClick={handleClick}>
-            <KeyboardArrowDownIcon />
+            <KeyboardArrowDownIcon style={{ fontSize: '1.2rem' }} />
           </IconButton>
 
           <Menu open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={handleClose}>

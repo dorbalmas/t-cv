@@ -1,13 +1,13 @@
 import { Language } from '@mui/icons-material';
-import { IconButton, Menu, MenuItem } from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { MouseEvent, useState } from 'react';
 
 import { languages } from '@/config/languages';
 // import { TRANSLATE_URL } from '@/constants/index';
-
-const LanguageSwitcher = () => {
+type Props = { isName?: boolean };
+const LanguageSwitcher: React.FC<Props> = ({ isName }) => {
   const { i18n } = useTranslation();
 
   const router = useRouter();
@@ -32,12 +32,14 @@ const LanguageSwitcher = () => {
 
   return (
     <div>
-      <IconButton style={{ paddingBottom: 0 }} onClick={handleClick}>
+      <button style={{ paddingBottom: 0 }} onClick={handleClick}>
         <Language />
-        {languages.map(({ code, name }) =>
-          i18n.language == code ? <div className="text-sm text-gray-900 font-light">{name}</div> : ''
-        )}
-      </IconButton>
+        {isName
+          ? languages.map(({ code, name }) =>
+              i18n.language == code ? <div className="text-sm text-gray-900 font-light">{name}</div> : ''
+            )
+          : ''}
+      </button>
 
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         {languages.map(({ code, name, localName }) => (

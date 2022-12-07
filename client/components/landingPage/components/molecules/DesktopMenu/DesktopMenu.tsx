@@ -106,7 +106,7 @@ export const DesktopMenu = ({ activeItem, setActiveItem, scrollToTop, isMobile, 
         <S.Decoration onClick={() => handleClick('FAQ')}>FAQ</S.Decoration>
       </S.Item>
       <S.ItemLanguageSwitcher>
-        <LanguageSwitcher />
+        <LanguageSwitcher isName />
       </S.ItemLanguageSwitcher>
       {/* <div onMouseOver={onMouseOver('blog')} {...props} /> */}
     </S.Menu>

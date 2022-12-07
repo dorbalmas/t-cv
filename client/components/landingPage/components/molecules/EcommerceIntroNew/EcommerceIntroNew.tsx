@@ -33,7 +33,7 @@ export const EcommerceIntroNew = React.forwardRef<HTMLDivElement>((_, ref) => {
         <div></div>
       </S.BlogPost>
       <S.LanguageSwitcherContainer>
-        <LanguageSwitcher />
+        <LanguageSwitcher isName />
       </S.LanguageSwitcherContainer>
       <S.Title>
         <b>The commerce API that puts developers first</b>
