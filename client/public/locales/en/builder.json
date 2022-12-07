@@ -385,14 +385,16 @@
       }
     },
     "website": {
-      "intro": "Our expert team found the best way for you to quickly build your website.",
-      "li": "Unique and modern templates",
+      "intro": "Once you've finished preparing your resume, you can take the way you present yourself to the next level by building a website.",
+      "li": "unique and modern templates",
       "free": "for free",
-      "remember": "Remember the goal here is to show that you put in the effort."
+      "quick": "(quick & easy)",
+      "remember": "Remember: the goal here is to show that you put in the effort."
     },
     "summary": {
-      "free": "for free",
-      "importance": ""
+      "intro": "This is the first section and sometimes the only section that recruiters will read, so make sure to write the most important and relevant qualifications for the position.",
+      "li1": "Write your summary in the present tense.",
+      "li2": "This is your time to convince the hiring manager, you have the right values for the position so don't be afraid to brag!"
     },
     "addResume": {
       "intro": "Show a personal attitude to the company you want to join!",

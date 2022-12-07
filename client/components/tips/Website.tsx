@@ -19,7 +19,10 @@ const Website = () => {
               </a>
             </Link>{' '}
             - {t<string>('builder.tips.website.li')}
-            <b className="tracking-wide"> {t<string>('builder.tips.website.free')}!!!</b>
+            <b className="tracking-wide">
+              {' '}
+              {t<string>('builder.tips.website.free')}!!! {t<string>('builder.tips.website.quick')}
+            </b>
           </div>
         </li>
       </ul>

@@ -8,9 +8,10 @@ type Props = {
   open?: boolean;
 };
 
-const Button = styled.button`
-  color: white;
-  border: 2px solid white;
+const Button = styled.button<{ isOpen: boolean }>`
+  color: ${(props) => (props.isOpen ? `#37baf6` : `#fafafa`)};
+  background-color: ${(props) => (props.isOpen ? `#fafafa` : `#37baf6`)};
+  border: 2px solid #fafafa;
   width: 100%;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
@@ -18,13 +19,13 @@ const Button = styled.button`
   font-weight: 400;
   border-radius: 4px;
   outline: none;
-  margin-top: 2rem;
+  margin-top: 0.4rem;
   margin-bottom: calc(2rem * 0.625);
   transition: 300ms;
   transform: scale(1);
   &:hover:not(:disabled),
   &:active {
-    background-color: white;
+    background-color: #fafafa;
     color: #37baf6;
   }
 `;
@@ -47,7 +48,7 @@ const SharedComp: React.FC<Props> = ({ open }) => {
   const [isOpen, setOpen] = useState<boolean>(open || false);
   return (
     <>
-      <Button onClick={() => setOpen((isOpen) => !isOpen)}>
+      <Button isOpen={isOpen} onClick={() => setOpen((isOpen) => !isOpen)}>
         {t<string>('builder.tips.shared.markdown')}
         <PlusIcon active={isOpen}>
           <KeyboardArrowDownIcon />
@@ -57,11 +58,9 @@ const SharedComp: React.FC<Props> = ({ open }) => {
         <div className="rtl:text-right">{t<string>('builder.tips.shared.intro')}</div>
 
         <table
-          className={
-            rtlLanguages.includes(i18n.language)
-              ? 'table-auto text-neutral-900 bg-neutral-50 divide-slate-700 sm:rounded-md text-right'
-              : 'table-auto text-neutral-900 bg-neutral-50 divide-slate-700 sm:rounded-md text-left'
-          }
+          className={`table-auto text-neutral-900 bg-neutral-50 divide-slate-700 mt-3 mb-3 sm:rounded-md text-${
+            rtlLanguages.includes(i18n.language) ? 'right' : 'left'
+          }`}
         >
           <thead>
             <tr>
