@@ -63,7 +63,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: '#36BBF7',
       //   color: '#36BBF7',
-      //   maxWidth: 280,
+      maxWidth: isMobile ? null : 400,
       filter: 'drop-shadow(0px 0px 5px rgba(0, 0, 0, .5))',
       //   fontSize: theme.typography.pxToRem(12),
     },
@@ -86,12 +86,21 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
             placement={
               rtlLanguages.includes(i18n.language)
                 ? isMobile
-                  ? 'top-start'
+                  ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-start`
                   : 'left'
                 : isMobile
-                ? 'top-start'
+                ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-end`
                 : 'right'
             }
+            // placement={
+            //   rtlLanguages.includes(i18n.language)
+            //     ? isMobile
+            //       ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-start`
+            //       : 'left'
+            //     : isMobile
+            //     ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-end`
+            //     : 'right'
+            // }
             title={
               <div
                 dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}
