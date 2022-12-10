@@ -35,7 +35,7 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
       - name: Build Client Image
-        uses: docker/build-push-action@v3.1.1
+        uses: docker/build-push-action@v3.2.0
         with:
           context: .
           push: false
@@ -75,7 +75,7 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
       - name: Build Server Image
-        uses: docker/build-push-action@v3.1.1
+        uses: docker/build-push-action@v3.2.0
         with:
           context: .
           push: false
