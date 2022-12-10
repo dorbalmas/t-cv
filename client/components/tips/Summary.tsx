@@ -2,7 +2,7 @@
 
 import { useTranslation } from 'next-i18next';
 
-import SharedComp from './SharedComp';
+import CustomSuggestions from './CustomSuggestions';
 import styles from './styles.module.scss';
 
 const Summary = () => {
@@ -19,7 +19,7 @@ const Summary = () => {
           <div>{t<string>('builder.tips.summary.li2')}</div>
         </li>
       </ul>
-      <SharedComp open />
+      <CustomSuggestions />
     </>
   );
 };

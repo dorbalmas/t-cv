@@ -92,15 +92,6 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-end`
                 : 'right'
             }
-            // placement={
-            //   rtlLanguages.includes(i18n.language)
-            //     ? isMobile
-            //       ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-start`
-            //       : 'left'
-            //     : isMobile
-            //     ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-end`
-            //     : 'right'
-            // }
             title={
               <div
                 dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}

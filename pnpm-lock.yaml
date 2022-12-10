@@ -94,6 +94,7 @@ importers:
       react-markdown: ^8.0.3
       react-query: ^3.39.2
       react-redux: ^8.0.2
+      react-string-replace: ^1.1.0
       react-zoom-pan-pinch: ^2.1.3
       redux: ^4.2.0
       redux-persist: ^6.0.0
@@ -148,6 +149,7 @@ importers:
       react-markdown: 8.0.3_ug65io7jkbhmo4fihdmbrh3ina
       react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
       react-redux: 8.0.2_ps4ywwwjjeajezffxxirqk36qa
+      react-string-replace: 1.1.0
       react-zoom-pan-pinch: 2.1.3_biqbaboplfbrettd7655fr4n2y
       redux: 4.2.0
       redux-persist: 6.0.0_redux@4.2.0
@@ -8167,6 +8169,11 @@ packages:
       react-is: 18.1.0
       redux: 4.2.0
       use-sync-external-store: 1.1.0_react@18.2.0
+    dev: false
+
+  /react-string-replace/1.1.0:
+    resolution: {integrity: sha512-N6RalSDFGbOHs0IJi1H611WbZsvk3ZT47Jl2JEXFbiS3kTwsdCYij70Keo/tWtLy7sfhDsYm7CwNM/WmjXIaMw==}
+    engines: {node: '>=0.12.0'}
     dev: false
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
