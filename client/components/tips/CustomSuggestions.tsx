@@ -6,14 +6,15 @@ import { rtlLanguages } from '@/config/languages';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 
-type Props = {
-  text: string;
+type PropsItem = {
+  text?: string;
+  title: string;
 };
-const Item: React.FC<Props> = ({ text }) => {
+const Item: React.FC<PropsItem> = ({ text, title }) => {
   const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
   const { summary } = useAppSelector((state) => state.resume.present.basics);
-  const path = 'basics.summary';
+  const path = title === 'summary' ? 'basics.summary' : '';
 
   const onClick = () => {
     dispatch(setResumeState({ path, value: summary + `${summary.length === 0 ? '' : ' '}` + text }));
@@ -28,9 +29,9 @@ const Item: React.FC<Props> = ({ text }) => {
         }`}
         style={{ cursor: 'copy' }}
       >
-        {reactStringReplace(text, /\[([^\^]*)\]/g, (match, i) => (
+        {reactStringReplace(text, /(\[.*?\])/g, (match, i) => (
           <span key={i} style={{ color: '#36BBF7' }}>
-            [{match}]
+            {match}
           </span>
         ))}
       </div>
@@ -41,14 +42,14 @@ const Item: React.FC<Props> = ({ text }) => {
   );
 };
 
-const CustomSuggestions = () => {
+const CustomSuggestions: React.FC<PropsItem> = ({ title }) => {
   const { t } = useTranslation();
 
   return (
     <>
       <div className="text-neutral-900 bg-neutral-50 mt-3 mb-3">
         {[...Array(3)].map((e, i) => {
-          return <Item key={i} text={t<string>(`builder.tips.summary.generic.${i}`)} />;
+          return <Item key={i} title={title} text={t<string>(`builder.tips.${title}.generic.${i}`)} />;
         })}
       </div>
     </>

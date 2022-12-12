@@ -19,7 +19,7 @@ const Summary = () => {
           <div>{t<string>('builder.tips.summary.li2')}</div>
         </li>
       </ul>
-      <CustomSuggestions />
+      <CustomSuggestions title="summary" />
     </>
   );
 };
