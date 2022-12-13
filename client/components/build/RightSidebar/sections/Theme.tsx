@@ -1,12 +1,14 @@
+import { Grade } from '@mui/icons-material';
 import { List, ListItem, ListItemText, Switch } from '@mui/material';
 import { Theme as ThemeType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 
 import ColorAvatar from '@/components/shared/ColorAvatar';
 import ColorPicker from '@/components/shared/ColorPicker';
-import Heading from '@/components/shared/Heading';
 import { colorOptions } from '@/config/colors';
+import sections from '@/config/sections';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 
@@ -16,6 +18,12 @@ const Theme = () => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
+
+  const name = t<string>('builder.rightSidebar.sections.theme.heading');
+  const path = 'metadata.theme';
+  const id = useMemo(() => path.split('.')[1], [path]);
+  const icon = sections.find((x) => x.id === id)?.icon || <Grade />;
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
 
   const { background, text, primary, gradient, isGradient } = useAppSelector<ThemeType>((state) =>
     get(state.resume.present, 'metadata.theme')
@@ -30,8 +38,10 @@ const Theme = () => {
 
   return (
     <>
-      <Heading path="metadata.theme" name={t<string>('builder.rightSidebar.sections.theme.heading')} />
-
+      <div className="flex w-full items-center gap-3">
+        <div className="opacity-50">{icon}</div>
+        <h1 className="text-2xl">{heading}</h1>
+      </div>
       <div className={styles.container}>
         <div className={styles.colorOptions}>
           {colorOptions.map((color) => (

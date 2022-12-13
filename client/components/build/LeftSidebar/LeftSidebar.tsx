@@ -83,7 +83,7 @@ const LeftSidebar = () => {
                 arrow
                 key={id}
                 placement="right"
-                title={get(sections, `${id}.name`, t<string>(`builder.leftSidebar.sections.${id}.heading`)) as string}
+                title={t<string>(`builder.leftSidebar.sections.${id}.heading`) as string}
               >
                 <IconButton onClick={() => handleClick(id)}>{icon}</IconButton>
               </Tooltip>
@@ -120,9 +120,11 @@ const LeftSidebar = () => {
 
           <div className="py-6 text-right">
             <Button fullWidth variant="outlined" startIcon={<Add />} onClick={handleAddSection}>
-              {t<string>('builder.common.actions.add', {
-                token: t<string>('builder.leftSidebar.sections.section.heading'),
-              })}
+              <span className="rtl:mr-2">
+                {t<string>('builder.common.actions.add') +
+                  ' ' +
+                  t<string>('builder.leftSidebar.sections.section.heading_one')}
+              </span>
             </Button>
           </div>
         </main>

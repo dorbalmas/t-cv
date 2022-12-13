@@ -42,13 +42,10 @@ const ProfileModal: React.FC = () => {
 
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
+  const heading: any = t<string>('builder.leftSidebar.sections.profiles.heading_one');
 
-  const addText = t<string>('builder.common.actions.add', {
-    token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
-  });
-  const editText = t<string>('builder.common.actions.edit', {
-    token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
-  });
+  const addText = t<string>('builder.common.actions.add') + ' ' + heading;
+  const editText = t<string>('builder.common.actions.edit') + ' ' + heading;
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,

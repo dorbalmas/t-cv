@@ -1,9 +1,9 @@
 {
   "common": {
     "actions": {
-      "add": "Add New {{token}}",
-      "delete": "Delete {{token}}",
-      "edit": "Edit {{token}}"
+      "add": "Add ",
+      "delete": "Delete ",
+      "edit": "Edit "
     },
     "columns": {
       "heading": "Columns",
@@ -108,7 +108,9 @@
           "awarder": {
             "label": "Awarder"
           }
-        }
+        },
+        "heading": "Awards",
+        "heading_one": "Award"
       },
       "basics": {
         "actions": {
@@ -153,7 +155,9 @@
           "issuer": {
             "label": "Issuer"
           }
-        }
+        },
+        "heading": "Certifications",
+        "heading_one": "Certification"
       },
       "education": {
         "form": {
@@ -172,7 +176,9 @@
           "institution": {
             "label": "Institution"
           }
-        }
+        },
+        "heading": "Education",
+        "heading_one": "Education"
       },
       "location": {
         "address": {
@@ -204,29 +210,61 @@
         "heading": "Profiles",
         "heading_one": "Profile"
       },
+      "work": {
+        "form": {
+          "name": {
+            "label": "Company Name"
+          }
+        },
+        "heading": "Work Experience",
+        "heading_one": "Work Experience"
+      },
+      "projects": {
+        "heading": "Projects",
+        "heading_one": "Project"
+      },
+      "skills": {
+        "heading": "Skills",
+        "heading_one": "Skill"
+      },
+      "interests": {
+        "heading": "Interests",
+        "heading_one": "Interest"
+      },
+      "languages": {
+        "heading": "Languages",
+        "heading_one": "Language"
+      },
       "publications": {
         "form": {
           "publisher": {
             "label": "Publisher"
           }
-        }
+        },
+        "heading": "Publications",
+        "heading_one": "Publication"
       },
       "references": {
         "form": {
           "relationship": {
             "label": "Relationship"
           }
-        }
+        },
+        "heading": "References",
+        "heading_one": "Reference"
       },
       "section": {
-        "heading": "Section"
+        "heading": "Custom Section",
+        "heading_one": "New Section"
       },
       "volunteer": {
         "form": {
           "organization": {
             "label": "Organization"
           }
-        }
+        },
+        "heading": "Volunteering",
+        "heading_one": "Volunteering"
       }
     }
   },
@@ -400,7 +438,7 @@
 
         "Results-driven [Profession] with good technical skills, firm grasp of business needs and understanding of user requirements gathering. Assesses risks, troubleshoots problems and conducts tests. Excellent communication and planning abilities.",
 
-        "A highly creative [Profession] with over 2 years of experience in [Industry]. Knowledgeable in [technologies, fields, languages]. Skilled in working under pressure and adapting to new situations and challenges to best enhance the organizational brand."
+        "A highly creative [Profession] with over 2 years of experience in [Industry]. Knowledgeable in [technologies, fields, etc]. Skilled in working under pressure and adapting to new situations and challenges to best enhance the organizational brand."
       ]
     },
     "addResume": {

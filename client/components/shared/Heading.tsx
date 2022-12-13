@@ -31,8 +31,8 @@ const Heading: React.FC<Props> = ({
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
+  const heading = t<string>(`builder.leftSidebar.sections.${path.split('.')[1]}.heading`);
 
-  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
   const visibility = useAppSelector((state) => get(state.resume.present, `${path}.visible`, true));
 
   const [editMode, setEditMode] = useState(false);

@@ -40,9 +40,11 @@ const Profiles = () => {
 
       <footer className="flex justify-end">
         <Button variant="outlined" startIcon={<Add />} onClick={handleAdd}>
-          {t<string>('builder.common.actions.add', {
-            token: t<string>('builder.leftSidebar.sections.profiles.heading', { count: 1 }),
-          })}
+          <span className="rtl:mr-2">
+            {t<string>('builder.common.actions.add') +
+              ' ' +
+              t<string>('builder.leftSidebar.sections.profiles.heading_one')}
+          </span>
         </Button>
       </footer>
     </>

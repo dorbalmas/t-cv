@@ -1,11 +1,13 @@
+import { Grade } from '@mui/icons-material';
 import { Autocomplete, Skeleton, Slider, TextField } from '@mui/material';
 import { Font, TypeCategory, TypeProperty, Typography as TypographyType } from '@reactive-resume/schema';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import { useQuery } from 'react-query';
 
-import Heading from '@/components/shared/Heading';
+import sections from '@/config/sections';
 import { FONTS_QUERY } from '@/constants/index';
 import { fetchFonts } from '@/services/fonts';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -96,9 +98,18 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
 const Typography = () => {
   const { t } = useTranslation();
 
+  const name = t<string>('builder.rightSidebar.sections.typography.heading');
+  const path = 'metadata.typography';
+  const id = useMemo(() => path.split('.')[1], [path]);
+  const icon = sections.find((x) => x.id === id)?.icon || <Grade />;
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
+
   return (
     <>
-      <Heading path="metadata.typography" name={t<string>('builder.rightSidebar.sections.typography.heading')} />
+      <div className="flex w-full items-center gap-3">
+        <div className="opacity-50">{icon}</div>
+        <h1 className="text-2xl">{heading}</h1>
+      </div>
 
       <Widgets
         label={t<string>('builder.rightSidebar.sections.typography.widgets.headings.label')}

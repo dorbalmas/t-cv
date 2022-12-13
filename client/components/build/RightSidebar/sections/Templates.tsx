@@ -1,10 +1,12 @@
+import { Grade } from '@mui/icons-material';
 import { ButtonBase } from '@mui/material';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 
-import Heading from '@/components/shared/Heading';
+import sections from '@/config/sections';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResumeState } from '@/store/resume/resumeSlice';
 import templateMap, { TemplateMeta } from '@/templates/templateMap';
@@ -16,6 +18,12 @@ const Templates = () => {
 
   const dispatch = useAppDispatch();
 
+  const name = t<string>('builder.rightSidebar.sections.templates.heading');
+  const path = 'metadata.templates';
+  const id = useMemo(() => path.split('.')[1], [path]);
+  const icon = sections.find((x) => x.id === id)?.icon || <Grade />;
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
+
   const currentTemplate: string = useAppSelector((state) => get(state.resume.present, 'metadata.template'));
 
   const handleChange = (template: TemplateMeta) => {
@@ -24,7 +32,10 @@ const Templates = () => {
 
   return (
     <>
-      <Heading path="metadata.templates" name={t<string>('builder.rightSidebar.sections.templates.heading')} />
+      <div className="flex w-full items-center gap-3">
+        <div className="opacity-50">{icon}</div>
+        <h1 className="text-2xl">{heading}</h1>
+      </div>
 
       <div className={styles.container}>
         {Object.values(templateMap).map((template) => (

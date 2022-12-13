@@ -50,14 +50,14 @@ const VolunteerModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
+  const heading: any = t<string>('builder.leftSidebar.sections.volunteer.heading_one');
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
 
   const item: FormData = get(payload, 'item', null);
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = t<string>('builder.common.actions.add') + ' ' + heading;
+  const editText = t<string>('builder.common.actions.edit') + ' ' + heading;
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,

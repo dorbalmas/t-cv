@@ -44,14 +44,14 @@ const CertificateModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`));
+  const heading = t<string>('builder.leftSidebar.sections.certifications.heading_one');
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
   const item: FormData = get(payload, 'item', null);
 
   const isEditMode = useMemo(() => !!item, [item]);
 
-  const addText = useMemo(() => t<string>('builder.common.actions.add', { token: heading }), [t, heading]);
-  const editText = useMemo(() => t<string>('builder.common.actions.edit', { token: heading }), [t, heading]);
+  const addText = useMemo(() => t<string>('builder.common.actions.add') + ' ' + heading, [heading, t]);
+  const editText = useMemo(() => t<string>('builder.common.actions.edit') + ' ' + heading, [heading, t]);
 
   const { reset, control, handleSubmit } = useForm<FormData>({
     defaultValues: defaultState,

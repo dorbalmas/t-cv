@@ -36,8 +36,8 @@ const Section: React.FC<Props> = ({
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
+  const heading = t<string>(`builder.leftSidebar.sections.${path.split('.')[1]}.heading_one`);
 
-  const heading = useAppSelector<string>((state) => get(state.resume.present, `${path}.name`, name));
   const visibility = useAppSelector<boolean>((state) => get(state.resume.present, `${path}.visible`, true));
 
   const handleAdd = () => {
@@ -74,7 +74,7 @@ const Section: React.FC<Props> = ({
         <SectionSettings path={path} />
 
         <Button variant="outlined" startIcon={<Add />} onClick={handleAdd}>
-          {t<string>('builder.common.actions.add', { token: heading })}
+          <span className="rtl:mr-2">{t<string>('builder.common.actions.add') + ' ' + heading}</span>
         </Button>
       </footer>
     </>

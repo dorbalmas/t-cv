@@ -1,4 +1,4 @@
-import { Anchor, DeleteForever, Palette } from '@mui/icons-material';
+import { Anchor, DeleteForever, Grade, Palette } from '@mui/icons-material';
 import {
   Autocomplete,
   List,
@@ -18,9 +18,9 @@ import { useTranslation } from 'next-i18next';
 import { useMemo, useState } from 'react';
 import { useMutation } from 'react-query';
 
-import Heading from '@/components/shared/Heading';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
 import { Language, languageMap, languages } from '@/config/languages';
+import sections from '@/config/sections';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { loadSampleData, LoadSampleDataParams, resetResume, ResetResumeParams } from '@/services/resume';
@@ -48,6 +48,12 @@ const Settings = () => {
   const slug: string = useMemo(() => get(resume, 'slug'), [resume]);
   const username: string = useMemo(() => get(resume, 'user.username'), [resume]);
   const dateConfig: DateConfig = useMemo(() => get(resume, 'metadata.date'), [resume]);
+
+  const name = t<string>('builder.rightSidebar.sections.settings.heading');
+  const path = 'metadata.settings';
+  const idPath = useMemo(() => path.split('.')[1], [path]);
+  const icon = sections.find((x) => x.id === idPath)?.icon || <Grade />;
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
 
   const isDarkMode = useMemo(() => theme === 'dark', [theme]);
   const exampleString = useMemo(() => `Eg. ${dayjs().utc().format(dateConfig.format)}`, [dateConfig.format]);
@@ -92,7 +98,11 @@ const Settings = () => {
 
   return (
     <>
-      <Heading path="metadata.settings" name={t<string>('builder.rightSidebar.sections.settings.heading')} />
+      {/* <Heading path="metadata.settings" name={t<string>('builder.rightSidebar.sections.settings.heading')} /> */}
+      <div className="flex w-full items-center gap-3">
+        <div className="opacity-50">{icon}</div>
+        <h1 className="text-2xl">{heading}</h1>
+      </div>
 
       <List sx={{ padding: 0 }}>
         {/* Global Settings */}

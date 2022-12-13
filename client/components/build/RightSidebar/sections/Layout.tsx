@@ -1,12 +1,14 @@
 import { Add, Close, Restore } from '@mui/icons-material';
+import { Grade } from '@mui/icons-material';
 import { Button, IconButton, Tooltip } from '@mui/material';
 import clsx from 'clsx';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 import { DragDropContext, Draggable, DraggableLocation, Droppable, DropResult } from 'react-beautiful-dnd';
 
-import Heading from '@/components/shared/Heading';
+import sections from '@/config/sections';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { addPage, deletePage, setResumeState } from '@/store/resume/resumeSlice';
 
@@ -22,6 +24,12 @@ const Layout = () => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
+
+  const name = t<string>('builder.rightSidebar.sections.layout.heading');
+  const path = 'metadata.layout';
+  const id = useMemo(() => path.split('.')[1], [path]);
+  const icon = sections.find((x) => x.id === id)?.icon || <Grade />;
+  const heading = useAppSelector((state) => get(state.resume.present, `${path}.name`, name));
 
   const layout = useAppSelector((state) => state.resume.present.metadata.layout);
   const resumeSections = useAppSelector((state) => state.resume.present.sections);
@@ -58,17 +66,18 @@ const Layout = () => {
 
   return (
     <>
-      <Heading
-        path="metadata.layout"
-        name={t<string>('builder.rightSidebar.sections.layout.heading')}
-        action={
-          <Tooltip title={t<string>('builder.rightSidebar.sections.layout.tooltip.reset-layout')}>
-            <IconButton onClick={handleResetLayout}>
-              <Restore />
-            </IconButton>
-          </Tooltip>
-        }
-      />
+      <div className="flex w-full justify-between">
+        <div className="flex items-center gap-3">
+          <div className="opacity-50">{icon}</div>
+          <h1 className="text-2xl">{heading}</h1>
+        </div>
+
+        <Tooltip title={t<string>('builder.rightSidebar.sections.layout.tooltip.reset-layout')}>
+          <IconButton onClick={handleResetLayout}>
+            <Restore />
+          </IconButton>
+        </Tooltip>
+      </div>
 
       <DragDropContext onDragEnd={onDragEnd}>
         {/* Pages */}

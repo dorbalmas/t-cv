@@ -2,7 +2,7 @@
   @apply list-outside mt-1 mb-1 rtl:mr-3;
   li {
     div {
-      @apply rtl:mr-2;
+      @apply rtl:mr-2 whitespace-pre-line;
     }
     &::marker {
       content: '✦';
