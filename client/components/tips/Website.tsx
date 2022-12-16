@@ -7,9 +7,9 @@ const Website = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className={styles.container}>
       <div>{t<string>('builder.tips.website.intro')}</div>
-      <ul className={styles.list}>
+      <ul>
         <li>
           <div>
             {' '}
@@ -27,7 +27,7 @@ const Website = () => {
         </li>
       </ul>
       <div className="text-sm">{t<string>('builder.tips.website.remember')}</div>
-    </>
+    </div>
   );
 };
 export default Website;

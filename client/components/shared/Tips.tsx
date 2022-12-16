@@ -21,6 +21,7 @@ import AddResume from '../tips/AddResume';
 import Profiles from '../tips/Profiles';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
+import Work from '../tips/Work';
 import styles from './Tips.module.scss';
 
 type Props = {
@@ -110,6 +111,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'summary' ? <Summary /> : null}
                 {tipsTitle === 'addResume' ? <AddResume /> : null}
                 {tipsTitle === 'profiles' ? <Profiles /> : null}
+                {tipsTitle === 'work' ? <Work /> : null}
               </div>
             }
           >

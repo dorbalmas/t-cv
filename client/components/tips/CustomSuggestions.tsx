@@ -14,7 +14,8 @@ const Item: React.FC<PropsItem> = ({ text, title }) => {
   const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
   const { summary } = useAppSelector((state) => state.resume.present.basics);
-  const path = title === 'summary' ? 'basics.summary' : '';
+
+  const path = `basics.${title}`;
 
   const onClick = () => {
     dispatch(setResumeState({ path, value: summary + `${summary.length === 0 ? '' : ' '}` + text }));
@@ -44,12 +45,13 @@ const Item: React.FC<PropsItem> = ({ text, title }) => {
 
 const CustomSuggestions: React.FC<PropsItem> = ({ title }) => {
   const { t } = useTranslation();
+  const suggestions = t<string>(`builder.tips.${title}.generic`, { returnObjects: true }).length;
 
   return (
     <>
       <div className="text-neutral-900 bg-neutral-50 mt-3 mb-3">
-        {[...Array(3)].map((e, i) => {
-          return <Item key={i} title={title} text={t<string>(`builder.tips.${title}.generic.${i}`)} />;
+        {[...Array(suggestions)].map((item, idx) => {
+          return <Item key={idx} title={title} text={t<string>(`builder.tips.${title}.generic.${idx}`)} />;
         })}
       </div>
     </>

@@ -5,17 +5,18 @@ import styles from './styles.module.scss';
 
 const Profiles = () => {
   const { t } = useTranslation();
+  const liLength = t<string>(`builder.tips.profiles.li`, { returnObjects: true }).length;
 
   return (
-    <>
-      {/* <div>{t<string>('builder.tips.addResume.intro')}</div> */}
-      <ul className={styles.list}>
-        <li>
-          <div>{t<string>('builder.tips.profiles.li1')}</div>
-        </li>
-        <li>
-          <div>{t<string>('builder.tips.profiles.li2')}</div>
-        </li>
+    <div className={styles.container}>
+      <ul>
+        {[...Array(liLength - 1)].map((item, idx) => {
+          return (
+            <li key={idx}>
+              <div>{t<string>(`builder.tips.profiles.li.${idx}`)}</div>
+            </li>
+          );
+        })}
         <li>
           <div>
             {' '}
@@ -24,11 +25,11 @@ const Profiles = () => {
                 Linkedin
               </a>
             </Link>
-            <span> - {t<string>('builder.tips.profiles.li3')}</span>
+            <span> - {t<string>('builder.tips.profiles.li.2')}</span>
           </div>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 export default Profiles;

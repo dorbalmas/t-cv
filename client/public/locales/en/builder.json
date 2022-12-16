@@ -431,8 +431,11 @@
     },
     "summary": {
       "intro": "This is the first section and sometimes the only section that recruiters will read, so make sure to write the most important and relevant qualifications for the position you are aiming for.",
-      "li1": "ֹUse our examples below and start editing\n(pay attention to the structure and the use of high-value adjectives).",
-      "li2": "This is your time to convince the hiring manager, you have the relevant values that will help the company reach its goals, so don't be afraid to brag!",
+      "li": [
+        "ֹUse our examples below and start editing\n(pay attention to the structure and the use of high-value adjectives).",
+
+        "This is your time to convince the hiring manager, you have the relevant values that will help the company reach its goals, so don't be afraid to brag!"
+      ],
       "generic": [
         "Second-year [Degree Type] student with a proven track record of success, work, and extracurricular activities. Highly motivated, organized, and proactive with excellent communication, problem-solving, and attentions to detail. Looking to leverage my skills and knowledge to make a positive impact in a professional environment.",
 
@@ -441,15 +444,31 @@
         "A highly creative [Profession] with over 2 years of experience in [Industry]. Knowledgeable in [technologies, fields, etc]. Skilled in working under pressure and adapting to new situations and challenges to best enhance the organizational brand."
       ]
     },
+    "work": {
+      "intro": "If you have no relevant work experience as an employee or a freelancer, you need to write about a position you worked in and try to find parallel lines between it and the position you are aiming for. (Go to the Projects section and treat each project as if it were work experience).",
+      "li": [
+        "Write in a short and focused way, minimum 3 sentences that present your work and contribution.",
+
+        "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
+
+        "Open each of your sentences with the following professional verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
+
+        "Try to write at least one case where you did something extraordinary and what it improved/how it affected (put it at the top of the list!)."
+      ]
+    },
     "addResume": {
       "intro": "Personalize your resume to the company you are aiming for!",
       "li1": "After you have finished preparing your resume, click on the 'Duplicate' option and start making the necessary adjustments according to the job description.",
       "closure": "Studies has shown that hiring managers will rate your resume higher if you make adjustments by job description."
     },
     "profiles": {
-      "li1": "Add only relevant links to your position.",
-      "li2": "Hiring managers can easily find all your other social networks ,so clean them from anything that could make you look bad.",
-      "li3": "Community that allows employers and employees to contact each other directly, it is a great opportunity to surround yourself with people in your field."
+      "li": [
+        "Add only relevant links to your position.",
+
+        "Hiring managers can easily find all your other social networks ,so clean them from anything that could make you look bad.",
+
+        "Community that allows employers and employees to contact each other directly, it is a great opportunity to surround yourself with people in your field."
+      ]
     }
   }
 }

@@ -102,6 +102,7 @@ const ProfileModal: React.FC = () => {
               label={t<string>('builder.leftSidebar.sections.profiles.form.network.label')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
+              placeholder="Linkedin"
               {...field}
             />
           )}
@@ -124,11 +125,11 @@ const ProfileModal: React.FC = () => {
           )}
         />
 
-        <Controller
-          name="url"
-          control={control}
-          render={({ field, fieldState }) => (
-            <Tips tipsTitle="profiles">
+        <Tips tipsTitle="profiles">
+          <Controller
+            name="url"
+            control={control}
+            render={({ field, fieldState }) => (
               <TextField
                 label={t<string>('builder.common.form.url.label')}
                 className="col-span-2"
@@ -137,9 +138,9 @@ const ProfileModal: React.FC = () => {
                 helperText={fieldState.error?.message}
                 {...field}
               />
-            </Tips>
-          )}
-        />
+            )}
+          />
+        </Tips>
       </form>
     </BaseModal>
   );

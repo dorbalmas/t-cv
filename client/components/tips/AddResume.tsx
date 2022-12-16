@@ -6,15 +6,15 @@ const AddResume = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className={styles.container}>
       <div>{t<string>('builder.tips.addResume.intro')}</div>
-      <ul className={styles.list}>
+      <ul>
         <li>
           <div>{t<string>('builder.tips.addResume.li1')}</div>
         </li>
       </ul>
       <div>{t<string>('builder.tips.addResume.closure')}</div>
-    </>
+    </div>
   );
 };
 export default AddResume;

@@ -12,7 +12,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
-import MarkdownSupported from '@/components/shared/MarkdownSupported';
+import Tips from '@/components/shared/Tips';
 import { VALID_URL_REGEX } from '@/constants/index';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -196,22 +196,24 @@ const WorkModal: React.FC = () => {
           )}
         />
 
-        <Controller
-          name="summary"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              multiline
-              minRows={3}
-              maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
-              className="col-span-2"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message || <MarkdownSupported />}
-              {...field}
-            />
-          )}
-        />
+        <Tips tipsTitle="work">
+          <Controller
+            name="summary"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                multiline
+                minRows={3}
+                maxRows={6}
+                label={t<string>('builder.common.form.summary.label')}
+                className="col-span-2"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
+        </Tips>
       </form>
     </BaseModal>
   );

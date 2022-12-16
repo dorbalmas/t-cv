@@ -1,12 +1,17 @@
-.list {
-  @apply list-outside mt-1 mb-1 rtl:mr-3;
-  li {
-    div {
-      @apply rtl:mr-2 whitespace-pre-line;
-    }
-    &::marker {
-      content: '✦';
-      color: #fafafa;
+.container {
+  div {
+    @apply first-letter:uppercase;
+  }
+  ul {
+    @apply list-outside mt-1 mb-1 rtl:mr-3;
+    li {
+      div {
+        @apply rtl:mr-2 whitespace-pre-line;
+      }
+      &::marker {
+        content: '✦';
+        color: #fafafa;
+      }
     }
   }
 }
