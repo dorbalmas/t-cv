@@ -4,14 +4,18 @@ import styles from './styles.module.scss';
 
 const AddResume = () => {
   const { t } = useTranslation();
+  const liLength = t<string>(`builder.tips.addResume.li`, { returnObjects: true }).length;
 
   return (
     <div className={styles.container}>
-      <div>{t<string>('builder.tips.addResume.intro')}</div>
       <ul>
-        <li>
-          <div>{t<string>('builder.tips.addResume.li1')}</div>
-        </li>
+        {[...Array(liLength)].map((item, idx) => {
+          return (
+            <li key={idx}>
+              <div>{t<string>(`builder.tips.addResume.li.${idx}`)}</div>
+            </li>
+          );
+        })}
       </ul>
       <div>{t<string>('builder.tips.addResume.closure')}</div>
     </div>

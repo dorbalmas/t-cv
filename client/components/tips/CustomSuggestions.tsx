@@ -16,7 +16,11 @@ const Item: React.FC<PropsItem> = ({ text, title }) => {
   const { summary } = useAppSelector((state) => state.resume.present.basics);
 
   const path = `basics.${title}`;
-
+  const reactStringReplaceText = reactStringReplace(text, /(\[.*?\])/g, (match, i) => (
+    <span key={i} style={{ color: '#36BBF7' }}>
+      {match}
+    </span>
+  ));
   const onClick = () => {
     dispatch(setResumeState({ path, value: summary + `${summary.length === 0 ? '' : ' '}` + text }));
   };
@@ -30,10 +34,10 @@ const Item: React.FC<PropsItem> = ({ text, title }) => {
         }`}
         style={{ cursor: 'copy' }}
       >
-        {reactStringReplace(text, /(\[.*?\])/g, (match, i) => (
-          <span key={i} style={{ color: '#36BBF7' }}>
+        {reactStringReplace(reactStringReplaceText, /\*\*([^\^]*)\*\*/g, (match, i) => (
+          <strong key={i} style={{ color: '#000000' }}>
             {match}
-          </span>
+          </strong>
         ))}
       </div>
       <Divider

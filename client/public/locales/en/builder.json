@@ -441,25 +441,28 @@
 
         "Results-driven [Profession] with good technical skills, firm grasp of business needs and understanding of user requirements gathering. Assesses risks, troubleshoots problems and conducts tests. Excellent communication and planning abilities.",
 
-        "A highly creative [Profession] with over 2 years of experience in [Industry]. Knowledgeable in [technologies, fields, etc]. Skilled in working under pressure and adapting to new situations and challenges to best enhance the organizational brand."
+        "A highly creative [Profession] with over **2 years** of experience in [Industry]. Knowledgeable in [technologies, fields, etc]. Skilled in working under pressure and adapting to new situations and challenges to best **enhance** the organizational brand."
       ]
     },
     "work": {
       "intro": "If you have no relevant work experience as an employee or a freelancer, you need to write about a position you worked in and try to find parallel lines between it and the position you are aiming for. (Go to the Projects section and treat each project as if it were work experience).",
       "li": [
-        "Write in a short and focused way, minimum 3 sentences that present your work and contribution.",
+        "Write in a concise and clear way, minimum 3 sentences that present your work and contribution.",
 
         "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
 
-        "Open each of your sentences with the following professional verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
+        "Open each of your bullet points with the following professional verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
 
         "Try to write at least one case where you did something extraordinary and what it improved/how it affected (put it at the top of the list!)."
       ]
     },
     "addResume": {
-      "intro": "Personalize your resume to the company you are aiming for!",
-      "li1": "After you have finished preparing your resume, click on the 'Duplicate' option and start making the necessary adjustments according to the job description.",
-      "closure": "Studies has shown that hiring managers will rate your resume higher if you make adjustments by job description."
+      "li": [
+        "Before you start preparing your CV, collect several job descriptions and use them as a guideline.",
+
+        "After you have finished preparing your CV, click on the 'Duplicate' option and start including keywords from the job description in the company you are aiming for."
+      ],
+      "closure": "According to studies, hiring managers will rate your resume higher if you make the necessary adjustments according to the job description."
     },
     "profiles": {
       "li": [

@@ -118,11 +118,11 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
             <InputAdornment position="start">
               <IconButton edge="end" disableRipple style={{ color: '#36BBF7' }} onClick={handleTooltipOpen}>
                 {tipsTitle === 'addResume' ? (
-                  <span className="text-lg font-semibold tracking-wide	">
+                  <span className="text-lg font-semibold tracking-wide">
                     {t<string>('builder.tips.iconText')}&nbsp;
                   </span>
                 ) : (
-                  ''
+                  <span className="text-sm font-medium tracking-wide">{t<string>('builder.tips.iconText')}&nbsp;</span>
                 )}
                 <TipsAndUpdatesIcon htmlColor="#36BBF7" fontSize={tipsTitle === 'addResume' ? 'large' : 'small'} />
               </IconButton>

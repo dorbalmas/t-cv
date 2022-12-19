@@ -91,9 +91,9 @@ const SharedComp: React.FC<Props> = ({ open }) => {
               <br /> - {t<string>('builder.tips.shared.table.bull3')}
             </td>
             <td className="font-thin pl-2">
-              &bull; {t<string>('builder.tips.shared.table.bull1')}
-              <br /> &bull; {t<string>('builder.tips.shared.table.bull2')}
-              <br /> &bull; {t<string>('builder.tips.shared.table.bull3')}
+              &bull;&nbsp; {t<string>('builder.tips.shared.table.bull1')}
+              <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull2')}
+              <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull3')}
             </td>
           </tr>
         </tbody>
