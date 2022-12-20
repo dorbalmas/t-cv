@@ -57,47 +57,50 @@ const SharedComp: React.FC<Props> = ({ open }) => {
       <ul>
         <li>
           <div className="rtl:text-right">{t<string>('builder.tips.shared.intro')}</div>
-        </li>
-      </ul>
 
-      <table
-        className={`table-auto text-neutral-900 bg-neutral-50 divide-slate-700 mt-3 mb-3 sm:rounded-md text-${
-          rtlLanguages.includes(i18n.language) ? 'right' : 'left'
-        }`}
-      >
-        <thead>
-          <tr>
-            <th className="text-base text-neutral-700 py-2 pl-2">{t<string>('builder.tips.shared.table.header1')}</th>
-            <th className="text-base text-neutral-700">{t<string>('builder.tips.shared.table.header2')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* <tr>
+          <table
+            className={`table-auto text-neutral-900 bg-neutral-50 divide-slate-700 mt-3 mb-3 sm:rounded-md rtl:mr-2 text-${
+              rtlLanguages.includes(i18n.language) ? 'right' : 'left'
+            }`}
+            style={{ width: '95%' }}
+          >
+            <thead>
+              <tr>
+                <th className="text-base text-neutral-700 py-2 pl-2">
+                  {t<string>('builder.tips.shared.table.header1')}
+                </th>
+                <th className="text-base text-neutral-700">{t<string>('builder.tips.shared.table.header2')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* <tr>
             <td className="font-thin pl-2">*{t<string>('builder.tips.shared.table.italic')}*</td>
             <td className="font-thin ">
               <i>{t<string>('builder.tips.shared.table.italic')}</i>
             </td>
           </tr> */}
-          <tr>
-            <td className="font-thin pl-2">**{t<string>('builder.tips.shared.table.bold')}**</td>
-            <td>
-              <b>{t<string>('builder.tips.shared.table.bold')}</b>
-            </td>
-          </tr>
-          <tr>
-            <td className="font-thin pl-2">
-              - {t<string>('builder.tips.shared.table.bull1')}
-              <br /> - {t<string>('builder.tips.shared.table.bull2')}
-              <br /> - {t<string>('builder.tips.shared.table.bull3')}
-            </td>
-            <td className="font-thin pl-2">
-              &bull;&nbsp; {t<string>('builder.tips.shared.table.bull1')}
-              <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull2')}
-              <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull3')}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <tr>
+                <td className="font-thin pl-2">**{t<string>('builder.tips.shared.table.bold')}**</td>
+                <td>
+                  <b>{t<string>('builder.tips.shared.table.bold')}</b>
+                </td>
+              </tr>
+              <tr>
+                <td className="font-thin pl-2">
+                  - {t<string>('builder.tips.shared.table.bull1')}
+                  <br /> - {t<string>('builder.tips.shared.table.bull2')}
+                  <br /> - {t<string>('builder.tips.shared.table.bull3')}
+                </td>
+                <td className="font-thin pl-2">
+                  &bull;&nbsp; {t<string>('builder.tips.shared.table.bull1')}
+                  <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull2')}
+                  <br /> &bull;&nbsp; {t<string>('builder.tips.shared.table.bull3')}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
       {/* </FAQRowContent> */}
     </>
   );

@@ -4,6 +4,7 @@
   }
   ul {
     @apply list-outside mt-1 mb-1 rtl:mr-3;
+    margin-left: -0.7rem;
     li {
       div {
         @apply rtl:mr-2 whitespace-pre-line;

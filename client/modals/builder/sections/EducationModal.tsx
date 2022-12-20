@@ -27,7 +27,6 @@ const defaultState: FormData = {
   institution: '',
   degree: '',
   area: '',
-  score: '',
   date: {
     start: '',
     end: '',
@@ -42,7 +41,6 @@ const schema = Joi.object<FormData>().keys({
   institution: Joi.string().required(),
   degree: Joi.string().required(),
   area: Joi.string().allow(''),
-  score: Joi.string().allow(''),
   date: Joi.object().keys({
     start: Joi.string().allow(''),
     end: Joi.string().allow(''),
@@ -148,19 +146,7 @@ const EducationModal: React.FC = () => {
             render={({ field, fieldState }) => (
               <TextField
                 label={t<string>('builder.leftSidebar.sections.education.form.area-study.label')}
-                error={!!fieldState.error}
-                helperText={fieldState.error?.message}
-                {...field}
-              />
-            )}
-          />
-
-          <Controller
-            name="score"
-            control={control}
-            render={({ field, fieldState }) => (
-              <TextField
-                label={t<string>('builder.leftSidebar.sections.education.form.grade.label')}
+                className="col-span-2"
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}
@@ -238,7 +224,7 @@ const EducationModal: React.FC = () => {
                 multiline
                 minRows={3}
                 maxRows={6}
-                label={t<string>('builder.common.form.summary.label')}
+                label={t<string>('builder.common.form.description.label')}
                 className="col-span-2"
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}

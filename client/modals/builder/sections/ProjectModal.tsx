@@ -207,7 +207,7 @@ const ProjectModal: React.FC = () => {
               multiline
               minRows={3}
               maxRows={6}
-              label={t<string>('builder.common.form.summary.label')}
+              label={t<string>('builder.common.form.description.label')}
               className="col-span-2"
               error={!!fieldState.error}
               helperText={fieldState.error?.message || <MarkdownSupported />}
