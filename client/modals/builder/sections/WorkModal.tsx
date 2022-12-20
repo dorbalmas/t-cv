@@ -103,100 +103,100 @@ const WorkModal: React.FC = () => {
         </Button>
       }
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
-        <Controller
-          name="name"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              autoFocus
-              label={t<string>('builder.leftSidebar.sections.work.form.name.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+      <Tips tipsTitle="work" top="-0.5rem">
+        <form className="my-2 grid grid-cols-2 gap-4">
+          <Controller
+            name="name"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                autoFocus
+                label={t<string>('builder.leftSidebar.sections.work.form.name.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="position"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              label={t<string>('builder.common.form.position.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+          <Controller
+            name="position"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                label={t<string>('builder.common.form.position.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="date.start"
-          control={control}
-          render={({ field, fieldState }) => (
-            <DatePicker
-              {...field}
-              openTo="year"
-              label={t<string>('builder.common.form.start-date.label')}
-              views={['year', 'month', 'day']}
-              onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-                isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message || params.inputProps?.placeholder}
-                />
-              )}
-            />
-          )}
-        />
+          <Controller
+            name="date.start"
+            control={control}
+            render={({ field, fieldState }) => (
+              <DatePicker
+                {...field}
+                openTo="year"
+                label={t<string>('builder.common.form.start-date.label')}
+                views={['year', 'month', 'day']}
+                onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
+                  isEmpty(keyboardInputValue) && field.onChange('');
+                  date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message || params.inputProps?.placeholder}
+                  />
+                )}
+              />
+            )}
+          />
 
-        <Controller
-          name="date.end"
-          control={control}
-          render={({ field, fieldState }) => (
-            <DatePicker
-              {...field}
-              openTo="year"
-              label={t<string>('builder.common.form.end-date.label')}
-              views={['year', 'month', 'day']}
-              onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-                isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
-                />
-              )}
-            />
-          )}
-        />
+          <Controller
+            name="date.end"
+            control={control}
+            render={({ field, fieldState }) => (
+              <DatePicker
+                {...field}
+                openTo="year"
+                label={t<string>('builder.common.form.end-date.label')}
+                views={['year', 'month', 'day']}
+                onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
+                  isEmpty(keyboardInputValue) && field.onChange('');
+                  date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message || t<string>('builder.common.form.end-date.help-text')}
+                  />
+                )}
+              />
+            )}
+          />
 
-        <Controller
-          name="url"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              label={t<string>('builder.common.form.url.label')}
-              placeholder="https://"
-              className="col-span-2"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+          <Controller
+            name="url"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                label={t<string>('builder.common.form.url.label')}
+                placeholder="https://"
+                className="col-span-2"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Tips tipsTitle="work">
           <Controller
             name="summary"
             control={control}
@@ -213,8 +213,8 @@ const WorkModal: React.FC = () => {
               />
             )}
           />
-        </Tips>
-      </form>
+        </form>
+      </Tips>
     </BaseModal>
   );
 };

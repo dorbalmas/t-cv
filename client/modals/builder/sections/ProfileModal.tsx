@@ -91,41 +91,41 @@ const ProfileModal: React.FC = () => {
         </Button>
       }
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
-        <Controller
-          name="network"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              autoFocus
-              label={t<string>('builder.leftSidebar.sections.profiles.form.network.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              placeholder="Linkedin"
-              {...field}
-            />
-          )}
-        />
+      <Tips tipsTitle="profiles" top="-0.5rem">
+        <form className="my-2 grid grid-cols-2 gap-4">
+          <Controller
+            name="network"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                autoFocus
+                label={t<string>('builder.leftSidebar.sections.profiles.form.network.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                placeholder="Linkedin"
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="username"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              label={t<string>('builder.leftSidebar.sections.profiles.form.username.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              InputProps={{
-                startAdornment: <AlternateEmail className="mr-2" />,
-              }}
-              {...field}
-            />
-          )}
-        />
+          <Controller
+            name="username"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                label={t<string>('builder.leftSidebar.sections.profiles.form.username.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                InputProps={{
+                  startAdornment: <AlternateEmail className="mr-2" />,
+                }}
+                {...field}
+              />
+            )}
+          />
 
-        <Tips tipsTitle="profiles">
           <Controller
             name="url"
             control={control}
@@ -140,8 +140,8 @@ const ProfileModal: React.FC = () => {
               />
             )}
           />
-        </Tips>
-      </form>
+        </form>
+      </Tips>
     </BaseModal>
   );
 };

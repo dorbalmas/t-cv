@@ -12,7 +12,7 @@
 .header {
   @apply sticky top-0 left-0 right-0 z-50 pt-6 bg-slate-50 dark:bg-slate-900;
   @apply flex items-center justify-between;
-  @apply w-full border-b pb-5 dark:border-white/10;
+  @apply w-full border-b pb-5 mb-2 dark:border-white/10;
 
   > div {
     @apply flex items-center gap-2;
