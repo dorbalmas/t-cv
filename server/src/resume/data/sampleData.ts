@@ -253,13 +253,11 @@ const sampleData: Partial<Resume> = {
         {
           name: 'English',
           level: 'Native',
-          levelNum: 10,
           id: 'dd9eb2b8-2956-463b-b0b1-0ffef84f9fc2',
         },
         {
           name: 'German',
-          level: 'B1 (Intermediate)',
-          levelNum: 6,
+          level: 'Intermediate',
           id: '6cf99d85-4efc-4ff8-9a7f-e76abd2d2857',
         },
       ],

@@ -10,7 +10,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
-import MarkdownSupported from '@/components/shared/MarkdownSupported';
+import Tips from '@/components/shared/Tips';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { addItem, editItem } from '@/store/resume/resumeSlice';
@@ -23,8 +23,6 @@ const defaultState: FormData = {
   name: '',
   relationship: '',
   phone: '',
-  email: '',
-  summary: '',
 };
 
 const schema = Joi.object<FormData>().keys({
@@ -32,8 +30,6 @@ const schema = Joi.object<FormData>().keys({
   name: Joi.string().required(),
   relationship: Joi.string().required(),
   phone: Joi.string().allow(''),
-  email: Joi.string().allow(''),
-  summary: Joi.string().allow(''),
 });
 
 const ReferenceModal: React.FC = () => {
@@ -94,79 +90,50 @@ const ReferenceModal: React.FC = () => {
         </Button>
       }
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
-        <Controller
-          name="name"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              autoFocus
-              label={t<string>('builder.common.form.name.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="relationship"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              label={t<string>('builder.leftSidebar.sections.references.form.relationship.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="phone"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              label={t<string>('builder.common.form.phone.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="email"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              label={t<string>('builder.common.form.email.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="summary"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              multiline
-              minRows={3}
-              maxRows={6}
-              label={t<string>('builder.common.form.description.label')}
-              className="col-span-2"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message || <MarkdownSupported />}
-              {...field}
-            />
-          )}
-        />
-      </form>
+      <Tips tipsTitle="reference" top="-0.5rem">
+        <form className="my-2 grid grid-cols-2 gap-4">
+          <Controller
+            name="name"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                autoFocus
+                label={t<string>('builder.common.form.name.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="relationship"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                label={t<string>('builder.leftSidebar.sections.references.form.relationship.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="phone"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                label={t<string>('builder.common.form.phone.label')}
+                className="col-span-2 place-self-center w-60"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
+        </form>
+      </Tips>
     </BaseModal>
   );
 };

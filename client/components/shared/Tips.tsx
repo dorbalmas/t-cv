@@ -20,6 +20,7 @@ import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
 import AddResume from '../tips/AddResume';
 import Education from '../tips/Education';
 import Profiles from '../tips/Profiles';
+import Reference from '../tips/Reference';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
 import Work from '../tips/Work';
@@ -114,6 +115,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'profiles' ? <Profiles /> : null}
                 {tipsTitle === 'work' ? <Work /> : null}
                 {tipsTitle === 'education' ? <Education /> : null}
+                {tipsTitle === 'reference' ? <Reference /> : null}
               </div>
             }
           >

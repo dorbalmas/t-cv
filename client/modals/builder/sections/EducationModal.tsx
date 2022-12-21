@@ -146,7 +146,7 @@ const EducationModal: React.FC = () => {
             render={({ field, fieldState }) => (
               <TextField
                 label={t<string>('builder.leftSidebar.sections.education.form.area-study.label')}
-                className="col-span-2"
+                className="col-span-2 place-self-center w-60"
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}

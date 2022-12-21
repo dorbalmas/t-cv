@@ -1,6 +1,6 @@
 import { joiResolver } from '@hookform/resolvers/joi';
 import { Add, DriveFileRenameOutline } from '@mui/icons-material';
-import { Button, Slider, TextField } from '@mui/material';
+import { Button, MenuItem, TextField } from '@mui/material';
 import { Language, SectionPath } from '@reactive-resume/schema';
 import Joi from 'joi';
 import get from 'lodash/get';
@@ -10,6 +10,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
+import { rtlLanguages } from '@/config/languages';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import { addItem, editItem } from '@/store/resume/resumeSlice';
@@ -32,9 +33,11 @@ const schema = Joi.object<FormData>().keys({
 });
 
 const LanguageModal: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
+
+  const languageLength = t<string>(`builder.leftSidebar.sections.languages.levels`, { returnObjects: true }).length;
 
   const heading: any = t<string>('builder.leftSidebar.sections.languages.heading_one');
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
@@ -97,7 +100,7 @@ const LanguageModal: React.FC = () => {
             <TextField
               required
               autoFocus
-              label={t<string>('builder.common.form.name.label')}
+              label={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
               error={!!fieldState.error}
               helperText={fieldState.error?.message}
               {...field}
@@ -109,49 +112,28 @@ const LanguageModal: React.FC = () => {
           name="level"
           control={control}
           render={({ field, fieldState }) => (
-            <TextField
-              required
-              label={t<string>('builder.common.form.level.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="levelNum"
-          control={control}
-          render={({ field }) => (
-            <div className="col-span-2">
-              <h4 className="mb-3 font-semibold">{t<string>('builder.common.form.levelNum.label')}</h4>
-
-              <div className="px-10">
-                <Slider
-                  {...field}
-                  marks={[
-                    {
-                      value: 0,
-                      label: 'Disable',
-                    },
-                    {
-                      value: 1,
-                      label: 'Beginner',
-                    },
-                    {
-                      value: 10,
-                      label: 'Expert',
-                    },
-                  ]}
-                  min={0}
-                  max={10}
-                  defaultValue={0}
-                  color="secondary"
-                  valueLabelDisplay="auto"
-                  aria-label={t<string>('builder.common.form.levelNum.label')}
-                />
-              </div>
-            </div>
+            <>
+              <TextField
+                select
+                sx={{
+                  '.MuiSelect-icon': {
+                    right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
+                    left: rtlLanguages.includes(i18n.language) ? '25px' : 'inherit',
+                  },
+                }}
+                required
+                label={t<string>('builder.common.form.level.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              >
+                {[...Array(languageLength)].map((item, idx) => (
+                  <MenuItem key={idx} value={t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}>
+                    {t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </>
           )}
         />
       </form>
