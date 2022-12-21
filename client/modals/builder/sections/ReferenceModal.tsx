@@ -99,7 +99,7 @@ const ReferenceModal: React.FC = () => {
               <TextField
                 required
                 autoFocus
-                label={t<string>('builder.common.form.name.label')}
+                label={t<string>('builder.leftSidebar.sections.basics.name.label')}
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}
@@ -112,7 +112,11 @@ const ReferenceModal: React.FC = () => {
             render={({ field, fieldState }) => (
               <TextField
                 required
-                label={t<string>('builder.leftSidebar.sections.references.form.relationship.label')}
+                label={
+                  t<string>('builder.common.form.position.label') +
+                  ', ' +
+                  t<string>('builder.leftSidebar.sections.work.form.name.label')
+                }
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}

@@ -10,6 +10,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
+import Tips from '@/components/shared/Tips';
 import { rtlLanguages } from '@/config/languages';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -92,51 +93,53 @@ const LanguageModal: React.FC = () => {
         </Button>
       }
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
-        <Controller
-          name="name"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              autoFocus
-              label={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="level"
-          control={control}
-          render={({ field, fieldState }) => (
-            <>
+      <Tips tipsTitle="language" top="-0.5rem">
+        <form className="my-2 grid grid-cols-2 gap-4">
+          <Controller
+            name="name"
+            control={control}
+            render={({ field, fieldState }) => (
               <TextField
-                select
-                sx={{
-                  '.MuiSelect-icon': {
-                    right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
-                    left: rtlLanguages.includes(i18n.language) ? '25px' : 'inherit',
-                  },
-                }}
                 required
-                label={t<string>('builder.common.form.level.label')}
+                autoFocus
+                label={t<string>('builder.rightSidebar.sections.settings.global.language.primary')}
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}
-              >
-                {[...Array(languageLength)].map((item, idx) => (
-                  <MenuItem key={idx} value={t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}>
-                    {t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </>
-          )}
-        />
-      </form>
+              />
+            )}
+          />
+
+          <Controller
+            name="level"
+            control={control}
+            render={({ field, fieldState }) => (
+              <>
+                <TextField
+                  select
+                  sx={{
+                    '.MuiSelect-icon': {
+                      right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
+                      left: rtlLanguages.includes(i18n.language) ? '25px' : 'inherit',
+                    },
+                  }}
+                  required
+                  label={t<string>('builder.common.form.level.label')}
+                  error={!!fieldState.error}
+                  helperText={fieldState.error?.message}
+                  {...field}
+                >
+                  {[...Array(languageLength)].map((item, idx) => (
+                    <MenuItem key={idx} value={t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}>
+                      {t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </>
+            )}
+          />
+        </form>
+      </Tips>
     </BaseModal>
   );
 };

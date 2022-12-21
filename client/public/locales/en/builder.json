@@ -213,7 +213,7 @@
       "work": {
         "form": {
           "name": {
-            "label": "Company Name"
+            "label": "Company"
           }
         },
         "heading": "Work Experience",
@@ -485,8 +485,18 @@
         "Community that allows employers and employees to contact each other directly, it is a great opportunity to surround yourself with people in your field."
       ]
     },
+    "language": {
+      "li": [
+        "List languages in order of proficiency, with your strongest language at the top.",
+
+        "If you have strong language skills that are relevant to the job you are applying for, mention them in the 'Summary' at the top of your CV.",
+
+        "If you have used your language skills in a professional setting, include this information in your 'Work Experience' section."
+      ]
+    },
     "reference": {
-      "intro": "This section is not mandatory, although its very presence strengthens the overall visibility of your CV."
+      "intro": "This section is not mandatory, although its presence strengthens the overall visibility of your CV.",
+      "li": ["List (up to 2) relevant references for the position."]
     }
   }
 }
