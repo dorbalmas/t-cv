@@ -18,6 +18,8 @@ import { rtlLanguages } from '@/config/languages';
 
 import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
 import AddResume from '../tips/AddResume';
+import Awards from '../tips/Awards';
+import Certifications from '../tips/Certifications';
 import Education from '../tips/Education';
 import Language from '../tips/Language';
 import Profiles from '../tips/Profiles';
@@ -118,6 +120,8 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'education' ? <Education /> : null}
                 {tipsTitle === 'reference' ? <Reference /> : null}
                 {tipsTitle === 'language' ? <Language /> : null}
+                {tipsTitle === 'awards' ? <Awards /> : null}
+                {tipsTitle === 'certifications' ? <Certifications /> : null}
               </div>
             }
           >
