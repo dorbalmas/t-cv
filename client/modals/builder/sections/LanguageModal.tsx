@@ -38,7 +38,7 @@ const LanguageModal: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const languageLength = t<string>(`builder.leftSidebar.sections.languages.levels`, { returnObjects: true }).length;
+  const levelsLength = t<string>(`builder.leftSidebar.sections.languages.levels`, { returnObjects: true }).length;
 
   const heading: any = t<string>('builder.leftSidebar.sections.languages.heading_one');
   const { open: isOpen, payload } = useAppSelector((state) => state.modal[`builder.${path}`]);
@@ -129,7 +129,7 @@ const LanguageModal: React.FC = () => {
                   helperText={fieldState.error?.message}
                   {...field}
                 >
-                  {[...Array(languageLength)].map((item, idx) => (
+                  {[...Array(levelsLength)].map((item, idx) => (
                     <MenuItem key={idx} value={t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}>
                       {t<string>(`builder.leftSidebar.sections.languages.levels.${idx}`)}
                     </MenuItem>

@@ -225,7 +225,9 @@
       },
       "skills": {
         "heading": "Skills",
-        "heading_one": "Skill"
+        "heading_one": "Skills",
+        "type": "type",
+        "types": ["Technical", "Interpersonal"]
       },
       "interests": {
         "heading": "Interests",
@@ -433,7 +435,7 @@
     "summary": {
       "intro": "This is the first section and sometimes the only section that recruiters will read, so make sure to write the most important and relevant qualifications for the position you are aiming for.",
       "li": [
-        "ֹUse our examples below and start editing\n(pay attention to the structure and the use of high-value adjectives).",
+        "Use our examples below and start editing\n(pay attention to the structure and the use of high-value adjectives and action-oriented words).",
 
         "This is your time to convince the hiring manager, you have the relevant values that will help the company reach its goals, so don't be afraid to brag!"
       ],
@@ -452,7 +454,7 @@
 
         "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
 
-        "Open each of your bullet points with the following professional verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
+        "Open each of your bullet points with the following  action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
 
         "Try to write at least one case where you did something extraordinary and what it improved/how it affected (put it at the top of the list!)."
       ]
@@ -460,7 +462,7 @@
     "awards": {
       "intro": "Don't list every award you've ever received, be concise and focus on the most relevant and impressive ones.",
       "li": [
-        "Open each sentence with action verbs to describe your achievement, such as Won, Received, Achieved, Earned, Honored, Recognized, Selected, Presented, Awarded, etc."
+        "Open each sentence with  action-oriented verbs to describe your achievement, such as Won, Received, Achieved, Earned, Honored, Recognized, Selected, Presented, Awarded, etc."
       ]
     },
     "certifications": {
@@ -509,7 +511,17 @@
 
         "If you have strong language skills that are relevant to the job you are applying for, mention them in the 'Summary' at the top of your CV.",
 
-        "If you have used your language skills in a professional setting, include this information in your 'Work Experience' section."
+        "If you have used your language skills in a professional setting, highlight this information in your 'Work Experience' section."
+      ]
+    },
+    "skills": {
+      "intro": "Choose skills that are relevant to the job you are applying for.\nFor example, if you are applying for a job as a software developer, make sure to include your programming skills.",
+      "li": [
+        "List skills in order of proficiency, with your strongest skill first (start with the technical type).",
+
+        "Try to list up to 5 skills for each type, but if you don't have many technical skills, include more interpersonal skills.",
+
+        "If you have used your skills in a professional setting, highlight this information in your 'Work Experience' section."
       ]
     },
     "reference": {

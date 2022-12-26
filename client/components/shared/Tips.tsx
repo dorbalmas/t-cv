@@ -24,6 +24,7 @@ import Education from '../tips/Education';
 import Language from '../tips/Language';
 import Profiles from '../tips/Profiles';
 import Reference from '../tips/Reference';
+import Skills from '../tips/Skills';
 import Summary from '../tips/Summary';
 import Website from '../tips/Website';
 import Work from '../tips/Work';
@@ -119,6 +120,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'work' ? <Work /> : null}
                 {tipsTitle === 'education' ? <Education /> : null}
                 {tipsTitle === 'reference' ? <Reference /> : null}
+                {tipsTitle === 'skills' ? <Skills /> : null}
                 {tipsTitle === 'language' ? <Language /> : null}
                 {tipsTitle === 'awards' ? <Awards /> : null}
                 {tipsTitle === 'certifications' ? <Certifications /> : null}

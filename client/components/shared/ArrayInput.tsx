@@ -51,6 +51,7 @@ const ArrayInput: React.FC<Props> = ({ value, label, onChange, errors, className
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleChange(event, index)}
             error={!!get(errors, index, false)}
             helperText={get(errors, `${index}.message`, '')}
+            autoFocus
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
