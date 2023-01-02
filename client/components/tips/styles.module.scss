@@ -2,6 +2,9 @@
   div {
     @apply first-letter:uppercase;
   }
+  h4 {
+    @apply underline tracking-wider;
+  }
   ul {
     @apply list-outside mt-1 mb-1 rtl:mr-3;
     margin-left: -0.7rem;

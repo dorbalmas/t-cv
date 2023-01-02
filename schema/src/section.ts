@@ -61,8 +61,8 @@ export type Publication = {
 export type Skill = {
   id?: string;
   name: string;
-  //   level?: string;
-  //   levelNum: number;
+  level?: string;
+  levelNum: number;
   keywords?: string[];
 };
 

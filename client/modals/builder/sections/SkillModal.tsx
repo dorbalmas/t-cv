@@ -23,8 +23,8 @@ const path: SectionPath = 'sections.skills';
 
 const defaultState: FormData = {
   name: '',
-  //   level: '',
-  //   levelNum: 0,
+  level: '',
+  levelNum: 0,
   keywords: [],
 };
 

@@ -449,31 +449,48 @@
     },
     "work": {
       "intro": "If you have no relevant work experience as an employee or a freelancer, you need to write about a position you worked in and try to find parallel lines between it and the position you are aiming for. (Go to the Projects section and treat each project as if it were work experience).",
-      "li": [
+      "li-generic": ["Start with your most recent work experience."],
+      "li-description": [
         "Write in a concise and clear way, minimum 3 sentences that present your work and contribution.",
 
         "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
 
-        "Open each of your bullet points with the following  action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
+        "Open each of your bullet points with the following action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
 
         "Try to write at least one case where you did something extraordinary and what it improved/how it affected (put it at the top of the list!)."
       ]
     },
+    "project": {
+      "li-generic": [
+        "If you don't have relevant work experience, you should treat every project as if it were work experience.",
+
+        "If you have many projects, include a few selected projects that are most relevant or impressive (up to 3)."
+      ],
+      "li-description": [
+        "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
+
+        "Open each of your bullet points with the following action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ..."
+      ]
+    },
     "awards": {
-      "intro": "Don't list every award you've ever received, be concise and focus on the most relevant and impressive ones.",
-      "li": [
-        "Open each sentence with  action-oriented verbs to describe your achievement, such as Won, Received, Achieved, Earned, Honored, Recognized, Selected, Presented, Awarded, etc."
+      "li-generic": [
+        "Don't list every award you've ever received, be concise and focus on the most relevant and impressive ones."
+      ],
+      "li-description": [
+        "Open each sentence with action-oriented verbs to describe your achievement, such as Won, Received, Achieved, Earned, Honored, Recognized, Selected, Presented, Awarded, etc."
       ]
     },
     "certifications": {
-      "intro": "Only include certifications that are directly relevant to the job you are applying for or that demonstrate your expertise in a specific area.",
-      "li": [
+      "li-generic": [
+        "Only include certifications that are directly relevant to the job you are applying for or that demonstrate your expertise in a specific area.",
+
         "If you have no relevant work experience, place the 'certifications' section below the 'education' section.",
 
         "List the most relevant or prestigious ones first.",
 
-        "Don't forget to include any relevant licenses or accreditations, such as a professional license or a teaching certification.",
-
+        "Don't forget to include any relevant licenses or accreditations, such as a professional license or a teaching certification."
+      ],
+      "li-description": [
         "Include a description only if the certificate is not widely known or if it demonstrates a specific skill or area of knowledge."
       ]
     },

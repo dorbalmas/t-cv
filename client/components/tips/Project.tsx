@@ -3,10 +3,10 @@ import { useTranslation } from 'next-i18next';
 import SharedComp from './SharedComp';
 import styles from './styles.module.scss';
 
-const Awards = () => {
+const Project = () => {
   const { t } = useTranslation();
-  const liGenericLength = t<string>(`builder.tips.awards.li-generic`, { returnObjects: true }).length;
-  const liDescriptionLength = t<string>(`builder.tips.awards.li-description`, { returnObjects: true }).length;
+  const liGenericLength = t<string>(`builder.tips.project.li-generic`, { returnObjects: true }).length;
+  const liDescriptionLength = t<string>(`builder.tips.project.li-description`, { returnObjects: true }).length;
 
   return (
     <div className={styles.container}>
@@ -14,7 +14,7 @@ const Awards = () => {
         {[...Array(liGenericLength)].map((item, idx) => {
           return (
             <li key={idx}>
-              <div>{t<string>(`builder.tips.awards.li-generic.${idx}`)}</div>
+              <div>{t<string>(`builder.tips.project.li-generic.${idx}`)}</div>
             </li>
           );
         })}
@@ -25,7 +25,7 @@ const Awards = () => {
         {[...Array(liDescriptionLength)].map((item, idx) => {
           return (
             <li key={idx}>
-              <div>{t<string>(`builder.tips.awards.li-description.${idx}`)}</div>
+              <div>{t<string>(`builder.tips.project.li-description.${idx}`)}</div>
             </li>
           );
         })}
@@ -33,4 +33,4 @@ const Awards = () => {
     </div>
   );
 };
-export default Awards;
+export default Project;
