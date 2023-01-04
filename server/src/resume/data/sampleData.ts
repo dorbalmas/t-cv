@@ -153,7 +153,6 @@ const sampleData: Partial<Resume> = {
           url: '',
           summary:
             '- Created a content management system serving as a client interface that reduced download times by 30%.\n- Developed new admin panel, which improved internal operating efficiency by over 40%.\n- Created comprehensive testing regime using RSpec to ensure bug-free code.\n- Rebuilt entire website with up to date technologies and frameworks.',
-          keywords: ['Python', 'PHP', 'Ruby', 'Javascript'],
           id: '8c12add5-605a-449f-a8a6-e7625c702e60',
         },
         {
@@ -166,7 +165,6 @@ const sampleData: Partial<Resume> = {
           url: '',
           summary:
             '- Performed an average of 90+ cold calls daily creating three new qualified prospects exceeding company average by 10%.\n- Managed a $1 million pipeline that supported the creation of 50 new accounts.\n- Sold SaaS and Cloud offering to key accounts including California State University, Ace Athetics and BMI, succeeding in reducing back-up time by 50%.\n\n**Key Projects:** Worked with IT team to create a new web-based leads-generating system, resulting in closed sales increasing by 18% contributing to a $1.5 million increase in profits.',
-          keywords: ['Sales & Marketing', 'Chain Management'],
           id: 'ec58bb49-a6b1-49ed-9ff6-860a44663ed7',
         },
       ],

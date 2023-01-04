@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import reactStringReplace from 'react-string-replace';
 
 import styles from './styles.module.scss';
 
@@ -18,15 +19,18 @@ const Website = () => {
                 carrd.co
               </a>
             </Link>{' '}
-            - {t<string>('builder.tips.website.li')}
-            <b className="tracking-wide">
-              {' '}
-              {t<string>('builder.tips.website.free')}!!! {t<string>('builder.tips.website.quick')}
-            </b>
+            -{' '}
+            {reactStringReplace(t<string>('builder.tips.website.li.0'), /\*\*([^\^]*)\*\*/g, (match, i) => (
+              <strong key={i} className="uppercase">
+                {match}
+              </strong>
+            ))}
           </div>
         </li>
+        <li>
+          <div>{t<string>('builder.tips.website.li.1')}</div>
+        </li>
       </ul>
-      <div className="text-sm">{t<string>('builder.tips.website.remember')}</div>
     </div>
   );
 };

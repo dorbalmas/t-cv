@@ -10,7 +10,6 @@ import {
   Language,
   LinkedIn,
   Margin,
-  MenuBook,
   Palette,
   Person,
   Sailing,
@@ -72,11 +71,6 @@ export const left: SidebarSection[] = [
     component: <Section path="sections.certifications" titleKey="name" subtitleKey="issuer" isEditable isHideable />,
   },
   {
-    id: 'publications',
-    icon: <MenuBook />,
-    component: <Section path="sections.publications" titleKey="name" subtitleKey="publisher" isEditable isHideable />,
-  },
-  {
     id: 'skills',
     icon: <Architecture />,
     component: <Section path="sections.skills" titleKey="name" subtitleKey="level" isEditable isHideable />,
@@ -87,9 +81,9 @@ export const left: SidebarSection[] = [
     component: <Section path="sections.languages" titleKey="name" subtitleKey="level" isEditable isHideable />,
   },
   {
-    id: 'interests',
-    icon: <Sailing />,
-    component: <Section path="sections.interests" titleKey="name" subtitleKey="keywords" isEditable isHideable />,
+    id: 'projects',
+    icon: <Coffee />,
+    component: <Section path="sections.projects" titleKey="name" subtitleKey="description" isEditable isHideable />,
   },
   {
     id: 'volunteer',
@@ -99,15 +93,20 @@ export const left: SidebarSection[] = [
     ),
   },
   {
-    id: 'projects',
-    icon: <Coffee />,
-    component: <Section path="sections.projects" titleKey="name" subtitleKey="description" isEditable isHideable />,
-  },
-  {
     id: 'references',
     icon: <Groups />,
     component: <Section path="sections.references" titleKey="name" subtitleKey="relationship" isEditable isHideable />,
   },
+  {
+    id: 'interests',
+    icon: <Sailing />,
+    component: <Section path="sections.interests" titleKey="name" subtitleKey="keywords" isEditable isHideable />,
+  },
+  //   {
+  //     id: 'publications',
+  //     icon: <MenuBook />,
+  //     component: <Section path="sections.publications" titleKey="name" subtitleKey="publisher" isEditable isHideable />,
+  //   },
 ];
 
 export const right: SidebarSection[] = [

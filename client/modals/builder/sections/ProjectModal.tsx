@@ -11,7 +11,6 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import ArrayInput from '@/components/shared/ArrayInput';
 import BaseModal from '@/components/shared/BaseModal';
 import Tips from '@/components/shared/Tips';
 import { VALID_URL_REGEX } from '@/constants/index';
@@ -213,20 +212,6 @@ const ProjectModal: React.FC = () => {
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}
-              />
-            )}
-          />
-
-          <Controller
-            name="keywords"
-            control={control}
-            render={({ field, fieldState }) => (
-              <ArrayInput
-                label={t<string>('builder.common.form.keywords.label')}
-                value={field.value as string[]}
-                onChange={field.onChange}
-                errors={fieldState.error}
-                className="col-span-2"
               />
             )}
           />

@@ -1,4 +1,6 @@
 .container {
+  @apply font-light;
+
   div {
     @apply first-letter:uppercase;
   }

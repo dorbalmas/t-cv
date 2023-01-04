@@ -21,6 +21,7 @@ import AddResume from '../tips/AddResume';
 import Awards from '../tips/Awards';
 import Certifications from '../tips/Certifications';
 import Education from '../tips/Education';
+import Entrance from '../tips/Entrance';
 import Language from '../tips/Language';
 import Profiles from '../tips/Profiles';
 import Project from '../tips/Project';
@@ -114,18 +115,19 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                   </IconButton>
                 </header>
                 <Divider style={{ marginBottom: '0.7rem' }} />
+                {tipsTitle === 'addResume' ? <AddResume /> : null}
+                {tipsTitle === 'entrance' ? <Entrance /> : null}
                 {tipsTitle === 'website' ? <Website /> : null}
                 {tipsTitle === 'summary' ? <Summary /> : null}
-                {tipsTitle === 'addResume' ? <AddResume /> : null}
                 {tipsTitle === 'profiles' ? <Profiles /> : null}
                 {tipsTitle === 'work' ? <Work /> : null}
                 {tipsTitle === 'project' ? <Project /> : null}
                 {tipsTitle === 'education' ? <Education /> : null}
-                {tipsTitle === 'reference' ? <Reference /> : null}
-                {tipsTitle === 'skills' ? <Skills /> : null}
-                {tipsTitle === 'language' ? <Language /> : null}
                 {tipsTitle === 'awards' ? <Awards /> : null}
                 {tipsTitle === 'certifications' ? <Certifications /> : null}
+                {tipsTitle === 'skills' ? <Skills /> : null}
+                {tipsTitle === 'language' ? <Language /> : null}
+                {tipsTitle === 'reference' ? <Reference /> : null}
               </div>
             }
           >

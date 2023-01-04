@@ -29,6 +29,7 @@ import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
+import Tips from '@/components/shared/Tips';
 import { rtlLanguages } from '@/config/languages';
 import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
@@ -156,6 +157,8 @@ const Header = () => {
         )}
 
         <div className={styles.title}>
+          <Tips tipsTitle="entrance" />
+
           <span className="mr-2 mb-1 transition ease-in-out duration-500 hover:scale-125 duration-300">
             <LanguageSwitcher />
           </span>

@@ -425,12 +425,20 @@
         "bull3": "Third sentence"
       }
     },
+    "entrance": {
+      "li": [
+        "Carefully proofread your CV for spelling and grammar errors. Even small mistakes can be a red flag to potential employers, so it's important to take the time to ensure that your CV is error-free.\nDownload for FREE the <1>Grammarly Chrome Extension</1> to check your grammar, spelling, and punctuation in English.",
+
+        "After you have finished preparing your CV, click on the 'Duplicate' option and start including keywords from the job description in the company you are aiming for."
+      ]
+    },
     "website": {
       "intro": "Once you've finished preparing your CV, you can take the way you present yourself to the next level by building a website.",
-      "li": "unique and modern templates",
-      "free": "for free",
-      "quick": "(quick & easy)",
-      "remember": "Remember: the goal here is to show that you put in the effort."
+      "li": [
+        "Easy to use with ready and unique templates for **free!!!**",
+
+        "The goal is to stand out and show that you put in the extra effort."
+      ]
     },
     "summary": {
       "intro": "This is the first section and sometimes the only section that recruiters will read, so make sure to write the most important and relevant qualifications for the position you are aiming for.",
@@ -462,14 +470,16 @@
     },
     "project": {
       "li-generic": [
-        "If you don't have relevant work experience, you should treat every project as if it were work experience.",
+        "If you don't have relevant work experience, take your best project and treat it as if it were work experience and place it above the 'work experience' section, this way you will show hiring managers willingness and readiness for the job.",
 
-        "If you have many projects, include a few selected projects that are most relevant or impressive (up to 3)."
+        "If you have relevant work experience, there is no need to use this section.\nMention the project only if it shows you in a very positive light and place it under the 'work experience' section."
       ],
       "li-description": [
-        "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements.",
+        "Describe in a concise and clear way your responsibilities and achievements while highlighting the skills you have developed.",
 
-        "Open each of your bullet points with the following action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ..."
+        "Open each of your bullet points with the following action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
+
+        "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements."
       ]
     },
     "awards": {
@@ -517,7 +527,7 @@
       "li": [
         "Add only relevant links to your position.",
 
-        "Hiring managers can easily find all your other social networks ,so clean them from anything that could make you look bad.",
+        "Hiring managers can easily find all your other social networks, so clean them from anything that could make you look bad.",
 
         "Community that allows employers and employees to contact each other directly, it is a great opportunity to surround yourself with people in your field."
       ]
@@ -536,7 +546,7 @@
       "li": [
         "List skills in order of proficiency, with your strongest skill first (start with the technical type).",
 
-        "Try to list up to 5 skills for each type, but if you don't have many technical skills, include more interpersonal skills.",
+        "Try to list up to 10 skills in total from the 2 types combined.",
 
         "If you have used your skills in a professional setting, highlight this information in your 'Work Experience' section."
       ]
