@@ -95,7 +95,7 @@ const Basics = () => {
             type="textarea"
             label={t<string>('builder.common.form.summary.label')}
             path="basics.summary"
-            //   markdownSupported
+            // markdownSupported
           />
         </Tips>
       </div>

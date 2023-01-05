@@ -28,6 +28,7 @@ import Project from '../tips/Project';
 import Reference from '../tips/Reference';
 import Skills from '../tips/Skills';
 import Summary from '../tips/Summary';
+import Volunteer from '../tips/Volunteer';
 import Website from '../tips/Website';
 import Work from '../tips/Work';
 import styles from './Tips.module.scss';
@@ -122,6 +123,7 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 {tipsTitle === 'profiles' ? <Profiles /> : null}
                 {tipsTitle === 'work' ? <Work /> : null}
                 {tipsTitle === 'project' ? <Project /> : null}
+                {tipsTitle === 'volunteer' ? <Volunteer /> : null}
                 {tipsTitle === 'education' ? <Education /> : null}
                 {tipsTitle === 'awards' ? <Awards /> : null}
                 {tipsTitle === 'certifications' ? <Certifications /> : null}

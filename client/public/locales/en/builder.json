@@ -427,9 +427,9 @@
     },
     "entrance": {
       "li": [
-        "Carefully proofread your CV for spelling and grammar errors. Even small mistakes can be a red flag to potential employers, so it's important to take the time to ensure that your CV is error-free.\nDownload for FREE the <1>Grammarly Chrome Extension</1> to check your grammar, spelling, and punctuation in English.",
+        "The goal is to keep the CV concise.\nAlways aim for 1 page, especially if you have no work experience relevant to the position you are applying for, but no more than 2 pages.",
 
-        "After you have finished preparing your CV, click on the 'Duplicate' option and start including keywords from the job description in the company you are aiming for."
+        "Carefully proofread your CV for spelling and grammar errors. Even small mistakes can be a red flag to potential employers, so it's important to take the time to ensure that your CV is error-free.\nDownload for FREE the <1>Grammarly Chrome Extension</1> to check your grammar, spelling, and punctuation in English."
       ]
     },
     "website": {
@@ -456,7 +456,7 @@
       ]
     },
     "work": {
-      "intro": "If you have no relevant work experience as an employee or a freelancer, you need to write about a position you worked in and try to find parallel lines between it and the position you are aiming for. (Go to the Projects section and treat each project as if it were work experience).",
+      "intro": "If you have no relevant work experience as an employee or a freelancer, you need to write about a position you worked in and try to find parallel lines between it and the position you are aiming for. (Go to the 'Projects' section and treat each project as if it were work experience).",
       "li-generic": ["Start with your most recent work experience."],
       "li-description": [
         "Write in a concise and clear way, minimum 3 sentences that present your work and contribution.",
@@ -470,9 +470,9 @@
     },
     "project": {
       "li-generic": [
-        "If you don't have relevant work experience, take your best project and treat it as if it were work experience and place it above the 'work experience' section, this way you will show hiring managers willingness and readiness for the job.",
+        "If you don't have relevant work experience, take your best project and treat it as if it were work experience and place it above the 'Work Experience' section, this way you will show hiring managers willingness and readiness for the job.",
 
-        "If you have relevant work experience, there is no need to use this section.\nMention the project only if it shows you in a very positive light and place it under the 'work experience' section."
+        "If you have relevant work experience, there is no need to use this section.\nMention the project only if it shows you in a very positive light and place it under the 'Work Experience' section."
       ],
       "li-description": [
         "Describe in a concise and clear way your responsibilities and achievements while highlighting the skills you have developed.",
@@ -480,6 +480,16 @@
         "Open each of your bullet points with the following action-oriented verbs:\nLed, Executed, Improved, Researched, Administered, Collaborated, Presented, Developed, Facilitated, Analyzed, Implemented, Managed, Coordinated, Optimized, Automated, Resolved, Achieved, Streamlined, Produced, Consolidated, Pioneered, Supervised, Disseminated, Trained, Mentored, Negotiated, Assessed, ...",
 
         "Be prepared to elaborate on each sentence orally, because professional interviewers like to dive deep into those statements."
+      ]
+    },
+    "Volunteer": {
+      "li-generic": [
+        "Mention the volunteering only if it presents you in a very positive light or is relevant to the position you are applying for (for example: contribution to an open source project), and place it in the 'Work Experience' section."
+      ],
+      "li-description": [
+        "Describe in a concise and clear way your responsibilities and achievements while highlighting the skills you have developed.",
+
+        "Open each of your bullet points with the following action-oriented verbs:\nContributed, Assisted, Collaborated, Coordinated, Fundraised, Led, Mentored, Organized, Participated, Planned, Recruited, Tutored, ..."
       ]
     },
     "awards": {
@@ -494,7 +504,7 @@
       "li-generic": [
         "Only include certifications that are directly relevant to the job you are applying for or that demonstrate your expertise in a specific area.",
 
-        "If you have no relevant work experience, place the 'certifications' section below the 'education' section.",
+        "If you have no relevant work experience, place this section below the 'Education' section.",
 
         "List the most relevant or prestigious ones first.",
 

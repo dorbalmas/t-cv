@@ -12,6 +12,7 @@ import { useEffect, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import BaseModal from '@/components/shared/BaseModal';
+import Tips from '@/components/shared/Tips';
 import { VALID_URL_REGEX } from '@/constants/index';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
@@ -102,116 +103,118 @@ const VolunteerModal: React.FC = () => {
         </Button>
       }
     >
-      <form className="my-2 grid grid-cols-2 gap-4">
-        <Controller
-          name="organization"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              autoFocus
-              label={t<string>('builder.leftSidebar.sections.volunteer.form.organization.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+      <Tips tipsTitle="volunteer" top="-0.5rem">
+        <form className="my-2 grid grid-cols-2 gap-4">
+          <Controller
+            name="organization"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                autoFocus
+                label={t<string>('builder.leftSidebar.sections.volunteer.form.organization.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="position"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              required
-              label={t<string>('builder.common.form.position.label')}
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+          <Controller
+            name="position"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                required
+                label={t<string>('builder.common.form.position.label')}
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="date.start"
-          control={control}
-          render={({ field, fieldState }) => (
-            <DatePicker
-              {...field}
-              openTo="year"
-              label={t<string>('builder.common.form.start-date.label')}
-              views={['year', 'month', 'day']}
-              onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-                isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message || params.inputProps?.placeholder}
-                />
-              )}
-            />
-          )}
-        />
+          <Controller
+            name="date.start"
+            control={control}
+            render={({ field, fieldState }) => (
+              <DatePicker
+                {...field}
+                openTo="year"
+                label={t<string>('builder.common.form.start-date.label')}
+                views={['year', 'month', 'day']}
+                onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
+                  isEmpty(keyboardInputValue) && field.onChange('');
+                  date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message || params.inputProps?.placeholder}
+                  />
+                )}
+              />
+            )}
+          />
 
-        <Controller
-          name="date.end"
-          control={control}
-          render={({ field, fieldState }) => (
-            <DatePicker
-              {...field}
-              openTo="year"
-              label={t<string>('builder.common.form.end-date.label')}
-              views={['year', 'month', 'day']}
-              onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
-                isEmpty(keyboardInputValue) && field.onChange('');
-                date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message || 'Leave this field blank, if still present'}
-                />
-              )}
-            />
-          )}
-        />
+          <Controller
+            name="date.end"
+            control={control}
+            render={({ field, fieldState }) => (
+              <DatePicker
+                {...field}
+                openTo="year"
+                label={t<string>('builder.common.form.end-date.label')}
+                views={['year', 'month', 'day']}
+                onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
+                  isEmpty(keyboardInputValue) && field.onChange('');
+                  date && dayjs(date).utc().isValid() && field.onChange(dayjs(date).utc().toISOString());
+                }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message || 'Leave this field blank, if still present'}
+                  />
+                )}
+              />
+            )}
+          />
 
-        <Controller
-          name="url"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              label={t<string>('builder.common.form.url.label')}
-              placeholder="https://"
-              className="col-span-2"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
+          <Controller
+            name="url"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                label={t<string>('builder.common.form.url.label')}
+                placeholder="https://"
+                className="col-span-2"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
 
-        <Controller
-          name="summary"
-          control={control}
-          render={({ field, fieldState }) => (
-            <TextField
-              multiline
-              minRows={3}
-              maxRows={6}
-              label={t<string>('builder.common.form.description.label')}
-              className="col-span-2"
-              error={!!fieldState.error}
-              helperText={fieldState.error?.message}
-              {...field}
-            />
-          )}
-        />
-      </form>
+          <Controller
+            name="summary"
+            control={control}
+            render={({ field, fieldState }) => (
+              <TextField
+                multiline
+                minRows={3}
+                maxRows={6}
+                label={t<string>('builder.common.form.description.label')}
+                className="col-span-2"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                {...field}
+              />
+            )}
+          />
+        </form>
+      </Tips>
     </BaseModal>
   );
 };
