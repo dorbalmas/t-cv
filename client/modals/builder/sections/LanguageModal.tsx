@@ -120,7 +120,10 @@ const LanguageModal: React.FC = () => {
                   sx={{
                     '.MuiSelect-icon': {
                       right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
-                      left: rtlLanguages.includes(i18n.language) ? '25px' : 'inherit',
+                      left: rtlLanguages.includes(i18n.language) ? '10px' : 'inherit',
+                    },
+                    '.MuiOutlinedInput-input': {
+                      paddingRight: '14px !important',
                     },
                   }}
                   required

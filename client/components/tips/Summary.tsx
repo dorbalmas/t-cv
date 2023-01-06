@@ -9,7 +9,6 @@ const Summary = () => {
 
   return (
     <div className={styles.container}>
-      <div>{t<string>('builder.tips.summary.intro')}</div>
       <ul>
         {[...Array(liLength)].map((item, idx) => {
           return (
