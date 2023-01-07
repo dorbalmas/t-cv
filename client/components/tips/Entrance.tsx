@@ -26,6 +26,9 @@ const Entrance = () => {
             </li>
           );
         })}
+        <li>
+          <div>Video</div>
+        </li>
       </ul>
     </div>
   );
