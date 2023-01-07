@@ -19,7 +19,7 @@ import { useMemo, useState } from 'react';
 import { useMutation } from 'react-query';
 
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
-import { Language, languageMap, languages, rtlLanguages } from '@/config/languages';
+import { Language, languageMap, languages } from '@/config/languages';
 import sections from '@/config/sections';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
@@ -30,7 +30,7 @@ import { setResumeState } from '@/store/resume/resumeSlice';
 import { dateFormatOptions } from '@/utils/date';
 
 const Settings = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -129,21 +129,28 @@ const Settings = () => {
               secondary={t<string>('builder.rightSidebar.sections.settings.global.date.secondary')}
             />
             <Autocomplete<string, false, boolean, false>
+              openOnFocus
               disableClearable
               className="my-2 w-full"
-              sx={{
-                '.MuiAutocomplete-endAdornment': {
-                  right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
-                  left: rtlLanguages.includes(i18n.language) ? '10px' : 'inherit',
-                },
-                '.MuiOutlinedInput-root': {
-                  paddingRight: '14px !important',
-                },
-              }}
               options={dateFormatOptions}
               value={dateConfig.format}
               onChange={(_, value) => handleChangeDateFormat(value)}
-              renderInput={(params) => <TextField {...params} helperText={exampleString} />}
+              renderInput={(params) => (
+                <TextField
+                  sx={{
+                    direction: 'ltr',
+                    // '.MuiAutocomplete-endAdornment': {
+                    //   right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
+                    //   left: rtlLanguages.includes(i18n.language) ? '10px' : 'inherit',
+                    // },
+                    // '.MuiOutlinedInput-root': {
+                    //   paddingRight: '14px !important',
+                    // },
+                  }}
+                  {...params}
+                  helperText={exampleString}
+                />
+              )}
             />
           </ListItem>
 
@@ -154,22 +161,28 @@ const Settings = () => {
               secondary={t<string>('builder.rightSidebar.sections.settings.global.language.secondary')}
             />
             <Autocomplete<Language, false, boolean, false>
+              openOnFocus
               disableClearable
               className="my-2 w-full"
-              sx={{
-                '.MuiAutocomplete-endAdornment': {
-                  right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
-                  left: rtlLanguages.includes(i18n.language) ? '10px' : 'inherit',
-                },
-                '.MuiOutlinedInput-root': {
-                  paddingRight: '14px !important',
-                },
-              }}
               options={languages}
               value={languageMap[locale ?? 'en']}
               isOptionEqualToValue={(a, b) => a.code === b.code}
               onChange={(_, value) => handleChangeLanguage(value)}
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField
+                  sx={{
+                    direction: 'ltr',
+                    // '.MuiAutocomplete-endAdornment': {
+                    //   right: rtlLanguages.includes(i18n.language) ? 'inherit' : '7px',
+                    //   left: rtlLanguages.includes(i18n.language) ? '10px' : 'inherit',
+                    // },
+                    // '.MuiOutlinedInput-root': {
+                    //   paddingRight: '14px !important',
+                    // },
+                  }}
+                  {...params}
+                />
+              )}
               getOptionLabel={(language) => {
                 if (language.localName) {
                   return `${language.name} (${language.localName})`;

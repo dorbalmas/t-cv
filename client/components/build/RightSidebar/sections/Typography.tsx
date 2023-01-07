@@ -77,6 +77,7 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
 
         <Autocomplete<Font, false, boolean, false>
           options={fonts}
+          openOnFocus
           disableClearable={true}
           groupBy={(font) => font.category}
           getOptionLabel={(font) => font.family}
@@ -85,6 +86,9 @@ const Widgets: React.FC<WidgetProps> = ({ label, category }) => {
           onChange={(_, font: Font | null) => handleChange('family', font)}
           renderInput={(params) => (
             <TextField
+              sx={{
+                direction: 'ltr',
+              }}
               {...params}
               label={t<string>('builder.rightSidebar.sections.typography.form.font-family.label')}
             />

@@ -81,9 +81,7 @@ const SharedComp: React.FC<Props> = ({ open }) => {
           </tr> */}
               <tr>
                 <td className="font-thin pl-2">**{t<string>('builder.tips.shared.table.bold')}**</td>
-                <td>
-                  <b>{t<string>('builder.tips.shared.table.bold')}</b>
-                </td>
+                <td className="font-bold pl-2">{t<string>('builder.tips.shared.table.bold')}</td>
               </tr>
               <tr>
                 <td className="font-thin pl-2">

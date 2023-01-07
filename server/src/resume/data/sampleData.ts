@@ -116,23 +116,13 @@ const sampleData: Partial<Resume> = {
       items: [
         {
           id: 'e27660b2-2b0f-48b0-9b04-3597f0282d06',
-          name: 'tec',
-          keywords: ['ReactJS', 'HTML/CSS', 'jQuery', 'PHP'],
+          name: 'Technical',
+          keywords: ['ReactJS', 'HTML/CSS', 'NodeJS', 'Python/Flask'],
         },
         {
           id: '2f98e07e-21f7-4b40-81e3-4cf529d43339',
-          name: 'Backend Development',
-          keywords: ['NodeJS', 'Springboot', 'Python/Flask', 'Postman'],
-        },
-        {
-          id: 'bf4253f2-7829-432c-a1d5-07446e7ae873',
-          name: 'Adobe Creative Cloud',
-          keywords: ['Photoshop', 'Illustrator', 'InDesign', 'Fireworks'],
-        },
-        {
-          id: '0b4a6206-7a2b-47a4-b71d-59c24ceee219',
-          name: 'Content Management Systems',
-          keywords: ['Wordpress', 'Joomla', 'Mailchimp'],
+          name: 'Interpersonal',
+          keywords: ['Problem-solving', 'Communication', 'Adaptability', 'Time management'],
         },
       ],
       columns: 2,
