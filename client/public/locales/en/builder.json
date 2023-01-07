@@ -555,7 +555,7 @@
       ]
     },
     "skills": {
-      "intro": "Choose skills that are relevant to the job you are applying for.\nFor example, if you are applying for a job as a software developer, make sure to include your programming skills.",
+      "intro": "Choose skills that are relevant to the job you are applying for.",
       "li": [
         "List skills in order of proficiency, with your strongest skill first (start with the technical type).",
 

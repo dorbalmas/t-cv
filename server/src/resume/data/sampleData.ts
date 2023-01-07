@@ -117,7 +117,7 @@ const sampleData: Partial<Resume> = {
         {
           id: 'e27660b2-2b0f-48b0-9b04-3597f0282d06',
           name: 'Technical',
-          keywords: ['ReactJS', 'HTML/CSS', 'NodeJS', 'Python/Flask'],
+          keywords: ['ReactJS', 'HTML/CSS', 'NodeJS', 'Docker', 'MongoDB', 'Git'],
         },
         {
           id: '2f98e07e-21f7-4b40-81e3-4cf529d43339',
