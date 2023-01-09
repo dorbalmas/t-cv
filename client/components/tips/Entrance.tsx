@@ -8,7 +8,7 @@ const Entrance = () => {
 
   return (
     <div className={styles.container}>
-      <ul>
+      <ol>
         {[...Array(liLength)].map((item, idx) => {
           return (
             <li key={idx}>
@@ -29,7 +29,7 @@ const Entrance = () => {
         <li>
           <div>Video</div>
         </li>
-      </ul>
+      </ol>
     </div>
   );
 };

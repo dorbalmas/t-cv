@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { validate } from 'uuid';
 
+import OpenClose from '@/components/shared/OpenClose';
 import { rtlLanguages } from '@/config/languages';
 import { getCustomSections, left } from '@/config/sections';
 import paperDark from '@/public/images/paperDark.png';
@@ -66,6 +67,7 @@ const LeftSidebar = () => {
       onClose={handleClose}
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
+      sx={{ '.MuiPaper-root': { overflowY: 'visible', border: 'none' } }}
     >
       <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
         <nav className={rtlLanguages.includes(i18n.language) ? 'right-0' : 'left-0'}>
@@ -128,6 +130,7 @@ const LeftSidebar = () => {
             </Button>
           </div>
         </main>
+        <OpenClose />
       </div>
     </SwipeableDrawer>
   );

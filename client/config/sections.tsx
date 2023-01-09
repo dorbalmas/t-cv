@@ -12,7 +12,6 @@ import {
   Margin,
   Palette,
   Person,
-  Sailing,
   School,
   Settings as SettingsIcon,
   Share,
@@ -97,11 +96,11 @@ export const left: SidebarSection[] = [
     icon: <Groups />,
     component: <Section path="sections.references" titleKey="name" subtitleKey="relationship" isEditable isHideable />,
   },
-  {
-    id: 'interests',
-    icon: <Sailing />,
-    component: <Section path="sections.interests" titleKey="name" subtitleKey="keywords" isEditable isHideable />,
-  },
+  //   {
+  //     id: 'interests',
+  //     icon: <Sailing />,
+  //     component: <Section path="sections.interests" titleKey="name" subtitleKey="keywords" isEditable isHideable />,
+  //   },
   //   {
   //     id: 'publications',
   //     icon: <MenuBook />,

@@ -1,0 +1,9 @@
+.container {
+  @apply absolute;
+  top: 42%;
+  width: fit-content;
+  button {
+    @apply relative;
+    @apply flex items-center;
+  }
+}

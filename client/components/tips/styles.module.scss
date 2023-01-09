@@ -20,4 +20,16 @@
       }
     }
   }
+  ol {
+    @apply list-outside mt-1 mb-1 rtl:mr-4;
+    margin-left: -0.3rem;
+    li {
+      div {
+        @apply rtl:mr-1 whitespace-pre-line;
+      }
+      &::marker {
+        color: #fafafa;
+      }
+    }
+  }
 }

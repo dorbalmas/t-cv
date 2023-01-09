@@ -128,7 +128,7 @@ const ProjectModal: React.FC = () => {
             render={({ field, fieldState }) => (
               <TextField
                 required
-                label={t<string>('builder.common.form.description.label')}
+                label={t<string>('builder.common.form.position.label')}
                 error={!!fieldState.error}
                 helperText={fieldState.error?.message}
                 {...field}

@@ -145,7 +145,9 @@ const Layout = () => {
 
         <div className="flex items-center justify-end">
           <Button variant="outlined" startIcon={<Add />} onClick={handleAddPage}>
-            {t<string>('builder.common.actions.add', { token: t<string>('builder.common.glossary.page') })}
+            <span className="rtl:mr-2">
+              {t<string>('builder.common.actions.add')} {t<string>('builder.common.glossary.page')}
+            </span>
           </Button>
         </div>
       </DragDropContext>

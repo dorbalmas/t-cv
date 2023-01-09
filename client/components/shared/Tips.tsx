@@ -12,7 +12,7 @@ import {
   Zoom,
 } from '@mui/material';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { rtlLanguages } from '@/config/languages';
 
@@ -42,6 +42,14 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const { isMobile } = useBreakpoints();
+  //   const now = new Date();
+  //   const d = new Date( ... ); // pass all the parameters you need to create the time
+  //   if (now.getTime() > d.getTime()) {
+  // 	  // the date stored in `d` is in the past.
+  //   }
+  useEffect(() => {
+    setOpen(tipsTitle === 'entrance' ? true : false);
+  }, []);
 
   const handleTooltipClose = () => {
     setOpen(false);
@@ -97,10 +105,10 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
               rtlLanguages.includes(i18n.language)
                 ? isMobile
                   ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-start`
-                  : 'left'
+                  : `${tipsTitle === 'entrance' ? 'bottom' : 'left'}`
                 : isMobile
                 ? `${tipsTitle === 'summary' ? 'bottom' : 'top'}-end`
-                : 'right'
+                : `${tipsTitle === 'entrance' ? 'bottom' : 'right'}`
             }
             title={
               <div
