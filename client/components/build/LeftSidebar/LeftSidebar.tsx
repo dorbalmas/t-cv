@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { validate } from 'uuid';
 
-import OpenClose from '@/components/shared/OpenClose';
+import OpenCloseLeftSidebar from '@/components/shared/OpenCloseLeftSidebar';
 import { rtlLanguages } from '@/config/languages';
 import { getCustomSections, left } from '@/config/sections';
 import paperDark from '@/public/images/paperDark.png';
@@ -130,7 +130,7 @@ const LeftSidebar = () => {
             </Button>
           </div>
         </main>
-        <OpenClose />
+        <OpenCloseLeftSidebar />
       </div>
     </SwipeableDrawer>
   );

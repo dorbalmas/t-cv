@@ -1,6 +1,6 @@
 import {
-  ChevronLeft as ChevronLeftIcon,
-  ChevronRight as ChevronRightIcon,
+  //   ChevronLeft as ChevronLeftIcon,
+  //   ChevronRight as ChevronRightIcon,
   CopyAll,
   Delete,
   DriveFileRenameOutline,
@@ -35,7 +35,7 @@ import { RESUMES_QUERY } from '@/constants/index';
 import { ServerError } from '@/services/axios';
 import queryClient from '@/services/react-query';
 import { deleteResume, DeleteResumeParams, duplicateResume, DuplicateResumeParams } from '@/services/resume';
-import { setSidebarState, toggleSidebar } from '@/store/build/buildSlice';
+import { setSidebarState } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setModalState } from '@/store/modal/modalSlice';
 import getResumeUrl from '@/utils/getResumeUrl';
@@ -74,9 +74,9 @@ const Header = () => {
     }
   }, [isDesktop, dispatch]);
 
-  const toggleLeftSidebar = () => dispatch(toggleSidebar({ sidebar: 'left' }));
+  //   const toggleLeftSidebar = () => dispatch(toggleSidebar({ sidebar: 'left' }));
 
-  const toggleRightSidebar = () => dispatch(toggleSidebar({ sidebar: 'right' }));
+  //   const toggleRightSidebar = () => dispatch(toggleSidebar({ sidebar: 'right' }));
 
   const goBack = () => router.push('/dashboard');
 
@@ -148,13 +148,13 @@ const Header = () => {
           [styles.pushRight]: rtlLanguages.includes(i18n.language) ? left.open : right.open,
         })}
       >
-        {rtlLanguages.includes(i18n.language) ? (
+        {/* {rtlLanguages.includes(i18n.language) ? (
           <IconButton onClick={toggleRightSidebar}>
             {right.open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         ) : (
           <IconButton onClick={toggleLeftSidebar}>{left.open ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
-        )}
+        )} */}
 
         <div className={styles.title}>
           <Tips tipsTitle="entrance" />
@@ -216,13 +216,13 @@ const Header = () => {
           </Menu>
         </div>
 
-        {rtlLanguages.includes(i18n.language) ? (
+        {/* {rtlLanguages.includes(i18n.language) ? (
           <IconButton onClick={toggleLeftSidebar}>{left.open ? <ChevronRightIcon /> : <ChevronLeftIcon />}</IconButton>
         ) : (
           <IconButton onClick={toggleRightSidebar}>
             {right.open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
-        )}
+        )} */}
       </Toolbar>
     </AppBar>
   );

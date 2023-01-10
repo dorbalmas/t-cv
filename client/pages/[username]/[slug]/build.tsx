@@ -10,7 +10,8 @@ import { useQuery } from 'react-query';
 import Center from '@/components/build/Center/Center';
 import LeftSidebar from '@/components/build/LeftSidebar/LeftSidebar';
 import RightSidebar from '@/components/build/RightSidebar/RightSidebar';
-import OpenClose from '@/components/shared/OpenClose';
+import OpenCloseLeftSidebar from '@/components/shared/OpenCloseLeftSidebar';
+import OpenCloseRightSidebar from '@/components/shared/OpenCloseRightSidebar';
 import { rtlLanguages } from '@/config/languages';
 import { fetchResumeByIdentifier } from '@/services/resume';
 import { useAppDispatch } from '@/store/hooks';
@@ -67,7 +68,8 @@ const Build: NextPage<Props> = ({ username, slug }) => {
           {resume.name} | {t<string>('common.title')}
         </title>
       </Head>
-      <OpenClose openDir={rtlLanguages.includes(i18n.language) ? 'right' : 'left'} />
+      <OpenCloseLeftSidebar openDir={rtlLanguages.includes(i18n.language) ? 'right' : 'left'} />
+      <OpenCloseRightSidebar openDir={rtlLanguages.includes(i18n.language) ? 'left' : 'right'} />
       <LeftSidebar />
       <Center />
       <RightSidebar />

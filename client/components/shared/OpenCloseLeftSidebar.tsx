@@ -5,19 +5,19 @@ import { rtlLanguages } from '@/config/languages';
 import { toggleSidebar } from '@/store/build/buildSlice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 
-import styles from './OpenClose.module.scss';
+import { useBreakpoints } from '../landingPage/hooks/useBreakpoints';
+import styles from './OpenCloseLeftSidebar.module.scss';
 type Props = {
   openDir?: string;
 };
-const OpenClose: React.FC<Props> = ({ openDir }) => {
+const OpenCloseLeftSidebar: React.FC<Props> = ({ openDir }) => {
   const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
+  const { isMobile } = useBreakpoints();
 
   const { left: leftSideBar, right: rightSideBar } = useAppSelector((state) => state.build.sidebar);
 
   const toggleLeftSidebar = () => dispatch(toggleSidebar({ sidebar: 'left' }));
-
-  //   const toggleRightSidebar = () => dispatch(toggleSidebar({ sidebar: 'right' }));
 
   return (
     <span
@@ -28,7 +28,7 @@ const OpenClose: React.FC<Props> = ({ openDir }) => {
               [openDir]: '-0.1rem',
               transform: rtlLanguages.includes(i18n.language) ? 'rotate(180deg)' : 'rotate(0deg)',
               zIndex: 99999,
-              display: leftSideBar.open ? 'none' : 'inline',
+              display: leftSideBar.open || (isMobile && rightSideBar.open) ? 'none' : 'inline',
             }
           : {
               [rtlLanguages.includes(i18n.language) ? 'left' : 'right']: '-0.8rem',
@@ -76,4 +76,4 @@ const OpenClose: React.FC<Props> = ({ openDir }) => {
   );
 };
 
-export default OpenClose;
+export default OpenCloseLeftSidebar;

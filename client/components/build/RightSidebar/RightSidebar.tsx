@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import Avatar from '@/components/shared/Avatar';
 import Footer from '@/components/shared/Footer';
+import OpenCloseRightSidebar from '@/components/shared/OpenCloseRightSidebar';
 import { rtlLanguages } from '@/config/languages';
 import { right } from '@/config/sections';
 import { setSidebarState } from '@/store/build/buildSlice';
@@ -42,6 +43,7 @@ const RightSidebar = () => {
       onClose={handleClose}
       PaperProps={{ className: '!shadow-lg' }}
       variant={isDesktop ? 'persistent' : 'temporary'}
+      sx={{ '.MuiPaper-root': { overflowY: 'visible', border: 'none' } }}
     >
       <div className={styles.container} dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}>
         <nav className={rtlLanguages.includes(i18n.language) ? 'left-0' : 'right-0'}>
@@ -83,6 +85,7 @@ const RightSidebar = () => {
             {/* <div>v{process.env.appVersion}</div> */}
           </footer>
         </main>
+        <OpenCloseRightSidebar />
       </div>
     </SwipeableDrawer>
   );

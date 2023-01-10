@@ -1,16 +1,20 @@
-.header {
-  @apply top-0 left-0 right-0 z-50;
-  @apply flex items-center justify-between;
+.container {
+  @apply mx-auto pb-2 prose prose-invert text-neutral-50 text-sm mt-0;
 
-  > div {
-    @apply flex items-center gap-2;
-  }
+  header {
+    @apply top-0 left-0 right-0;
+    @apply flex items-center justify-between;
 
-  button {
-    @apply flex items-center justify-center;
-    @apply rotate-0 transition-transform hover:rotate-90;
-  }
-  h3 {
-    @apply mt-3;
+    > div {
+      @apply flex items-center gap-2;
+    }
+
+    button {
+      @apply flex items-center justify-center;
+      @apply rotate-0 transition-transform hover:rotate-90;
+    }
+    h3 {
+      @apply mt-3;
+    }
   }
 }

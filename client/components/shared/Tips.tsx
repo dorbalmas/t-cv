@@ -111,11 +111,8 @@ const Tips: React.FC<Props> = ({ tipsTitle, children, top }) => {
                 : `${tipsTitle === 'entrance' ? 'bottom' : 'right'}`
             }
             title={
-              <div
-                dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'}
-                className="mx-auto pb-2 prose prose-invert text-neutral-50 text-sm mt-0"
-              >
-                <header className={styles.header}>
+              <div dir={rtlLanguages.includes(i18n.language) ? 'rtl' : 'ltr'} className={styles.container}>
+                <header>
                   <div>
                     <h3>{t<string>('builder.tips.header')}</h3>
                   </div>
