@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://rxresu.me',
+  siteUrl: 'https://tivlotcv.com',
   changefreq: 'monthly',
   generateRobotsTxt: true,
 };
